@@ -5,8 +5,7 @@ import Hotitem from "./Pages/Hotitem/Hotitem";
 import Saleitem from "./Pages/Saleitem/Saleitem";
 import Newitem from "./Pages/Newitem/Newitem";
 import Cart from "./Pages/Cart/Cart";
-import CategoryOffice from "./Pages/CategoryOffice/CategoryOffice";
-import CategoryToy from "./Pages/CategoryToy/CategoryToy";
+import Category from "./Pages/Category/Category";
 import Details from "./Pages/Details/Details";
 import Location from "./Pages/Location/Location";
 import SignIn from "./Pages/SignIn/SignIn";
@@ -26,8 +25,7 @@ class Routes extends React.Component {
           <Route exact path="/sale" component={Saleitem} />
           <Route exact path="/new" component={Newitem} />
           <Route exact path="/cart" component={Cart} />
-          <Route exact path="/cate-office" component={CategoryOffice} />
-          <Route exact path="/cate-toy" component={CategoryToy} />
+          <Route exact path="/category" component={Category} />
           <Route exact path="/details" component={Details} />
           <Route exact path="/location" component={Location} />
           <Route exact path="/signin" component={SignIn} />
