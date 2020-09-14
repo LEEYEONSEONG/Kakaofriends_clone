@@ -1,0 +1,35 @@
+* {
+    font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic",
+        "맑은 고딕", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+// variables
+$breakpoint-tablet: 770px;
+
+@mixin tab {
+    @media screen and (max-width: #{$breakpoint-tablet}) {
+        @content;
+    }
+}
+
+@mixin flexBox($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+// colors
+$alert: #ff6129;
+$point: #ff447e;
+$subtext: #9a9a9e;
+$subblack: #1e1e1e;
+$kakaoyellow: #ffe500;
+$buttongray: #f6f6f6;
+$footertop: #3c404b;
+$footerbot: #2e2e2e;
