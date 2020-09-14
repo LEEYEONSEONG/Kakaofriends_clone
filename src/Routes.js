@@ -1,9 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Allitem from "./Pages/Allitem/Allitem";
-import Hotitem from "./Pages/Hotitem/Hotitem";
-import Saleitem from "./Pages/Saleitem/Saleitem";
-import Newitem from "./Pages/Newitem/Newitem";
+import Main from "./Pages/Main/Main";
 import Cart from "./Pages/Cart/Cart";
 import Category from "./Pages/Category/Category";
 import Details from "./Pages/Details/Details";
@@ -20,10 +17,7 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/all" component={Allitem} />
-          <Route exact path="/hot" component={Hotitem} />
-          <Route exact path="/sale" component={Saleitem} />
-          <Route exact path="/new" component={Newitem} />
+          <Route exact path="/main" component={Main} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/category" component={Category} />
           <Route exact path="/details" component={Details} />
