@@ -13,7 +13,6 @@ class Nav extends React.Component {
                 <span className="category-triangle"></span>
               </a>
             </li>
-
             <li className="category">
               <a className="category-link" href="#">
                 매장안내
