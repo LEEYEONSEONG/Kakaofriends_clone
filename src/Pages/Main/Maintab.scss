@@ -1,0 +1,34 @@
+@import "../../Styles/common.scss";
+@import "../../Styles/reset.scss";
+
+.Maintab {
+    top: 66px;
+    .menuTab {
+        @include flexBox(center, center, row);
+        border-bottom: 1px solid rgb(237, 237, 237);
+        button {
+            width: 106px;
+            height: 54px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            font-size: 15px;
+            &.highlightedBtn {
+                font-weight: 700;
+            }
+        }
+        .highlightedTab {
+            height: 3px;
+            margin: 0 13px;
+            background: black;
+            bottom: -1px;
+            border-style: initial;
+            &.off {
+                display: none;
+            }
+            &.on {
+                display: block;
+            }
+        }
+    }
+}
