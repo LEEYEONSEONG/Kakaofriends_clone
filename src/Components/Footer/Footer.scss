@@ -1,2 +1,71 @@
-@import "../../Styles/common.scss";
-@import "../../Styles/reset.scss";
+@import '../../Styles/common.scss';
+@import '../../Styles/reset.scss';
+
+.Footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 50px;
+  background-color: $footerbot;
+  .footer-top {
+    width: 100%;
+    background-color: $footertop;
+    @include flexBox(center, center, row);
+    &-inner {
+      @include flexBox(flex-start, center, row);
+      background-image: url('/images/footer-characters.png');
+      background-size: auto 55px;
+      background-repeat: no-repeat;
+      height: 55px;
+      width: 1080px;
+      margin: 0 auto;
+      .footer-top-text {
+        color: #ffffff;
+        font-size: 14px;
+        padding-left: 70px;
+        padding-right: 26px;
+        .sentence {
+          margin-right: 20px;
+        }
+        .intro {
+          margin: 0 20px;
+        }
+        .story {
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+  .footer-bot {
+    width: 100%;
+    background-color: $footerbot;
+    @include flexBox(center, center, column);
+    margin: 0 auto;
+    .sitemap {
+      padding-top: 50px;
+      padding-bottom: 34px;
+      width: 1080px;
+      margin: 0 auto;
+      @include flexBox(flex-start, center, row);
+      &-text {
+        color: #ffffff;
+        opacity: 70%;
+        padding-right: 20px;
+        font-size: 16px;
+      }
+    }
+    .company-info {
+      width: 1080px;
+      margin: 0 auto;
+      &-text {
+        color: #ffffff;
+        opacity: 70%;
+        font-size: 12px;
+      }
+      .copyright {
+        display: block;
+        margin-top: 49px;
+      }
+    }
+  }
+}

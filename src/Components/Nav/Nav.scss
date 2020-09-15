@@ -1,2 +1,150 @@
-@import "../../Styles/common.scss";
-@import "../../Styles/reset.scss";
+@import '../../Styles/common.scss';
+@import '../../Styles/reset.scss';
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    AppleSDGothicNeo, 'Malgun Gothic', '맑은 고딕', sans-serif;
+}
+
+.nav {
+  color: $subblack;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #ededed;
+  @include flexBox(center, center, row);
+
+  &-container {
+    padding: 0 48px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    width: 100%;
+    max-width: 1080px;
+    @include flexBox(space-between, center, row);
+    @media (min-width: 1280px) {
+      height: 66px;
+    }
+
+    .left-menu {
+      width: 20%;
+      padding: 15px 0px;
+      @include flexBox(flex-start, center, row) .category {
+        width: 70px;
+        padding-right: 11px;
+
+        @include flexBox(center, center, row);
+
+        &-link {
+          width: 70px;
+          max-height: 20px;
+          font-size: 15px;
+          margin: 0;
+          @include flexBox(center, center, row);
+        }
+
+        .category-triangle {
+          background-image: url('/images/ico-header-triangle.png');
+          background-size: 7px 4px;
+          width: 7px;
+          height: 4px;
+          background-repeat: no-repeat;
+          background-position: center;
+          display: inline-block;
+        }
+      }
+    }
+
+    .logo {
+      width: 137px;
+      height: 22px;
+      padding: 20px 0px;
+
+      @media (min-width: 1280px) {
+        width: 165px;
+        height: 27px;
+        padding: 20px 0px;
+      }
+    }
+    .right-menu {
+      width: 20%;
+      @include flexBox(center, center, row);
+
+      .searchbar {
+        &-box {
+          height: auto;
+          width: 213px;
+          border: 1px solid #ededed;
+          border-radius: 3.2px;
+          top: 13px;
+          right: 165px;
+          max-height: 40px;
+          @include flexBox(flex-start, center, row);
+          .searchbar-btn {
+            padding-left: 6px;
+            border: none;
+            background: none;
+            .searchbar-icon {
+              display: inline-block;
+              background-image: url('/images/ico-header-search.png');
+              background-size: 14.4px 14.4px;
+              background-repeat: no-repeat;
+              background-position: center;
+              width: 14.4px;
+              height: 14.4px;
+            }
+          }
+          .searchbar-input {
+            border: none;
+            padding: 10px 0;
+            outline: none;
+          }
+        }
+      }
+
+      .icons {
+        @include flexBox(center, center, row);
+        .iconLink {
+          margin: 23.5px 9px;
+
+          .icon {
+          }
+
+          #myPage {
+            display: inline-block;
+            background-image: url('/images/ico-header-mypage.png');
+            background-size: 18px 19px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 18px;
+            height: 19px;
+            margin: 0px 11px;
+          }
+
+          #cart {
+            display: inline-block;
+            background-image: url('/images/ico-header-cart.png');
+            background-size: 17px 21px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 17px;
+            height: 21px;
+            margin: 0px 11px;
+          }
+        }
+      }
+    }
+    #language {
+      display: inline-block;
+      background-image: url('/images/ico-header-lang.png');
+      background-size: 23px;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 23px;
+      height: 23px;
+      margin: 0px 11px;
+    }
+  }
+}
