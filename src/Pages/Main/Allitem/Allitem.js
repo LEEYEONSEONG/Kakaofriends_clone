@@ -4,6 +4,26 @@ import Sorting from "../../../Components/Sorting/Sorting";
 import "./Allitem.scss";
 
 class Allitem extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            productList: [],
+        };
+    }
+
+    componentDidMount() {
+        fetch("http://localhost:3000/Data/mock.json", {
+            method: "GET",
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                this.setState({
+                    productList: res.data,
+                });
+            });
+    }
+
     render() {
         return (
             <div className="Allitem">
@@ -17,7 +37,7 @@ class Allitem extends React.Component {
                         </div>
                         <Sorting />
                     </div>
-                    <List />
+                    <List productList={this.state.productList} />
                 </article>
             </div>
         );

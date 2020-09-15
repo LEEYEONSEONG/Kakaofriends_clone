@@ -4,28 +4,8 @@ import CardDiscount from "./CardDiscount";
 import "./List.scss";
 
 class List extends React.Component {
-    constructor() {
-        super();
-
-        this.state = {
-            productList: [],
-        };
-    }
-
-    componentDidMount() {
-        fetch("http://localhost:3000/Data/mock.json", {
-            method: "GET",
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                this.setState({
-                    productList: res.data,
-                });
-            });
-    }
-
     render() {
-        const { productList } = this.state;
+        const { productList } = this.props;
         return (
             <div className="List">
                 <ul className="allItemList">

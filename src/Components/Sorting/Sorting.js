@@ -60,7 +60,7 @@ class Sorting extends React.Component {
                             판매량순
                         </button>
                         <div
-                            className={`selectModalWrap selectType "
+                            className={`selectModalWrap selectType 
                                 ${this.state.typeBool ? "" : "hidden"}
                             `}
                         >
@@ -96,7 +96,7 @@ class Sorting extends React.Component {
                             캐릭터 전체
                         </button>
                         <div
-                            className={`selectModalWrap selectChar "
+                            className={`selectModalWrap selectChar 
                                 ${this.state.charBool ? "" : "hidden"}
                             `}
                         >

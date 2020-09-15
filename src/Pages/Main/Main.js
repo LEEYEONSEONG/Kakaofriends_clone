@@ -1,5 +1,4 @@
 import React from "react";
-// import Maintab from "./Maintab";
 import Allitem from "./Allitem/Allitem";
 import Hotitem from "./Hotitem/Hotitem";
 import Newitem from "./Newitem/Newitem";
@@ -29,24 +28,79 @@ class Main extends React.Component {
                 <div className="Maintab">
                     <ul className="menuTab">
                         <li onClick={() => this.clickHandler(0)}>
-                            <button>홈</button>
-                            <hr className="highlightedTab off" />
+                            <button
+                                className={`${
+                                    this.state.activeId === 0 &&
+                                    "highlightedBtn"
+                                }`}
+                            >
+                                홈
+                            </button>
+                            <hr
+                                className={`highlightedTab ${
+                                    this.state.activeId === 0 ? "on" : "off"
+                                }`}
+                            />
                         </li>
                         <li onClick={() => this.clickHandler(1)}>
-                            <button>신규</button>
-                            <hr className="highlightedTab off" />
+                            <button
+                                className={`${
+                                    this.state.activeId === 1 &&
+                                    "highlightedBtn"
+                                }`}
+                            >
+                                신규
+                            </button>
+                            <hr
+                                className={`highlightedTab ${
+                                    this.state.activeId === 1 ? "on" : "off"
+                                }`}
+                            />
                         </li>
                         <li onClick={() => this.clickHandler(2)}>
-                            <button>인기</button>
-                            <hr className="highlightedTab off" />
+                            <button
+                                className={`${
+                                    this.state.activeId === 2 &&
+                                    "highlightedBtn"
+                                }`}
+                            >
+                                인기
+                            </button>
+                            <hr
+                                className={`highlightedTab ${
+                                    this.state.activeId === 2 ? "on" : "off"
+                                }`}
+                            />
                         </li>
                         <li onClick={() => this.clickHandler(3)}>
-                            <button>세일</button>
-                            <hr className="highlightedTab off" />
+                            <button
+                                className={`${
+                                    this.state.activeId === 3 &&
+                                    "highlightedBtn"
+                                }`}
+                            >
+                                세일
+                            </button>
+                            <hr
+                                className={`highlightedTab ${
+                                    this.state.activeId === 3 ? "on" : "off"
+                                }`}
+                            />
                         </li>
                         <li onClick={() => this.clickHandler(4)}>
-                            <button className="highlightedBtn">전체</button>
-                            <hr className="highlightedTab on" />
+                            <button
+                                className={`${
+                                    this.state.activeId === 4 &&
+                                    "highlightedBtn"
+                                }`}
+                            >
+                                전체
+                            </button>
+                            <hr
+                                className={`highlightedTab ${
+                                    this.state.activeId === 4 ? "on" : "off"
+                                }`}
+                            />
                         </li>
                     </ul>
                 </div>
