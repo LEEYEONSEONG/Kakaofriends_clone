@@ -1,7 +1,7 @@
 @import "../../Styles/common.scss";
 @import "../../Styles/reset.scss";
 
-.Card {
+.CardDiscount {
     width: 255px;
     height: 383px;
     margin-right: 20px;
@@ -44,8 +44,13 @@
             color: #777777;
             font-weight: 400;
         }
-        &.productPrice {
+        &.productDiscountPrice {
             font-weight: 700;
+            color: $point;
+        }
+        &.productPrice {
+            color: $subtext;
+            text-decoration: line-through;
         }
     }
     .cartWrap {
