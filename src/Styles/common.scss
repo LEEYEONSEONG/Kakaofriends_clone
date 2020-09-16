@@ -1,27 +1,27 @@
 * {
-    font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic",
-        "맑은 고딕", sans-serif;
+  font-family: "-apple-system, BlinkMacSystemFont, Apple SD Gothic Neo",
+    AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 // variables
 $breakpoint-tablet: 770px;
 
 @mixin tab {
-    @media screen and (max-width: #{$breakpoint-tablet}) {
-        @content;
-    }
+  @media screen and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
 }
 
 @mixin flexBox($justify, $align, $direction) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $direction;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
 }
 
 // colors

@@ -1,9 +1,12 @@
 import React from "react";
 import "./Main.scss";
+import Newitem from "./Newitem/Newitem";
 
 class Main extends React.Component {
   render() {
-    return <div className="Main"></div>;
+    return <main className="Main">
+      <Newitem />
+    </main>;
   }
 }
 

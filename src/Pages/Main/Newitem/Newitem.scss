@@ -1,2 +1,72 @@
 @import "../../../Styles/common.scss";
-@import "../../../Styles/reset.scss";
+
+* {
+  outline: none;
+}
+.container {
+  margin-left: 600px;
+  width: 1120px;
+  height: 3377px;
+  // border: 1px solid gray;
+}
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: -1;
+}
+.text1 {
+  position: relative;
+  left: 20px;
+  bottom: 75px;
+  margin: 0 0 3px;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: SFProText;
+  color: white;
+  line-height: 1.23;
+  z-index: 2;
+}
+.text2 {
+  position: relative;
+  left: 20px;
+  bottom: 75px;
+  letter-spacing: -0.25px;
+  font-size: 16px;
+  font-family: SFProText;
+  color: white;
+  line-height: 1.63;
+  z-index: 2;
+}
+.text3 {
+  position: relative;
+  left: 1050px;
+  bottom: 90px;
+  line-height: 1.23;
+  color: white;
+  font-size: 14px;
+  z-index: 2;
+}
+.slick-prev {
+  left: 25px;
+  top: 95px;
+  z-index: 5;
+  // background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-left.png");
+}
+.slick-next {
+  right: 25px;
+  top: 95px;
+  z-index: 5;
+}
+.slick-prev:before {
+  content: "<";
+  color: white;
+  font-weight: normal;
+  font-size: 50px;
+}
+.slick-next:before {
+  content: ">";
+  color: white;
+  font-weight: normal;
+  font-size: 50px;
+}
