@@ -2,38 +2,69 @@ import React from 'react';
 import './Nav.scss';
 
 class Nav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      TitleMenu: [],
+      SpecMenu: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/mock.json', {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState(
+          {
+            dropdownMenu: res.titleMenu,
+          },
+          () => console.log(this.state.dropTitleMenu)
+        );
+      });
+  }
+
+  dropDownMenu = () => {
+    return <dropDownMenu />;
+  };
+
   render() {
     return (
-      <div className="nav">
-        <div className="nav-container">
-          <ul className="left-menu">
-            <li className="category">
-              <a className="category-link" href="#">
+      <nav className="Nav">
+        <div className="NavContainer">
+          <ul className="leftMenu">
+            <li
+              id="navCategory"
+              className="category"
+              onMouseEnter={this.dropDownMenu}
+            >
+              <a className="categoryLink" href="#">
                 카테고리
-                <span className="category-triangle"></span>
+                <span className="categoryTri"></span>
               </a>
             </li>
             <li className="category">
-              <a className="category-link" href="#">
+              <a className="categoryLink" href="#">
                 매장안내
               </a>
             </li>
 
             <li className="category">
-              <a className="category-link" href="#">
+              <a className="categoryLink" href="#">
                 고객센터
               </a>
             </li>
           </ul>
           <img className="logo" alt="" src="images/kakaologo.png" />
-          <div className="right-menu">
+          <div className="rightMenu">
             <form className="searchbar">
-              <div className="searchbar-box">
-                <button className="searchbar-btn">
-                  <span className="searchbar-icon"></span>
+              <div className="searchbarBox">
+                <button className="searchbarBtn">
+                  <span className="searchbarIcon"></span>
                 </button>
                 <input
-                  className="searchbar-input"
+                  className="searchbarInput"
                   type="textbox"
                   placeholder="무엇을 찾으세요?"
                 ></input>
@@ -52,7 +83,7 @@ class Nav extends React.Component {
             </a>
           </div>
         </div>
-      </div>
+      </nav>
     );
   }
 }

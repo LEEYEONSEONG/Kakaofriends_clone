@@ -6,10 +6,10 @@ import './Main.scss';
 class Main extends React.Component {
   render() {
     return (
-      <div className="Main">
+      <main className="Main">
         <Nav />
         <Footer />
-      </div>
+      </main>
     );
   }
 }

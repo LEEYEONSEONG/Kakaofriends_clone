@@ -1,58 +1,55 @@
 @import '../../Styles/common.scss';
-@import '../../Styles/reset.scss';
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
     AppleSDGothicNeo, 'Malgun Gothic', '맑은 고딕', sans-serif;
 }
 
-.nav {
-  color: $subblack;
+.Nav {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #ededed;
+  color: $subBlack;
   @include flexBox(center, center, row);
 
-  &-container {
-    padding: 0 48px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 60px;
+  &Container {
     width: 100%;
+    height: 60px;
     max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 48px;
     @include flexBox(space-between, center, row);
     @media (min-width: 1280px) {
       height: 66px;
     }
 
-    .left-menu {
+    .leftMenu {
       width: 20%;
       padding: 15px 0px;
-      @include flexBox(flex-start, center, row) .category {
+      @include flexBox(flex-start, center, row);
+
+      .category {
         width: 70px;
         padding-right: 11px;
-
         @include flexBox(center, center, row);
 
-        &-link {
+        &Link {
           width: 70px;
           max-height: 20px;
-          font-size: 15px;
           margin: 0;
+          font-size: 15px;
           @include flexBox(center, center, row);
         }
 
-        .category-triangle {
-          background-image: url('/images/ico-header-triangle.png');
-          background-size: 7px 4px;
+        .categoryTri {
+          display: inline-block;
           width: 7px;
           height: 4px;
-          background-repeat: no-repeat;
-          background-position: center;
-          display: inline-block;
+          margin-left: 3px;
+          background: url('/images/ico-header-triangle.png') no-repeat center;
+          background-size: 7px 4px;
         }
       }
     }
@@ -68,36 +65,36 @@
         padding: 20px 0px;
       }
     }
-    .right-menu {
+    .rightMenu {
       width: 20%;
       @include flexBox(center, center, row);
 
       .searchbar {
-        &-box {
-          height: auto;
+        &Box {
           width: 213px;
-          border: 1px solid #ededed;
-          border-radius: 3.2px;
+          height: auto;
+          max-height: 40px;
           top: 13px;
           right: 165px;
-          max-height: 40px;
           margin-right: 10px;
+          border: 1px solid #ededed;
+          border-radius: 3.2px;
           @include flexBox(flex-start, center, row);
-          .searchbar-btn {
-            padding-left: 6px;
+
+          .searchbarBtn {
             border: none;
+            padding-left: 6px;
             background: none;
-            .searchbar-icon {
+
+            .searchbarIcon {
               display: inline-block;
-              background-image: url('/images/ico-header-search.png');
-              background-size: 14.4px 14.4px;
-              background-repeat: no-repeat;
-              background-position: center;
               width: 14.4px;
               height: 14.4px;
+              background: url('/images/ico-header-search.png') no-repeat center;
+              background-size: 14.4px 14.4px;
             }
           }
-          .searchbar-input {
+          .searchbarInput {
             border: none;
             padding: 10px 0;
             outline: none;
@@ -115,35 +112,29 @@
 
           #myPage {
             display: inline-block;
-            background-image: url('/images/ico-header-mypage.png');
-            background-size: 18px 19px;
-            background-repeat: no-repeat;
-            background-position: center;
             width: 18px;
             height: 19px;
+            background: url('/images/ico-header-mypage.png') no-repeat center;
+            background-size: 18px 19px;
           }
 
           #cart {
             display: inline-block;
-            background-image: url('/images/ico-header-cart.png');
-            background-size: 17px 21px;
-            background-repeat: no-repeat;
-            background-position: center;
             width: 17px;
             height: 21px;
+            background: url('/images/ico-header-cart.png') no-repeat center;
+            background-size: 17px 21px;
           }
         }
       }
     }
     #language {
       display: inline-block;
-      background-image: url('/images/ico-header-lang.png');
-      background-size: 23px;
-      background-repeat: no-repeat;
-      background-position: center;
       width: 23px;
       height: 23px;
+      background: url('/images/ico-header-lang.png') no-repeat center;
       margin-left: 14px;
+      background-size: 23px;
     }
   }
 }

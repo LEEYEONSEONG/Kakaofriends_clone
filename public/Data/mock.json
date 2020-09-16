@@ -1,0 +1,138 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    },
+    {
+      "id": 2,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    },
+    {
+      "id": 3,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    },
+    {
+      "id": 4,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    },
+    {
+      "id": 5,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    },
+    {
+      "id": 6,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    },
+    {
+      "id": 7,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    },
+    {
+      "id": 8,
+      "img": "https://t1.daumcdn.net/friends/prod/product/20200824175128350_8809721503454_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "하비스트 버즈케이스 라이언",
+      "price": "17,000원"
+    }
+  ],
+
+  "titleMenu": [
+    {
+      "id": 1,
+      "category": "전체",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 2,
+      "category": "테마 기획전",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 3,
+      "category": "토이",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 4,
+      "category": "리빙",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 5,
+      "category": "잡화",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 6,
+      "category": "문구",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 7,
+      "category": "의류",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 8,
+      "category": "파자마",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 9,
+      "category": "여행/레저",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 10,
+      "category": "생활테크",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 11,
+      "category": "폰 엑세서리",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 12,
+      "category": "식품",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    }
+  ],
+
+  "AllMenu": [
+    {
+      "id": 1,
+      "category": "판매량순",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+    },
+    {
+      "id": 2,
+      "category": "신상품순",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+    },
+    {
+      "id": 3,
+      "category": "낮은 가격순",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+    },
+    {
+      "id": 4,
+      "category": "높은 가격순",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+    }
+  ]
+}

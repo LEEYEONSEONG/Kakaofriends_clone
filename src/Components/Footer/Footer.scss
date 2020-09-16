@@ -1,69 +1,73 @@
 @import '../../Styles/common.scss';
-@import '../../Styles/reset.scss';
 
 .Footer {
-  width: 100%;
   position: fixed;
+  width: 100%;
   bottom: 0;
   padding-bottom: 50px;
-  background-color: $footerbot;
-  .footer-top {
+  background-color: $footerBottomColor;
+
+  .footerHeader {
     width: 100%;
-    background-color: $footertop;
+    background-color: $footerUpperColor;
     @include flexBox(center, center, row);
-    &-inner {
-      @include flexBox(flex-start, center, row);
-      background-image: url('/images/footer-characters.png');
-      background-size: auto 55px;
-      background-repeat: no-repeat;
+
+    &Inner {
       height: 55px;
       width: 1080px;
       margin: 0 auto;
-      .footer-top-text {
-        color: #ffffff;
-        font-size: 14px;
+      background: url('/images/footer-characters.png') no-repeat;
+      background-size: auto 55px;
+      @include flexBox(flex-start, center, row);
+
+      .footerHeaderTextWrap {
         padding-left: 70px;
         padding-right: 26px;
-        .sentence {
-          margin-right: 20px;
+        color: #ffffff;
+        font-size: 14px;
+
+        &:first-child {
+          margin-left: 0px;
         }
-        .intro {
-          margin: 0 20px;
-        }
-        .story {
+
+        span,
+        a {
           margin: 0 20px;
         }
       }
     }
   }
-  .footer-bot {
+  .footerBody {
     width: 100%;
-    background-color: $footerbot;
-    @include flexBox(center, center, column);
     margin: 0 auto;
+    background-color: $footerBottomColor;
+    @include flexBox(center, center, column);
+
     .sitemap {
+      width: 1080px;
+      margin: 0 auto;
       padding-top: 50px;
       padding-bottom: 34px;
-      width: 1080px;
-      margin: 0 auto;
       @include flexBox(flex-start, center, row);
-      &-text {
-        color: #ffffff;
-        opacity: 70%;
+
+      &Text {
         padding-right: 20px;
         font-size: 16px;
+        color: #ffffff;
+        opacity: 0.7;
       }
     }
-    .company-info {
+    .companyInfo {
       width: 1080px;
       margin: 0 auto;
-      &-text {
+
+      &Text {
+        font-size: 12px;
         color: #ffffff;
         opacity: 70%;
-        font-size: 12px;
       }
+
       .copyright {
-        display: block;
         margin-top: 49px;
       }
     }
