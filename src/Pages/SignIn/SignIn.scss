@@ -1,5 +1,4 @@
 @import "../../Styles/common.scss";
-@import "../../Styles/reset.scss";
 
 .SignIn {
   padding: 60px 0;
@@ -80,13 +79,12 @@
             .toolTip {
               display: inline-block;
               position: absolute;
-              width: 280px;
-              height: 61px;
-              top: 30px;
-              font-size: 13px;
+              width: 270px;
+              height: 40px;
               padding: 7px 12px 8px;
+              top: 30px;
               background-color: rgba(0, 0, 0, 0.8);
-              box-sizing: border-box;
+              font-size: 12px;
               p {
                 color: #ffffff;
                 margin-bottom: 12px;
@@ -103,15 +101,13 @@
         .loginBtm {
           margin-top: 40px;
           .errorBox {
+            width: 290px;
             padding: 20px;
-            margin: 0 0 10px 0;
+            margin-bottom: 10px;
             font-size: 12px;
             background-color: #fafafa;
             color: red;
-            animation-name: fadeInOpacity;
-            animation-iteration-count: 1;
-            animation-timing-function: ease-in;
-            animation-duration: 1s;
+            animation: 1s fadeInOpacity;
           }
           @keyframes fadeInOpacity {
             0% {
@@ -136,10 +132,10 @@
           .line {
             display: flex;
             align-items: center;
-            font-size: 12px;
+            justify-content: space-between;
             width: 330px;
             height: 40px;
-            justify-content: space-between;
+            font-size: 12px;
             color: #e8e8e8;
             .inLine {
               height: 1px;
