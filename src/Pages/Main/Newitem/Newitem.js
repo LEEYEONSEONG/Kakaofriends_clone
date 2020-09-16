@@ -13,7 +13,7 @@ class Newitem extends React.Component {
       speed: 400,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplaySpeed: 3300,
+      autoplaySpeed: 3000,
       autoplay: true,
       arrows: true
     };  
@@ -83,6 +83,12 @@ class Newitem extends React.Component {
                   <p className="text3">10 / 10</p>
             </div>
         </Slider>
+        <article>
+        <a href="https://store.kakaofriends.com/kr/products/category/subject?categorySeq=103&subCategorySeq=164&sort=createDatetime,desc" 
+        className="moreButton">
+          더 보기
+        </a>
+        </article>
         </div>
     </div>
           );

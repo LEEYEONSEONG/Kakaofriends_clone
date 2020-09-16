@@ -4,21 +4,20 @@
   outline: none;
 }
 .container {
-  margin-left: 600px;
+  margin: 300px;
   width: 1120px;
-  height: 3377px;
-  // border: 1px solid gray;
+  height: 7187px;
 }
 img {
-  width: 100%;
-  height: 100%;
+  width: 1080px;
+  height: auto;
   border-radius: 5px;
   z-index: -1;
 }
 .text1 {
   position: relative;
-  left: 20px;
-  bottom: 75px;
+  left: 22px;
+  bottom: 76px;
   margin: 0 0 3px;
   font-weight: bold;
   font-size: 24px;
@@ -29,44 +28,79 @@ img {
 }
 .text2 {
   position: relative;
-  left: 20px;
+  left: 22px;
   bottom: 75px;
   letter-spacing: -0.25px;
-  font-size: 16px;
+  font-size: 176x;
   font-family: SFProText;
   color: white;
   line-height: 1.63;
   z-index: 2;
 }
 .text3 {
+  height: 17px;
   position: relative;
-  left: 1050px;
-  bottom: 90px;
+  left: 1024px;
+  bottom: 93px;
   line-height: 1.23;
   color: white;
   font-size: 14px;
+  font-family: SFProText;
   z-index: 2;
 }
 .slick-prev {
-  left: 25px;
-  top: 95px;
+  left: 27px;
+  top: 100px;
   z-index: 5;
-  // background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-left.png");
 }
 .slick-next {
-  right: 25px;
-  top: 95px;
+  right: 65px;
+  top: 100px;
   z-index: 5;
 }
 .slick-prev:before {
-  content: "<";
-  color: white;
-  font-weight: normal;
-  font-size: 50px;
+  content: "";
+  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-left.png")
+    center center / 10px no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+  display: block;
 }
 .slick-next:before {
-  content: ">";
-  color: white;
-  font-weight: normal;
-  font-size: 50px;
+  content: "";
+  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-right.png")
+    center center / 10px no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+  display: block;
+}
+.moreButton:after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: block;
+  background: url(https://t1.kakaocdn.net/friends/new_store/more-black.png) 0 0;
+  background-size: contain;
+  margin: -6px 0 0 2px;
+}
+.moreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 368.507px;
+  width: 343px;
+  height: 52px;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  font-family: SFProText;
+  font-size: 15px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #1e1e1e;
+  letter-spacing: 0.25px;
+  z-index: 15;
 }
