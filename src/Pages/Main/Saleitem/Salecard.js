@@ -27,7 +27,7 @@ class Salecard extends React.Component {
                                         {product.name}
                                     </p>
                                     <p className="productDiscountPrice">
-                                        {product.dcprice}
+                                        {product.dcpercent}% {product.dcprice}
                                     </p>
                                     <p className="productPrice">
                                         {product.price}

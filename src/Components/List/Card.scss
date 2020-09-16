@@ -47,6 +47,16 @@
         &.productPrice {
             font-weight: 700;
         }
+
+        &.productDiscountPrice {
+            color: $point;
+            font-weight: 700;
+        }
+
+        &.productOriginalPrice {
+            color: $subtext;
+            text-decoration: line-through;
+        }
     }
 
     .cartWrap {
