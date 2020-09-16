@@ -7,17 +7,15 @@ class Card extends React.Component {
         return (
             <li className="Card" key={key} id={id}>
                 <div>
-                    <span className="thumnailWrap">
-                        <span className="imgWrap"></span>
-                        <img className="cardImage" alt="상품이미지" src={img} />
-                    </span>
+                    <div className="thumnailWrap">
+                        <div className="imgWrap" />
+                        <img alt="상품이미지" className="cardImage" src={img} />
+                    </div>
                     <p className="productName">{name}</p>
                     <p className="productPrice">{price}</p>
                 </div>
                 <div className="cartWrap">
-                    <button type="button" className="addCart">
-                        담기
-                    </button>
+                    <button type="button">담기</button>
                 </div>
             </li>
         );

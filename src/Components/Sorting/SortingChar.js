@@ -4,7 +4,7 @@ class SortingChar extends React.Component {
     constructor() {
         super();
         this.state = {
-            bool: false,
+            isImgOn: false,
         };
     }
     render() {
@@ -13,17 +13,16 @@ class SortingChar extends React.Component {
             <li
                 key={id}
                 className="selectModalItem"
-                onMouseOver={() => this.setState({ bool: true })}
-                onMouseOut={() => this.setState({ bool: false })}
+                onMouseOver={() => this.setState({ isImgOn: true })}
+                onMouseOut={() => this.setState({ isImgOn: false })}
             >
                 <div className="selectCharWrap">
                     <div>
                         <span className="charImgWrap">
-                            {this.state.bool ? (
-                                <img alt={name} src={imgOn} />
-                            ) : (
-                                <img alt={name} src={img} />
-                            )}
+                            <img
+                                alt={name}
+                                src={this.state.isImgOn ? imgOn : img}
+                            />
                         </span>
                         <span>
                             <img

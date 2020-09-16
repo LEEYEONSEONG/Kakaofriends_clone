@@ -1,21 +1,15 @@
 import React from "react";
-import Allitem from "./Allitem/Allitem";
+import Homeitem from "./Homeitem/Homeitem";
 import Hotitem from "./Hotitem/Hotitem";
 import Newitem from "./Newitem/Newitem";
 import Saleitem from "./Saleitem/Saleitem";
-import "./Main.scss";
+import Allitem from "./Allitem/Allitem";
 
-const obj = {
-    0: <Allitem />,
-    1: <Newitem />,
-    2: <Hotitem />,
-    3: <Saleitem />,
-    4: <Allitem />,
-};
+import "./Main.scss";
 
 class Main extends React.Component {
     state = {
-        activeId: 4,
+        activeId: 0,
     };
 
     clickHandler = (id) => {
@@ -24,7 +18,7 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div className="Main">
+            <main className="Main">
                 <div className="Maintab">
                     <ul className="menuTab">
                         <li onClick={() => this.clickHandler(0)}>
@@ -104,10 +98,18 @@ class Main extends React.Component {
                         </li>
                     </ul>
                 </div>
-                {obj[this.state.activeId]}
-            </div>
+                {SHOWTAB[this.state.activeId]}
+            </main>
         );
     }
 }
+
+const SHOWTAB = {
+    0: <Homeitem />,
+    1: <Newitem />,
+    2: <Hotitem />,
+    3: <Saleitem />,
+    4: <Allitem />,
+};
 
 export default Main;

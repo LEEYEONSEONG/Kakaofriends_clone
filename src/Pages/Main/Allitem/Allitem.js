@@ -13,9 +13,7 @@ class Allitem extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/Data/mock.json", {
-            method: "GET",
-        })
+        fetch("/Data/mock.json")
             .then((res) => res.json())
             .then((res) => {
                 this.setState({
@@ -26,8 +24,7 @@ class Allitem extends React.Component {
 
     render() {
         return (
-            <div className="Allitem">
-                <article className="AllitemContainer">
+                <article className="Allitem">
                     <div className="topInfo">
                         <div className="totalItems">
                             <p className="totalNum">
@@ -39,7 +36,6 @@ class Allitem extends React.Component {
                     </div>
                     <List productList={this.state.productList} />
                 </article>
-            </div>
         );
     }
 }

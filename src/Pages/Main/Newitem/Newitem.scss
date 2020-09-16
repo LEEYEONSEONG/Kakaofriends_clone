@@ -1,1 +1,24 @@
 @import "../../../Styles/common.scss";
+
+.Newitem {
+    width: 1080px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 35px;
+
+    article {
+        padding-top: 100px;
+
+        .subTitle {
+            margin-bottom: 5px;
+            color: $subtext;
+            font-size: 15px;
+        }
+
+        .mainTitle {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+}

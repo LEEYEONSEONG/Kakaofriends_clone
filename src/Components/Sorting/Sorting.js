@@ -1,50 +1,43 @@
 import React from "react";
-import CHARACTER from "./SortingData";
 import SortingChar from "./SortingChar";
 import "./Sorting.scss";
+import CHARACTER from "./SortingData";
 
 class Sorting extends React.Component {
     constructor() {
         super();
         this.state = {
-            charList: [],
-            typeBool: false,
-            charBool: false,
+            charList: CHARACTER,
+            isTypeShown: false,
+            isCharShown: false,
         };
     }
 
-    componentDidMount() {
-        this.setState({
-            charList: CHARACTER,
-        });
-    }
-
-    showOption = () => {
-        this.setState(
-            {
-                typeBool: !this.state.typeBool,
-            },
-            () => {
-                this.state.typeBool &&
-                    this.setState({
-                        charBool: false,
-                    });
-            }
-        );
-    };
-
-    showOption2 = () => {
-        this.setState(
-            {
-                charBool: !this.state.charBool,
-            },
-            () => {
-                this.state.charBool &&
-                    this.setState({
-                        typeBool: false,
-                    });
-            }
-        );
+    showOption = (e) => {
+        const { name } = e.target;
+        name === "sortByType"
+            ? this.setState(
+                  {
+                      isTypeShown: !this.state.isTypeShown,
+                  },
+                  () => {
+                      this.state.isTypeShown &&
+                          this.setState({
+                              isCharShown: false,
+                          });
+                  }
+              )
+            : this.setState(
+                  {
+                      isCharShown: !this.state.isCharShown,
+                  },
+                  () => {
+                      this.state.isCharShown &&
+                          this.setState({
+                              isTypeShown: false,
+                          });
+                  }
+              );
     };
 
     render() {
@@ -56,12 +49,13 @@ class Sorting extends React.Component {
                         <button
                             className="sortingType sortBtn"
                             onClick={this.showOption}
+                            name="sortByType"
                         >
                             판매량순
                         </button>
                         <div
                             className={`selectModalWrap selectType 
-                                ${this.state.typeBool ? "" : "hidden"}
+                                ${this.state.isTypeShown ? "" : "hidden"}
                             `}
                         >
                             <ul className="sortType">
@@ -91,13 +85,14 @@ class Sorting extends React.Component {
                     <li className="listChar">
                         <button
                             className="sortingChar sortBtn"
-                            onClick={this.showOption2}
+                            onClick={this.showOption}
+                            name="isCharShown"
                         >
                             캐릭터 전체
                         </button>
                         <div
                             className={`selectModalWrap selectChar 
-                                ${this.state.charBool ? "" : "hidden"}
+                                ${this.state.isCharShown ? "" : "hidden"}
                             `}
                         >
                             <ul className="sortChar">

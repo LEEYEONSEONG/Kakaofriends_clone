@@ -14,14 +14,14 @@ class Salecard extends React.Component {
                             id={product.id}
                         >
                             <div>
-                                <span className="thumnailWrap">
-                                    <span className="imgWrap"></span>
+                                <div className="thumnailWrap">
+                                    <div className="imgWrap" />
                                     <img
                                         className="cardImage"
                                         alt="상품이미지"
                                         src={product.img}
                                     />
-                                </span>
+                                </div>
                                 <div className="productInfo">
                                     <p className="productName">
                                         {product.name}
