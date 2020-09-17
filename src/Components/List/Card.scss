@@ -53,7 +53,8 @@
             font-weight: 700;
         }
 
-        &.productOriginalPrice {
+        &.original {
+            font-weight: 400;
             color: $subtext;
             text-decoration: line-through;
         }

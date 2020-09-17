@@ -1,0 +1,75 @@
+@import "../../../Styles/common.scss";
+
+.HomeCard {
+  box-sizing: border-box;
+  width: 330px;
+  height: auto;
+  margin: 0px 23px 40px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 13px;
+
+  .thumnailWrap {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .detailInfo {
+      display: block;
+      width: 330px;
+      padding: 20px 20px 30px;
+      box-sizing: border-box;
+
+      span {
+        box-sizing: border-box;
+        height: 22px;
+        padding: 4px 8px;
+        border-radius: 2px;
+        background-color: #2b46fe;
+        color: white;
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: bold;
+
+        &.Sale {
+          background-color: #ff6582;
+        }
+
+        &.Good {
+          background-color: #fe1010;
+        }
+
+        &.Theme {
+          background-color: #9252f1;
+        }
+      }
+
+      h3 {
+        margin-top: 11px;
+        margin-bottom: 10px;
+        font-size: 28px;
+        letter-spacing: -0.29px;
+        line-height: 34px;
+      }
+
+      p {
+        font-size: 16px;
+        letter-spacing: -0.25px;
+        line-height: 24px;
+        color: #666666;
+      }
+    }
+    ul {
+      @include flexBox(space-between, flex-start, row);
+      flex-wrap: wrap;
+      width: 289px;
+      padding-top: 1px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

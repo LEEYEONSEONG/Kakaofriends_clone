@@ -7,13 +7,13 @@ import Allitem from "./Allitem/Allitem";
 
 import "./Main.scss";
 
-class Main extends React.Component {
+export default class Main extends React.Component {
     state = {
-        activeId: 0,
+        activeTab: 0,
     };
 
     clickHandler = (id) => {
-        this.setState({ activeId: id });
+        this.setState({ activeTab: id });
     };
 
     render() {
@@ -21,88 +21,39 @@ class Main extends React.Component {
             <main className="Main">
                 <div className="Maintab">
                     <ul className="menuTab">
-                        <li onClick={() => this.clickHandler(0)}>
-                            <button
-                                className={`${
-                                    this.state.activeId === 0 &&
-                                    "highlightedBtn"
-                                }`}
-                            >
-                                홈
-                            </button>
-                            <hr
-                                className={`highlightedTab ${
-                                    this.state.activeId === 0 ? "on" : "off"
-                                }`}
-                            />
-                        </li>
-                        <li onClick={() => this.clickHandler(1)}>
-                            <button
-                                className={`${
-                                    this.state.activeId === 1 &&
-                                    "highlightedBtn"
-                                }`}
-                            >
-                                신규
-                            </button>
-                            <hr
-                                className={`highlightedTab ${
-                                    this.state.activeId === 1 ? "on" : "off"
-                                }`}
-                            />
-                        </li>
-                        <li onClick={() => this.clickHandler(2)}>
-                            <button
-                                className={`${
-                                    this.state.activeId === 2 &&
-                                    "highlightedBtn"
-                                }`}
-                            >
-                                인기
-                            </button>
-                            <hr
-                                className={`highlightedTab ${
-                                    this.state.activeId === 2 ? "on" : "off"
-                                }`}
-                            />
-                        </li>
-                        <li onClick={() => this.clickHandler(3)}>
-                            <button
-                                className={`${
-                                    this.state.activeId === 3 &&
-                                    "highlightedBtn"
-                                }`}
-                            >
-                                세일
-                            </button>
-                            <hr
-                                className={`highlightedTab ${
-                                    this.state.activeId === 3 ? "on" : "off"
-                                }`}
-                            />
-                        </li>
-                        <li onClick={() => this.clickHandler(4)}>
-                            <button
-                                className={`${
-                                    this.state.activeId === 4 &&
-                                    "highlightedBtn"
-                                }`}
-                            >
-                                전체
-                            </button>
-                            <hr
-                                className={`highlightedTab ${
-                                    this.state.activeId === 4 ? "on" : "off"
-                                }`}
-                            />
-                        </li>
+                        {TAB_ARR.map((el, idx) => {
+                            return (
+                                <li
+                                    key={el}
+                                    onClick={() => this.clickHandler(idx)}
+                                >
+                                    <button
+                                        className={`${
+                                            this.state.activeTab === idx &&
+                                            "highlightedBtn"
+                                        }`}
+                                    >
+                                        {el}
+                                    </button>
+                                    <hr
+                                        className={`highlightedTab ${
+                                            this.state.activeTab === idx
+                                                ? "on"
+                                                : "off"
+                                        }`}
+                                    />
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
-                {SHOWTAB[this.state.activeId]}
+                {SHOWTAB[this.state.activeTab]}
             </main>
         );
     }
 }
+
+const TAB_ARR = ["홈", "신규", "인기", "세일", "전체"];
 
 const SHOWTAB = {
     0: <Homeitem />,
@@ -111,5 +62,3 @@ const SHOWTAB = {
     3: <Saleitem />,
     4: <Allitem />,
 };
-
-export default Main;
