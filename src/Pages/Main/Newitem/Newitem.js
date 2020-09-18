@@ -21,7 +21,7 @@ class Newitem extends React.Component {
         let result = res.data.slice(this.state.preItems, this.state.items);
         this.setState({
           productListUpper: res.data.slice(0, 8),
-          productList: this.state.productList.concat(result),
+          productList: [...this.state.productList, ...result],
         });
       });
     window.addEventListener("scroll", this.infiniteScroll, true);
@@ -38,7 +38,7 @@ class Newitem extends React.Component {
     );
     let clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop + clientHeight === scrollHeight) {
+    if (scrollTop + clientHeight >= scrollHeight) {
       this.setState({
         preItems: this.state.items,
         items: this.state.items + 10,

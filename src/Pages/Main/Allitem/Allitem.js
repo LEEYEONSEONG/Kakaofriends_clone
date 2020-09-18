@@ -20,7 +20,7 @@ class Allitem extends React.Component {
       .then((res) => {
         let result = res.data.slice(this.state.preItems, this.state.items);
         this.setState({
-          productList: this.state.productList.concat(result),
+          productList: [...this.state.productList, ...result],
         });
       });
     window.addEventListener("scroll", this.infiniteScroll, true);
@@ -37,7 +37,7 @@ class Allitem extends React.Component {
     );
     let clientHeight = document.documentElement.clientHeight;
 
-    if (scrollTop + clientHeight === scrollHeight) {
+    if (scrollTop + clientHeight >= scrollHeight) {
       this.setState({
         preItems: this.state.items,
         items: this.state.items + 10,
