@@ -4,20 +4,17 @@ import "./Homeitem.scss";
 import HOMECARD from "./HomeData";
 
 class Homeitem extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      CardList: HOMECARD,
-    };
-  }
+  state = {
+    cardList: HOMECARD,
+  };
 
   render() {
-    const { CardList } = this.state;
+    const { cardList } = this.state;
     return (
       <div className="Homeitem">
-        <div className="List">
-          {CardList.map((card) => {
-            return <HomeCard card={card} />;
+        <div className="HomeCardList">
+          {cardList.map((card) => {
+            return <HomeCard card={card} key={card.id} />;
           })}
         </div>
       </div>

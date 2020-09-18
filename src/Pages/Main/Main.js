@@ -8,57 +8,45 @@ import Allitem from "./Allitem/Allitem";
 import "./Main.scss";
 
 export default class Main extends React.Component {
-    state = {
-        activeTab: 0,
-    };
+  state = {
+    activeTab: 0,
+  };
 
-    clickHandler = (id) => {
-        this.setState({ activeTab: id });
-    };
+  clickHandler = (id) => {
+    this.setState({ activeTab: id });
+  };
 
-    render() {
-        return (
-            <main className="Main">
-                <div className="Maintab">
-                    <ul className="menuTab">
-                        {TAB_ARR.map((el, idx) => {
-                            return (
-                                <li
-                                    key={el}
-                                    onClick={() => this.clickHandler(idx)}
-                                >
-                                    <button
-                                        className={`${
-                                            this.state.activeTab === idx &&
-                                            "highlightedBtn"
-                                        }`}
-                                    >
-                                        {el}
-                                    </button>
-                                    <hr
-                                        className={`highlightedTab ${
-                                            this.state.activeTab === idx
-                                                ? "on"
-                                                : "off"
-                                        }`}
-                                    />
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
-                {SHOWTAB[this.state.activeTab]}
-            </main>
-        );
-    }
+  render() {
+    const { activeTab } = this.state;
+    return (
+      <main className="Main">
+        <div className="Maintab">
+          <ul className="menuTab">
+            {TAB_ARR.map((el, idx) => {
+              const isActive = activeTab === idx;
+              return (
+                <li key={el} onClick={() => this.clickHandler(idx)}>
+                  <button className={`${isActive && "highlightedBtn"}`}>
+                    {el}
+                  </button>
+                  <hr className={`highlightedTab ${isActive ? "on" : "off"}`} />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        {SHOWTAB[activeTab]}
+      </main>
+    );
+  }
 }
 
 const TAB_ARR = ["홈", "신규", "인기", "세일", "전체"];
 
 const SHOWTAB = {
-    0: <Homeitem />,
-    1: <Newitem />,
-    2: <Hotitem />,
-    3: <Saleitem />,
-    4: <Allitem />,
+  0: <Homeitem />,
+  1: <Newitem />,
+  2: <Hotitem />,
+  3: <Saleitem />,
+  4: <Allitem />,
 };

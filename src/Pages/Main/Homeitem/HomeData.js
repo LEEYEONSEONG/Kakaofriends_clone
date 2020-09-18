@@ -13,8 +13,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/8809721503980_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "하비스트 마스코트 인형_땅콩라이언",
-        price: "35,000원",
-        dcprice: "",
+        price: 35000,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -22,8 +22,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200824174713714_8809721503409_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "하비스트 동전지갑_어피치",
-        price: "13,000원",
-        dcprice: "",
+        price: 13000,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -31,8 +31,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200824174839796_8809721503430_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "하비스트 에어팟프로케이스 라이언",
-        price: "17,000원",
-        dcprice: "",
+        price: 17000,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -40,8 +40,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200824175301876_8809721503461_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "하비스트 버즈케이스 어피치",
-        price: "17,000원",
-        dcprice: "",
+        price: 17000,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -49,8 +49,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200824174015513_8809721503232_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "하비스트 여성 원피스_라이언",
-        price: "39,900원",
-        dcprice: "",
+        price: 39900,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -58,8 +58,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200824173331458_8809721503737_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "하비스트 무릎담요",
-        price: "18,000원",
-        dcprice: "",
+        price: 18000,
+        dcprice: 0,
         dcpercent: 0,
       },
     ],
@@ -88,8 +88,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20190903224414474_8809681700498_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "어텀스토리 다람쥐패밀리",
-        price: "32,000원",
-        dcprice: "20,000원",
+        price: 32000,
+        dcprice: 20000,
         dcpercent: 38,
       },
       {
@@ -97,8 +97,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20191010194435497_8809681700757_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "포레스트_인테리어쿠션",
-        price: "25,000원",
-        dcprice: "17,000원",
+        price: 25000,
+        dcprice: 17000,
         dcpercent: 32,
       },
       {
@@ -106,8 +106,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20191204140226111_8809641469731_BW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "어텀스토리_코스튬블랭킷라이언",
-        price: "35,000원",
-        dcprice: "21,000원",
+        price: 35000,
+        dcprice: 21000,
         dcpercent: 40,
       },
       {
@@ -115,8 +115,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20191015112648338_8809681701815_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "포레스트_패브릭 포스터S",
-        price: "12,000원",
-        dcprice: "8,000원",
+        price: 12000,
+        dcprice: 8000,
         dcpercent: 33,
       },
       {
@@ -124,8 +124,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20191204140323773_8809681701808_BW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "어텀스토리_다람쥐방석_어피치",
-        price: "29,900원",
-        dcprice: "20,000원",
+        price: 29900,
+        dcprice: 20000,
         dcpercent: 31,
       },
       {
@@ -133,8 +133,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20191010192009156_8809681702119_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "포레스트_오렌지머그_라이언",
-        price: "18,000원",
-        dcprice: "12,000원",
+        price: 18000,
+        dcprice: 12000,
         dcpercent: 33,
       },
     ],
@@ -153,8 +153,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200601113119940_8809721501917_AW_00_(1).jpg?type=thumb&opt=R255x255@2xa",
         name: "오토 차량용 고속충전 핸드폰 거치대_라이언",
-        price: "55,000원",
-        dcprice: "",
+        price: 55000,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -162,8 +162,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/8809656139896_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "어피치 차량용 고속 무선 충전거치대",
-        price: "43,000원",
-        dcprice: "",
+        price: 43000,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -171,8 +171,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/8809721503898_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "차량용방향제(통풍구형)_보드 라이언",
-        price: "13,900원",
-        dcprice: "",
+        price: 13900,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -180,8 +180,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20190902163801802_8809656139841_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "차량용방향제(통풍구형)_Apeach",
-        price: "13,900원",
-        dcprice: "",
+        price: 13900,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -189,8 +189,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200117143700245_8809681705967_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "피규어주차번호판_리틀라이언",
-        price: "15,900원",
-        dcprice: "",
+        price: 15900,
+        dcprice: 0,
         dcpercent: 0,
       },
       {
@@ -198,8 +198,8 @@ const HOMECARD = [
         img:
           "https://t1.daumcdn.net/friends/prod/product/20200730184914155_8809721505076_AW_00.jpg?type=thumb&opt=R255x255@2xa",
         name: "주차번호판_놀이터 리틀어피치",
-        price: "10,000원",
-        dcprice: "",
+        price: 10000,
+        dcprice: 0,
         dcpercent: 0,
       },
     ],

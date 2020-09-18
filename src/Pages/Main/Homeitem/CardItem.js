@@ -3,23 +3,22 @@ import "./CardItem.scss";
 
 class CardItem extends React.Component {
   render() {
-    console.log("connected!");
     const { item } = this.props;
     return (
-      <li className="CardItem" key={item.id}>
+      <li className="CardItem">
         <div>
           <div className="thumnailWrap">
             <div className="imgWrap" />
             <img alt="상품이미지" className="cardImage" src={item.img} />
           </div>
           <p className="productName">{item.name}</p>
-          {item.dcprice && (
-            <p className="productDiscountPrice">
-              {item.dcpercent}% {item.dcprice}
+          {item.dcprice !== 0 && (
+            <p className="productDiscountPrice bold">
+              {item.dcpercent}% {item.dcprice.toLocaleString()}원
             </p>
           )}
-          <p className={`productPrice ${item.dcprice && "original"}`}>
-            {item.price}
+          <p className={`productPrice bold ${item.dcprice && "original"}`}>
+            {item.price.toLocaleString()}원
           </p>
         </div>
         <div className="cartWrap">

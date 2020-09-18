@@ -14,20 +14,14 @@
 
     .imgWrap {
       position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      bottom: 0px;
       width: 100%;
       padding-top: 100%;
       background: rgba(0, 0, 0, 0.02);
-      z-index: 0;
     }
 
     img {
       width: 100%;
       height: auto;
-      z-index: -1;
     }
   }
 
@@ -38,9 +32,7 @@
       display: -webkit-box;
       width: 108px;
       height: 40px;
-      margin-top: 10px;
-      margin-bottom: 5px;
-      padding-right: 32px;
+      margin: 10px 32px 5px 0;
       color: #777777;
       font-weight: 400;
       text-overflow: ellipsis;
@@ -50,13 +42,12 @@
       overflow-wrap: break-word;
     }
 
-    &.productPrice {
+    &.bold {
       font-weight: 700;
     }
 
     &.productDiscountPrice {
       color: $point;
-      font-weight: 700;
     }
 
     &.original {

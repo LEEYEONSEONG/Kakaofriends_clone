@@ -1,7 +1,6 @@
 @import "../../../Styles/common.scss";
 
 .HomeCard {
-  box-sizing: border-box;
   width: 330px;
   height: auto;
   margin: 0px 23px 40px;
@@ -9,8 +8,6 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 13px;
 
   .thumnailWrap {
-    width: 100%;
-
     img {
       display: block;
       width: 100%;
@@ -19,13 +16,10 @@
     }
 
     .detailInfo {
-      display: block;
       width: 330px;
       padding: 20px 20px 30px;
-      box-sizing: border-box;
 
       span {
-        box-sizing: border-box;
         height: 22px;
         padding: 4px 8px;
         border-radius: 2px;
@@ -67,9 +61,7 @@
       @include flexBox(space-between, flex-start, row);
       flex-wrap: wrap;
       width: 289px;
-      padding-top: 1px;
-      padding-left: 20px;
-      padding-right: 20px;
+      margin: 1px 20px 0 20px;
     }
   }
 }

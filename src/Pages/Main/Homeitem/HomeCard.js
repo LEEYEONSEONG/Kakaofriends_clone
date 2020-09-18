@@ -3,54 +3,60 @@ import CardItem from "./CardItem";
 import "./HomeCard.scss";
 
 class HomeCard extends React.Component {
-  componentDidMount() {
-    window.onload = () => {
-      let images = document.querySelectorAll(".HomeCard");
-      console.log(images.length);
-      for (let i = 0; i < images.length; i++) {
-        console.log(i, images[i].children[0].clientHeight);
-        images[i].style.gridRowEnd = `span ${Math.floor(
-          images[i].children[0].clientHeight / 10
-        )}`;
-      }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      height: 0,
     };
+    this.divElement = React.createRef();
   }
+
+  componentDidMount() {
+    const height = this.divElement.current.clientHeight;
+    this.setState({ height });
+  }
+
   render() {
     const { card } = this.props;
-
-    console.log(card.product);
-
+    const { height } = this.state;
     return (
-      <div className="HomeCard" key={card.id}>
+      <div
+        className="HomeCard"
+        style={{
+          gridRowEnd: `span ${Math.floor(height / 10)}`,
+        }}
+        ref={this.divElement}
+      >
         <div className="thumnailWrap">
-          <img alt="홈 카드 메인 이미지" className="cardImage" src={card.mainimg} />
+          <img
+            alt="홈 카드 메인 이미지"
+            className="cardImage"
+            src={card.mainimg}
+          />
           <div className="detailInfo">
             <span className={card.tag}>{card.tag}</span>
             <h3>
-              {card.title.split("\n").map((line) => {
-                return (
-                  <>
-                    {line}
-                    <br />
-                  </>
-                );
-              })}
+              {card.title.split("\n").map((line) => (
+                <React.Fragment key={line}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
             </h3>
             <p>
-              {card.subtext.split("\n").map((line) => {
-                return (
-                  <>
-                    {line}
-                    <br />
-                  </>
-                );
-              })}
+              {card.subtext.split("\n").map((line) => (
+                <React.Fragment key={line}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
             </p>
           </div>
           {!!card.product.length && (
             <ul className="cardProduct">
               {card.product.map((item) => {
-                return <CardItem key={item.id} item={item} />;
+                return <CardItem item={item} key={item.name} />;
               })}
             </ul>
           )}
