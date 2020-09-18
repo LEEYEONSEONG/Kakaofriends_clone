@@ -1,24 +1,135 @@
 @import "../../../Styles/common.scss";
 
 .Newitem {
-    width: 1080px;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 35px;
+  width: 1080px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 35px;
 
-    article {
-        padding-top: 100px;
+  .container {
+    margin: 300px;
+    width: 1120px;
+    height: 7187px;
 
-        .subTitle {
-            margin-bottom: 5px;
-            color: $subtext;
-            font-size: 15px;
-        }
-
-        .mainTitle {
-            margin-bottom: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    img {
+      width: 1080px;
+      height: auto;
+      border-radius: 5px;
+      z-index: -1;
     }
+
+    .bannerTextBig {
+      position: relative;
+      left: 22px;
+      bottom: 76px;
+      margin: 0 0 3px;
+      font-weight: bold;
+      font-size: 24px;
+      color: white;
+      line-height: 1.23;
+      z-index: 2;
+    }
+
+    .bannerTextSmall {
+      position: relative;
+      left: 22px;
+      bottom: 75px;
+      letter-spacing: -0.25px;
+      font-size: 176x;
+      color: white;
+      line-height: 1.63;
+      z-index: 2;
+    }
+
+    .pageNumber {
+      height: 17px;
+      position: relative;
+      left: 1024px;
+      bottom: 93px;
+      line-height: 1.23;
+      color: white;
+      font-size: 14px;
+      z-index: 2;
+    }
+
+    .bannerTextBig,
+    .bannerTextSmall,
+    .pageNumber {
+      font-family: SFProText;
+    }
+
+    .slick-prev {
+      left: 27px;
+      top: 100px;
+      z-index: 5;
+    }
+
+    .slick-next {
+      right: 65px;
+      top: 100px;
+      z-index: 5;
+    }
+
+    .slick-prev:before {
+      background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-left.png")
+        center center / 10px no-repeat;
+    }
+
+    .slick-next:before {
+      background: url("https://t1.kakaocdn.net/friends/new_store/2.0/pc/arrow-right.png")
+        center center / 10px no-repeat;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      content: "";
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+      z-index: 10;
+      display: block;
+    }
+  }
+
+  .moreButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 368.507px;
+    width: 343px;
+    height: 52px;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    font-family: SFProText;
+    font-size: 15px;
+    background: #ffffff;
+    color: #1e1e1e;
+    letter-spacing: 0.25px;
+    z-index: 15;
+
+    &:after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: block;
+      background: url(https://t1.kakaocdn.net/friends/new_store/more-black.png);
+      background-size: contain;
+    }
+  }
+
+  article {
+    padding-top: 100px;
+
+    .subTitle {
+      margin-bottom: 5px;
+      color: $subtext;
+      font-size: 15px;
+    }
+
+    .mainTitle {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
 }
