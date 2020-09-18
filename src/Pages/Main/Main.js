@@ -4,7 +4,6 @@ import Hotitem from "./Hotitem/Hotitem";
 import Newitem from "./Newitem/Newitem";
 import Saleitem from "./Saleitem/Saleitem";
 import Allitem from "./Allitem/Allitem";
-
 import "./Main.scss";
 
 export default class Main extends React.Component {

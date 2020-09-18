@@ -65,11 +65,16 @@
       height: 100%;
       background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-pink-3.png)
         center center / 100% no-repeat;
-      color: white;
+      color: transparent;
       outline: none;
       border: none;
       border-radius: 3px;
       font-size: 1px;
+
+      &.addCart {
+        background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-pink.png)
+          center center / 100% no-repeat;
+      }
     }
   }
 }

@@ -44,10 +44,11 @@
       position: absolute;
       left: 0px;
       top: 34px;
-      width: 186px;
+      width: 188px;
       height: 140px;
       background: white;
       border: 1px solid rgb(227, 229, 232);
+      border-radius: 4px;
       z-index: 2;
 
       &.hidden {
@@ -76,10 +77,11 @@
       position: absolute;
       right: 0px;
       top: 34px;
-      width: 374px;
+      width: 376px;
       height: 226px;
       background: white;
       border: 1px solid rgb(227, 229, 232);
+      border-radius: 4px;
       z-index: 2;
 
       &.hidden {

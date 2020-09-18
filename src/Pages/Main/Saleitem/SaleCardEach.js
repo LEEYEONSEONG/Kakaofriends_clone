@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.scss";
+import "./SaleCardEach.scss";
 
-class Card extends React.Component {
+class SaleCardEach extends React.Component {
   constructor() {
     super();
 
@@ -18,23 +18,21 @@ class Card extends React.Component {
 
   render() {
     const { isCartAdd } = this.state;
-    const { name, img, price, dcprice, dcpercent } = this.props;
+    const { product } = this.props;
     return (
-      <li className="Card">
+      <li className="SaleCardEach" key={product.key}>
         <div>
           <div className="thumnailWrap">
             <div className="imgWrap" />
-            <img alt="상품이미지" className="cardImage" src={img} />
+            <img className="cardImage" alt="상품이미지" src={product.img} />
           </div>
-          <p className="productName">{name}</p>
-          {dcprice !== 0 && (
-            <p className="productDiscountPrice bold">
-              {dcpercent}% {dcprice.toLocaleString()}원
+          <div className="productInfo">
+            <p className="productName">{product.name}</p>
+            <p className="productDiscountPrice">
+              {product.dcpercent}% {product.dcprice.toLocaleString()}원
             </p>
-          )}
-          <p className={`productPrice bold ${dcprice !== 0 && "original"}`}>
-            {price.toLocaleString()}원
-          </p>
+            <p className="productPrice">{product.price.toLocaleString()}원</p>
+          </div>
         </div>
         <div className="cartWrap">
           <button
@@ -50,4 +48,4 @@ class Card extends React.Component {
   }
 }
 
-export default Card;
+export default SaleCardEach;
