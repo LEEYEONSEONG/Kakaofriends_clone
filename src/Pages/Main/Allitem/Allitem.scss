@@ -1,1 +1,22 @@
 @import "../../../Styles/common.scss";
+
+.Allitem {
+  width: 1080px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 35px;
+
+  .topInfo {
+    @include flexBox(space-between, center, row);
+    margin-bottom: 35px;
+
+    .totalNum {
+      color: $subtext;
+
+      .pointSpan {
+        color: black;
+        font-weight: 700;
+      }
+    }
+  }
+}

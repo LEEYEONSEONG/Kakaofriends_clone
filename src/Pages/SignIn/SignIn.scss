@@ -1,1 +1,264 @@
 @import "../../Styles/common.scss";
+
+@mixin backimg {
+  background-image: url("/Images/iconAll.png");
+  background-size: 200px 300px;
+}
+
+.SignIn {
+  padding: 60px 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 80px;
+
+    .wrapperLeft {
+      margin-top: 65px;
+      .bannerFontTop {
+        font-size: 25px;
+        font-weight: 400;
+      }
+
+      .bannerFontBot {
+        font-size: 13px;
+        color: #7c7c7c;
+      }
+      .bannerImg img {
+        width: 540px;
+        height: 300px;
+      }
+    }
+
+    .wrapperRight {
+      padding: 60px 70px;
+      border: 1px solid #e5e5e5;
+
+      .infoLogo {
+        margin-bottom: 30px;
+
+        .infoServiceLogo {
+          width: 100px;
+          height: 30px;
+        }
+      }
+
+      .loginForm {
+        .loginTop {
+          display: flex;
+          flex-direction: column;
+
+          .idPwForm {
+            width: 330px;
+            height: 50px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #e5e5e5;
+            &:nth-child(2) {
+              -webkit-text-security: disc;
+            }
+
+            &::-webkit-search-cancel-button {
+              -webkit-appearance: none;
+              height: 20px;
+              width: 20px;
+              background-repeat: no-repeat;
+              background-size: 20px;
+              background-position: center left;
+              background-image: url("/Images/cancel.png");
+            }
+          }
+
+          &input::placeholder {
+            color: rgb(209, 209, 209);
+          }
+
+          &input:focus {
+            border-bottom: 2px solid #7c7c7c;
+          }
+
+          .setLogin {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 25px 0 0;
+
+            span {
+              font-size: 14px;
+            }
+
+            .checkBox {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              margin: 1px 8px 0 0;
+              // background-image: url("/Images/iconAll.png");
+              // background-size: 200px 300px;
+              @include backimg;
+              background-position: -30px -30px;
+              border-radius: 5px;
+            }
+
+            .active {
+              margin: 1px 8px 0 0;
+              // background-image: url("/Images/iconAll.png");
+              // background-size: 200px 300px;
+              @include backimg;
+              background-position: 0px -30px;
+            }
+
+            .toolTip {
+              display: inline-block;
+              position: absolute;
+              padding: 7px 12px 8px;
+              top: 30px;
+              background-color: rgba(0, 0, 0, 0.8);
+              font-size: 12px;
+
+              p {
+                color: #ffffff;
+                margin-bottom: 12px;
+              }
+
+              a {
+                color: #ffe500;
+              }
+            }
+
+            .none {
+              display: none;
+            }
+          }
+        }
+
+        .loginBtm {
+          margin-top: 40px;
+
+          .errorBox {
+            width: 100%;
+            padding: 20px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            background-color: #fafafa;
+            color: red;
+            animation: 1s fadeInOpacity;
+          }
+
+          .none {
+            display: none;
+          }
+
+          @keyframes fadeInOpacity {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+
+          .btn {
+            font-size: 15px;
+            width: 330px;
+            height: 50px;
+            background-color: #ffe500;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+          }
+
+          .line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 330px;
+            height: 40px;
+            font-size: 12px;
+            color: #e8e8e8;
+
+            .inLine {
+              height: 1px;
+              width: 110px;
+              background-color: #e8e8e8;
+            }
+
+            .lineText {
+              margin: 0 10px;
+            }
+          }
+
+          .qrCode {
+            font-size: 15px;
+            width: 330px;
+            height: 50px;
+            background-color: #f6f6f6;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #e7e7e7;
+            }
+
+            img {
+              width: 13px;
+              height: 13px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+
+      .infoUser {
+        @include flexBox(space-between, default, row);
+        margin: 30px 0 0;
+        font-size: 12px;
+
+        a {
+          cursor: pointer;
+        }
+
+        .infoSearch {
+          display: flex;
+
+          .li {
+            cursor: pointer;
+          }
+
+          .searchLine {
+            width: 1px;
+            height: 10px;
+            margin: 4px 10px;
+            background-color: #e5e5e5;
+          }
+        }
+      }
+    }
+  }
+  .information {
+    padding: 20px 0 60px;
+    font-size: 12px;
+    border-top: 1px solid #e5e5e5;
+
+    .infoTop {
+      display: flex;
+      justify-content: center;
+
+      li {
+        a {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .infoBot {
+      display: flex;
+      justify-content: center;
+      font-size: 11px;
+      margin-top: 8px;
+      color: #7c7c7c;
+    }
+  }
+}
