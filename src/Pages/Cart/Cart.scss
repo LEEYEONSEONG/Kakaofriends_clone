@@ -3,32 +3,65 @@
 .Cart {
   margin: 0;
   padding: 0;
-  display: block;
-  width: 1422px;
+  width: 1777px;
   height: 1033px;
+  @include flexBox(center, center, column);
 }
+
 .headerCartBorder {
   width: 1080px;
-  margin: 66px auto 0;
+  height: 452px;
+  margin: 66px 348.5px 0 348.5px;
+  // margin: 66px 152px 0 152px;
   display: block;
 }
+
 .headerCart {
   display: flex;
   justify-content: center;
   align-items: center;
   display: block;
   width: 1080px;
-  height: 150px;
-
-  padding: 56px 0 34px 0;
   height: 60px;
+  // height: 150px;
+  padding: 56px 0 34px 0;
   font-size: 36px;
   font-weight: bold;
   line-height: 1.67;
   letter-spacing: -0.36px;
 }
+
 .emptyCart {
-  height: 300px;
+  width: 1080px;
+  height: 302px;
   padding: 0px;
-  border: 1px solid #e2e5e8;
+  border-top: 1px solid #e2e5e8;
+  border-bottom: 1px solid #e2e5e8;
+}
+
+.emptyCartMessage {
+  width: 258px;
+  height: 44px;
+  margin: 0 411px;
+  color: #9a9a9e;
+  font-size: 15px;
+  letter-spacing: -0.19px;
+  text-align: center;
+  padding-top: 98px;
+  padding-bottom: 25px;
+}
+
+.emptyCartLink {
+  width: 140px;
+  height: 36px;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: #3c404b;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: -0.2px;
 }
