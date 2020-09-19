@@ -1,5 +1,5 @@
 import React from "react";
-import SaleCard from "./SaleCard";
+import SaleCard from "./Salecard";
 import List from "../../../Components/List/List";
 import "./Saleitem.scss";
 

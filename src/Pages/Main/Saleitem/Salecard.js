@@ -1,6 +1,6 @@
 import React from "react";
 import SaleCardEach from "./SaleCardEach";
-import "./SaleCard.scss";
+import "./Salecard.scss";
 
 class SaleCard extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class SaleCard extends React.Component {
     return (
       <ul className="SaleCard">
         {productList.map((product) => {
-          return <SaleCardEach product={product} />;
+          return <SaleCardEach product={product} key={product.id} />;
         })}
       </ul>
     );
