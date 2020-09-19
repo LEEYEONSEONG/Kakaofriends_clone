@@ -1,48 +1,31 @@
 import React from 'react';
 import './Nav.scss';
+import DropDownMain from './Components/DropDownMain.js';
 
 class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      TitleMenu: [],
-      SpecMenu: [],
+      hoverOn: false,
     };
   }
-
-  componentDidMount() {
-    fetch('http://localhost:3000/data/mock.json', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState(
-          {
-            dropdownMenu: res.titleMenu,
-          },
-          () => console.log(this.state.dropTitleMenu)
-        );
-      });
-  }
-
-  dropDownMenu = () => {
-    return <dropDownMenu />;
-  };
 
   render() {
     return (
       <nav className="Nav">
         <div className="NavContainer">
           <ul className="leftMenu">
-            <li
-              id="navCategory"
-              className="category"
-              onMouseEnter={this.dropDownMenu}
-            >
-              <a className="categoryLink" href="#">
+            <li id="navCategory" className="category">
+              <div
+                className="categoryLink"
+                href="https://localhost:3000/main"
+                onMouseEnter={() => this.setState({ hoverOn: true })}
+                onMouseLeave={() => this.setState({ hoverOn: false })}
+              >
                 카테고리
                 <span className="categoryTri"></span>
-              </a>
+                {this.state.hoverOn ? <DropDownMain /> : null}
+              </div>
             </li>
             <li className="category">
               <a className="categoryLink" href="#">

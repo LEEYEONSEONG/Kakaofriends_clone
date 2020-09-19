@@ -1,0 +1,151 @@
+@import "../../Styles/common.scss";
+
+.Sorting {
+    width: 376px;
+
+    .sortItems {
+        @include flexBox(default, default, row);
+    }
+
+    li {
+        position: relative;
+        width: 188px;
+
+        .sortBtn {
+            display: inline-block;
+            position: relative;
+            width: 188px;
+            height: 35px;
+            padding: 7px 21px 6px 17px;
+            background-color: white;
+            background-position: right 13px center;
+            background-image: url("https://t1.kakaocdn.net/friends/new_store/ico_dropdown.png");
+            background-size: 12px;
+            background-repeat: no-repeat;
+            border: 1px solid rgb(227, 229, 232);
+            font-size: 15px;
+            text-align: left;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.sortingType {
+                border-radius: 4px 0 0 4px;
+            }
+
+            &.sortingChar {
+                border-radius: 0 4px 4px 0;
+                border-left: none;
+            }
+        }
+
+        &.listType .selectModalWrap {
+            position: absolute;
+            left: 0px;
+            top: 34px;
+            width: 186px;
+            height: 140px;
+            background: white;
+            border: 1px solid rgb(227, 229, 232);
+            z-index: 2;
+
+            &.hidden {
+                display: none;
+            }
+
+            .selectModalItem {
+                display: block;
+                width: 100%;
+                height: 35px;
+                padding: 7px 17px;
+                box-sizing: border-box;
+                color: rgb(154, 154, 158);
+
+                &:hover {
+                    background-color: #f7f7f7;
+                    color: black;
+                }
+
+                .selectModalOption {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        &.listChar .selectModalWrap {
+            position: absolute;
+            right: 0px;
+            top: 34px;
+            width: 374px;
+            height: 226px;
+            background: white;
+            border: 1px solid rgb(227, 229, 232);
+            z-index: 2;
+
+            &.hidden {
+                display: none;
+            }
+
+            .sortChar {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                height: 226px;
+                padding: 13px 16px;
+                box-sizing: border-box;
+
+                li {
+                    width: 68px;
+                    height: 99px;
+
+                    .selectCharWrap {
+                        @include flexBox(center, default, column);
+                        width: 60px;
+                        height: 85px;
+                        margin: 7px 4px;
+
+                        div {
+                            position: relative;
+                            width: 60px;
+                            height: 60px;
+
+                            span {
+                                width: 100%;
+
+                                img {
+                                    width: 60px;
+                                    height: 60px;
+                                }
+
+                                img.selectedCharIcon {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    width: 18px;
+                                    height: 18px;
+
+                                    &.notSelected {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+
+                        span {
+                            height: 17px;
+                            margin-top: 8px;
+                            color: $subtext;
+                            font-size: 13px;
+                            text-align: center;
+
+                            &.selected {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
