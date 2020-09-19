@@ -23,30 +23,43 @@ class SignUp extends React.Component {
         idErrorText: "",
       });
     }
-
     this.setState({
       [name]: value,
     });
   };
 
   handleClick = () => {
-    const { idValue, pwdValue, pwdCheckValue } = this.state;
+    const SIGNUP_STATUS = {
+      100: "카카오계정 이메일을 입력해주세요.",
+      200: "이메일 형식이 올바르지 않습니다.",
+      300: "카카오계정 비밀번호를 입력해주세요.(영문자/숫자/특수문자",
+      400: "입력한 비밀번호와 재입력학 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.",
+    };
 
-    if (!idValue.length) {
+    const errorText = SIGNUP_STATUS[this.validata()];
+    const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
+
+    if (!errorText) fetch();
+
+    if (errorText) {
       this.setState({
-        idErrorText: "카카오계정 이메일을 입력해주세요.",
-      });
-    } else if (pwdValue < 1) {
-      this.setState({
-        pwdErrorText:
-          "카카오계정 비밀번호를 입력해주세요.(영문자/숫자/특수문자)",
-      });
-    } else if (pwdValue !== pwdCheckValue) {
-      this.setState({
-        pwdErrorText:
-          "입력한 비밀번호와 재입력한 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.",
+        [idPwdStatus]: errorText,
       });
     }
+  };
+
+  validata = () => {
+    const { idValue, pwdValue, pwdCheckValue } = this.state;
+
+    const idLengthCheck = !idValue;
+    const idFormCheck = !idValue.includes("@") || !idValue.includes(".");
+    const pwdInclued = !pwdValue;
+    const pwdCheck = pwdValue !== pwdCheckValue;
+
+    if (idLengthCheck) return 100;
+    if (idFormCheck) return 200;
+    if (pwdInclued) return 300;
+    if (pwdCheck) return 400;
   };
 
   render() {
