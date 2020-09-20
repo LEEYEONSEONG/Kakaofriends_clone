@@ -15,7 +15,7 @@ class Nav extends React.Component {
       <nav className="Nav">
         <div className="Container">
           <ul className="leftMenu">
-            <li id="navCategory" className="category">
+            <li className="category">
               <div
                 className="categoryLink"
                 href="https://localhost:3000/main"
@@ -23,7 +23,7 @@ class Nav extends React.Component {
                 onMouseLeave={() => this.setState({ hoverOn: false })}
               >
                 카테고리
-                <span className="categoryTri"></span>
+                <span className="categoryTri" />
                 {this.state.hoverOn ? <DropDownMain /> : null}
               </div>
             </li>
