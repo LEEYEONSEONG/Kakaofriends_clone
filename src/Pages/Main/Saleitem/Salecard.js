@@ -1,8 +1,8 @@
 import React from "react";
 import SaleCardEach from "./SaleCardEach";
-import "./SaleCard.scss";
+import "./Salecard.scss";
 
-class SaleCard extends React.Component {
+class Salecard extends React.Component {
   render() {
     const { productList } = this.props;
     return (
@@ -15,4 +15,4 @@ class SaleCard extends React.Component {
   }
 }
 
-export default SaleCard;
+export default Salecard;

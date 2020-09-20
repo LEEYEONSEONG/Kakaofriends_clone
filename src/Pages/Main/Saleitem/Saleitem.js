@@ -1,5 +1,5 @@
 import React from "react";
-import SaleCard from "./SaleCard";
+import Salecard from "./Salecard";
 import List from "../../../Components/List/List";
 import "./Saleitem.scss";
 
@@ -52,7 +52,7 @@ class Saleitem extends React.Component {
     const { cardList, productList } = this.state;
     return (
       <article className="Saleitem">
-        <SaleCard productList={cardList} />
+        <Salecard productList={cardList} />
         <p className="subTitle">세일 상품을 모두 한곳에</p>
         <p className="mainTitle">지금은 세일 중</p>
         <List productList={productList} />

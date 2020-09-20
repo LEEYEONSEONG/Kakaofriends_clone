@@ -75,8 +75,8 @@
       width: 100%;
       height: 100%;
       padding: 0;
-      background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-default-large-3.png)
-        center center / 100% no-repeat;
+      // background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-default-large-3.png)
+      //   center center / 100% no-repeat;
       color: transparent;
       outline: none;
       border: none;
@@ -84,8 +84,8 @@
       font-size: 1px;
 
       &.addCart {
-        background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-main-over-large-3.png)
-          center center / 100% no-repeat;
+        // background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-main-over-large-3.png)
+        //   center center / 100% no-repeat;
       }
     }
   }
