@@ -1,14 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
-import Nav from "../../Components/Nav/Nav.js";
-import Footer from "../../Components/Footer/Footer.js";
-=======
 import Homeitem from "./Homeitem/Homeitem";
 import Hotitem from "./Hotitem/Hotitem";
 import Newitem from "./Newitem/Newitem";
 import Saleitem from "./Saleitem/Saleitem";
 import Allitem from "./Allitem/Allitem";
->>>>>>> master
 import "./Main.scss";
 
 export default class Main extends React.Component {
@@ -21,11 +16,6 @@ export default class Main extends React.Component {
   };
 
   render() {
-<<<<<<< HEAD
-    return (
-      <main className="Main">
-        <Nav />
-=======
     const { activeTab } = this.state;
     return (
       <main className="Main">
@@ -45,7 +35,6 @@ export default class Main extends React.Component {
           </ul>
         </div>
         {SHOWTAB[activeTab]}
->>>>>>> master
       </main>
     );
   }
