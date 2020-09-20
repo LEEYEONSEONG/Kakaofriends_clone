@@ -1,8 +1,13 @@
 @import "../../Styles/common.scss";
 
 .Main {
+  padding-top: 126px;
   .Maintab {
     top: 66px;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
 
     .menuTab {
       @include flexBox(center, center, row);
@@ -11,7 +16,7 @@
 
       button {
         width: 106px;
-        height: 54px;
+        height: 51px;
         background-color: transparent;
         border: none;
         outline: none;
@@ -36,6 +41,14 @@
           display: block;
         }
       }
+    }
+  }
+  .tabContainer {
+    width: 1126px;
+    margin: 0 auto;
+    // position: relative;
+    .tabBox {
+      //   position: absolute;
     }
   }
 }

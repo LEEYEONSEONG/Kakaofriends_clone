@@ -1,5 +1,5 @@
 import React from "react";
-import SaleCard from "./Salecard";
+import SaleCard from "./SaleCard";
 import List from "../../../Components/List/List";
 import { withInfiniteScroll } from "../hoc";
 import "./Saleitem.scss";

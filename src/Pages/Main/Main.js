@@ -4,6 +4,7 @@ import Hotitem from "./Hotitem/Hotitem";
 import Newitem from "./Newitem/Newitem";
 import Saleitem from "./Saleitem/Saleitem";
 import Allitem from "./Allitem/Allitem";
+import TopBtn from "../../Components/TopBtn/TopBtn";
 import "./Main.scss";
 
 export default class Main extends React.Component {
@@ -12,8 +13,17 @@ export default class Main extends React.Component {
   };
 
   clickHandler = (id) => {
+    const { activeTab } = this.state;
+    if (id > activeTab) {
+      console.log("newTab after oldTab");
+    } else if (id < activeTab) {
+      console.log("newTab before oldTab");
+    }
     this.setState({ activeTab: id });
   };
+
+  //   setTimeout = () => {
+  //     this.setState({ position:1 }, 3000)};
 
   render() {
     const { activeTab } = this.state;
@@ -34,7 +44,10 @@ export default class Main extends React.Component {
             })}
           </ul>
         </div>
-        {SHOWTAB[activeTab]}
+        <div className="tabContainer">
+          <div className="tabBox">{SHOWTAB[activeTab]}</div>
+        </div>
+        <TopBtn />
       </main>
     );
   }

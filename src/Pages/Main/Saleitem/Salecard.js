@@ -1,6 +1,6 @@
 import React from "react";
 import SaleCardEach from "./SaleCardEach";
-import "./Salecard.scss";
+import "./SaleCard.scss";
 
 class SaleCard extends React.Component {
   render() {

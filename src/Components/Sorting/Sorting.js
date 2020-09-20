@@ -41,16 +41,22 @@ class Sorting extends React.Component {
             >
               <ul className="sortType">
                 <li className="selectModalItem">
-                  <a className="selectModalOption orderHot">판매량순</a>
+                  <a className="selectModalOption orderHot" href="/main">
+                    판매량순
+                  </a>
                 </li>
                 <li className="selectModalItem">
-                  <a className="selectModalOption orderNew">신상품순</a>
+                  <a className="selectModalOption orderNew" href="/main">
+                    신상품순
+                  </a>
                 </li>
                 <li className="selectModalItem">
-                  <a className="selectModalOption orderLowPrice">낮은 가격순</a>
+                  <a className="selectModalOption orderLowPrice" href="/main">
+                    낮은 가격순
+                  </a>
                 </li>
                 <li className="selectModalItem">
-                  <a className="selectModalOption orderHighPrice">
+                  <a className="selectModalOption orderHighPrice" href="/main">
                     높은 가격순
                   </a>
                 </li>
