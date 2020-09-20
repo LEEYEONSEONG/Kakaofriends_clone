@@ -32,7 +32,7 @@ class SignIn extends React.Component {
     const errorText = LOGIN_STATUS[this.validateIdPW()];
 
     if (!errorText)
-      fetch("http://3.34.133.239:8000/account/signin", {
+      fetch("http://10.58.4.99:8000/account/signin", {
         method: "POST",
         body: JSON.stringify({
           email: this.state.idValue,
@@ -43,6 +43,7 @@ class SignIn extends React.Component {
         .then((result) => {
           console.log(result);
           if (result.Authorization) {
+            localStorage.setItem("token", result.Authorization);
             this.props.history.push("/main");
           } else if (result.message === "UNAUTHORIZED") {
             this.setState({
@@ -68,6 +69,11 @@ class SignIn extends React.Component {
 
   handleTerms = () => {
     this.props.history.push("/terms");
+  };
+
+  checkToken = () => {
+    const token = localStorage.getItem("token");
+    console.log(token);
   };
 
   render() {
@@ -116,7 +122,7 @@ class SignIn extends React.Component {
                   value={pwdValue}
                   name="pwdValue"
                 />
-                <div className="setLogin">
+                <div className="setLogin" onClick={this.checkToken}>
                   <span
                     className={isChecked ? "checkBox active" : "checkBox"}
                     onClick={() => this.setState({ isChecked: !isChecked })}
