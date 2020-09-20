@@ -121,7 +121,11 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
+<<<<<<< HEAD
   content: '';
+=======
+  content: "";
+>>>>>>> master
   content: none;
 }
 

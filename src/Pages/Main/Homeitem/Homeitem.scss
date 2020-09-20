@@ -1,0 +1,15 @@
+@import "../../../Styles/common.scss";
+
+.Homeitem {
+  width: 1126px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 35px;
+
+  .HomeCardList {
+    display: grid;
+    max-width: 1126px;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+  }
+}
