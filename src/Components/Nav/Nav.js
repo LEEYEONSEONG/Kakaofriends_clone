@@ -1,6 +1,6 @@
-import React from 'react';
-import './Nav.scss';
-import DropDownMain from './Components/DropDownMain.js';
+import React from "react";
+import "./Nav.scss";
+import DropDownMain from "./Components/DropDownMain.js";
 
 class Nav extends React.Component {
   constructor() {
@@ -13,7 +13,7 @@ class Nav extends React.Component {
   render() {
     return (
       <nav className="Nav">
-        <div className="NavContainer">
+        <div className="Container">
           <ul className="leftMenu">
             <li id="navCategory" className="category">
               <div
@@ -60,10 +60,10 @@ class Nav extends React.Component {
               <a className="iconLink" href="#">
                 <span id="cart" className="icon"></span>
               </a>
+              <a className="iconLink" href="#">
+                <span id="language" className="icon"></span>
+              </a>
             </aside>
-            <a className="iconLink" href="#">
-              <span id="language" className="icon"></span>
-            </a>
           </div>
         </div>
       </nav>

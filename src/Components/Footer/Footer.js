@@ -1,5 +1,5 @@
-import React from 'react';
-import './Footer.scss';
+import React from "react";
+import "./Footer.scss";
 
 class Footer extends React.Component {
   render() {
@@ -34,38 +34,35 @@ class Footer extends React.Component {
             </a>
           </div>
           <div className="companyInfo">
-            <span className="companyInfoText">
+            <span className="infoText">
               카카오아이맥스 사업자등록번호 : 354-86-00070
             </span>
             <br />
-            <span className="companyInfoText">
+            <span className="infoText">
               통신판매업 신고번호 : 2017-서울강남-02573
             </span>
             <br />
-            <span className="companyInfoText">대표이사 : 권승조</span>
+            <span className="infoText">대표이사 : 권승조</span>
             <br />
-            <span className="companyInfoText">
+            <span className="infoText">
               주소 : 서울특별시 강남구 테헤란로98길(대치동) 11 EG빌딩 5,6층
             </span>
             <br />
-            <span className="companyInfoText">
+            <span className="infoText">
               고객센터 : 1577-6263 / 평일 10시 ~ 18시
             </span>
             <br />
-            <a className="companyInfoText" href="http://localhost:3000/main?#">
+            <a className="infoText" href="http://localhost:3000/main?#">
               store@kakaofriends.com
             </a>
-            <span className="companyInfoText">
+            <span className="infoText">
               글로벌 배송 문의 :
-              <a
-                className="companyInfoText"
-                href="http://localhost:3000/main?#"
-              >
+              <a className="infoText" href="http://localhost:3000/main?#">
                 global@kakaofriends.com
               </a>
             </span>
             <br />
-            <p className="copyright companyInfoText">
+            <p className="copyright infoText">
               Copyright ©
               <a
                 className="companyInfoText"

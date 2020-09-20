@@ -13,10 +13,13 @@
   left: 0;
   right: 0;
   color: $subBlack;
+  background-color: #ffffff;
+  z-index: 1;
   @include flexBox(center, center, row);
 
-  &Container {
-    width: 1080px;
+  .Container {
+    position: relative;
+    width: 1060px;
     height: 60px;
     margin: 0 auto;
     @include flexBox(space-between, center, row);
@@ -57,6 +60,8 @@
     }
 
     .logo {
+      position: absolute;
+      left: 470px;
       width: 137px;
       height: 22px;
 
@@ -66,9 +71,12 @@
       }
     }
     .rightMenu {
-      @include flexBox(flex-start, center, row);
+      position: absolute;
+      left: 790px;
+      @include flexBox(center, center, row);
 
       .searchbar {
+        padding-right: 20px;
         &Box {
           width: 216px;
           height: auto;
@@ -101,12 +109,11 @@
       }
 
       .icons {
+        position: absolute;
+        left: 210px;
         @include flexBox(center, center, row);
         .iconLink {
           margin: 23px 2px 23.5px 15px;
-
-          .icon {
-          }
 
           #myPage {
             display: inline-block;
@@ -123,16 +130,17 @@
             background: url("/images/ico-header-cart.png") no-repeat center;
             background-size: 17px 21px;
           }
+          #language {
+            display: absolute;
+            left: 500px;
+            background: url("/images/ico-header-lang.png") no-repeat center;
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            background-size: 23px;
+          }
         }
       }
-    }
-    #language {
-      display: inline-block;
-      width: 23px;
-      height: 23px;
-      background: url("/images/ico-header-lang.png") no-repeat center;
-      margin-left: 14px;
-      background-size: 23px;
     }
   }
 }

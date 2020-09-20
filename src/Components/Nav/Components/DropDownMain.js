@@ -22,7 +22,7 @@ class DropDownMain extends React.Component {
       fixedMenu: CHARACTER,
     });
 
-    fetch("http://localhost:3000/data/mock.json")
+    fetch("/data/mock.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
