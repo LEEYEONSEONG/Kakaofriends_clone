@@ -1,0 +1,135 @@
+@import "../../../Styles/common.scss";
+
+.dropDownWrap {
+  position: absolute;
+  width: 674px;
+  height: 432.5px;
+  top: 35px;
+  left: -85px;
+  padding: 32px 0;
+  @include flexBox(flex-start, center, row);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px;
+  border-radius: 3.2px;
+  z-index: 10;
+  background-color: #ffffff;
+  animation: 0.5s ease-in-out 0s 1 normal none running fadeIn;
+
+  .hoverMainMenu {
+    width: 163px;
+    height: 100%;
+    border-right: solid 1px rgb(227, 229, 232);
+    background-color: #ffffff;
+    @include flexBox(flex-start, flex-start, column);
+
+    .mainDropList {
+      height: 22px;
+      width: auto;
+      margin: 3.5px 0;
+      padding: 0 10px 3px 32px;
+
+      :hover {
+        font-weight: 700;
+      }
+
+      .mainDropLink {
+        text-align: left;
+        text-decoration: none;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .hoverSubMenu {
+    width: 163px;
+    height: 100%;
+    background-color: #ffffff;
+    @include flexBox(flex-start, flex-start, column);
+
+    .subDropList {
+      height: 22px;
+      width: auto;
+      margin: 3.5px 0;
+      padding: 0 10px 3px 32px;
+
+      :hover {
+        font-weight: 700;
+      }
+
+      .subDropLink {
+        text-align: left;
+        text-decoration: none;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .hoverFixMenuWrap {
+    height: 100%;
+    background-color: #ffffff;
+    border-left: solid 1px rgb(227, 229, 232);
+    @include flexBox(space-between, space-between, column);
+
+    .hoverFixMenu {
+      width: 328px;
+      margin-left: 20px;
+      background-color: #ffffff;
+      @include flexBox(center, flex-start, row);
+      flex-wrap: wrap;
+
+      .sortByCharacter {
+        display: block;
+        margin: 7px 4px;
+        @include flexBox(center, center, row);
+
+        :hover {
+          font-weight: 700;
+        }
+
+        .selectCharWrap1 {
+          @include flexBox(center, center, column);
+
+          .selectCharWrap2 {
+            @include flexBox(center, flex-start, column);
+
+            .charImgWrap {
+              .eachChar {
+                width: 60px;
+                height: 60px;
+                display: inline-block;
+              }
+            }
+          }
+          .charName {
+            line-height: 1.5;
+            font-size: 14px;
+            margin-top: 8px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .dropBannerWrap {
+      width: 328px;
+      margin-left: 20px;
+      padding: 0 20px;
+      @include flexBox(space-between, center, row);
+
+      .dropBanner {
+        .dropBannerImg1 {
+          display: inline-block;
+          width: 140px;
+          height: 60px;
+          background: url("/images/dropBanner_left.png") no-repeat center;
+          background-size: 140px 60px;
+        }
+        .dropBannerImg2 {
+          display: inline-block;
+          width: 140px;
+          height: 60px;
+          background: url("/images/dropBanner_right.png") no-repeat center;
+          background-size: 140px 60px;
+        }
+      }
+    }
+  }
+}
