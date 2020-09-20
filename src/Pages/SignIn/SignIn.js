@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import "./SignIn.scss";
 
 class SignIn extends React.Component {
@@ -30,7 +31,27 @@ class SignIn extends React.Component {
     };
     const errorText = LOGIN_STATUS[this.validateIdPW()];
 
-    if (!errorText) fetch();
+    if (!errorText)
+      fetch("http://3.34.133.239:8000/account/signin", {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.state.idValue,
+          password: this.state.pwdValue,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          if (result.Authorization) {
+            this.props.history.push("/main");
+          } else if (result.message === "UNAUTHORIZED") {
+            this.setState({
+              errorText:
+                "카카오계정 혹은 비밀번호가 일치하지 않습니다. 입력한 내용을 다시 확인해 주세요.",
+            });
+          }
+        });
+
     if (errorText) this.setState({ errorText });
   };
 
@@ -43,6 +64,10 @@ class SignIn extends React.Component {
     if (idValueCheck) return 100;
     if (idIncludes) return 200;
     if (hasValue) return 300;
+  };
+
+  handleTerms = () => {
+    this.props.history.push("/terms");
   };
 
   render() {
@@ -125,7 +150,7 @@ class SignIn extends React.Component {
               </div>
             </div>
             <div className="infoUser">
-              <a href="www">회원가입</a>
+              <p onClick={this.handleTerms}>회원가입</p>
               <ul className="infoSearch">
                 <li>
                   <a href="www">카카오계정</a>
@@ -157,7 +182,7 @@ class SignIn extends React.Component {
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);
 
 const INFO = [
   "이용약관",
