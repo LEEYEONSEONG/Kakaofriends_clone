@@ -12,6 +12,12 @@
     height: 210px;
     margin-top: 25px;
     border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+
+    div:focus {
+      outline: none;
+    }
 
     img {
       width: 1080px;
