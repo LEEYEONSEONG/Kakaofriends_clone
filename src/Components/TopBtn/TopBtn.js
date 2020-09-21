@@ -10,6 +10,10 @@ class TopBtn extends React.Component {
     window.addEventListener("scroll", this.topbtnHandler);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.topbtnHandler);
+  }
+
   topbtnHandler = () => {
     const { documentElement, body } = document;
 

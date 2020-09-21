@@ -1,6 +1,7 @@
 import React from "react";
+import DropDownMain from "./Components/DropDownMain";
+import Searchbar from "./Components/Searchbar";
 import "./Nav.scss";
-import DropDownMain from "./Components/DropDownMain.js";
 
 class Nav extends React.Component {
   constructor() {
@@ -39,20 +40,11 @@ class Nav extends React.Component {
               </a>
             </li>
           </ul>
-          <img className="logo" alt="" src="images/kakaologo.png" />
+          <a className="logoWrap" href="/main">
+            <img className="logo" alt="" src="images/kakaologo.png" />
+          </a>
           <div className="rightMenu">
-            <form className="searchbar">
-              <div className="searchbarBox">
-                <button className="searchbarBtn">
-                  <span className="searchbarIcon"></span>
-                </button>
-                <input
-                  className="searchbarInput"
-                  type="textbox"
-                  placeholder="무엇을 찾으세요?"
-                ></input>
-              </div>
-            </form>
+            <Searchbar />
             <aside className="icons">
               <a className="iconLink" href="#">
                 <span id="myPage" className="icon"></span>

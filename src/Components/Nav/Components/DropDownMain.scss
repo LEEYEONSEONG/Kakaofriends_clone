@@ -10,9 +10,12 @@
   @include flexBox(flex-start, center, row);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px;
   border-radius: 3.2px;
-  z-index: 10;
+  z-index: 10000;
   background-color: #ffffff;
-  animation: 0.5s ease-in-out 0s 1 normal none running fadeIn;
+  transition: 2s;
+  opacity: 0;
+
+  // animation: 0.5s ease-in-out 0s 1 normal none running fadeIn;
 
   .hoverMainMenu {
     width: 163px;
@@ -34,7 +37,7 @@
       .mainDropLink {
         text-align: left;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 15px;
       }
     }
   }
@@ -58,7 +61,7 @@
       .subDropLink {
         text-align: left;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 15px;
       }
     }
   }

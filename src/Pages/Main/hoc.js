@@ -1,11 +1,12 @@
 import React from "react";
 
-export const withInfiniteScroll = (InputComponent) => {
+export const withInfiniteScroll = (InputComponent, path) => {
   return class OutputComponent extends InputComponent {
     state = {
       productList: [],
       items: 10,
       preItems: 0,
+      totalCount: 0,
     };
 
     componentDidMount() {
@@ -17,35 +18,36 @@ export const withInfiniteScroll = (InputComponent) => {
       window.removeEventListener("scroll", this.infiniteScroll);
     }
 
-    getData = () => {
-      const { preItems, items, productList } = this.state;
-      fetch("Data/mock.json", {
-        method: "GET",
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          // console.log(res);
-          const result = res.data.slice(preItems, items);
-          this.setState({
-            productList: [...productList, ...result],
-          });
-        });
-    };
-
     // getData = () => {
     //   const { preItems, items, productList } = this.state;
-    //   fetch("http://10.58.6.38:8000/product/sale", {
+    //   fetch("Data/mock.json", {
     //     method: "GET",
     //   })
     //     .then((res) => res.json())
     //     .then((res) => {
-    //       console.log(res);
-    //       const result = res.data_list.slice(preItems, items);
+    //       // console.log(res);
+    //       const result = res.data.slice(preItems, items);
     //       this.setState({
     //         productList: [...productList, ...result],
     //       });
     //     });
     // };
+
+    getData = () => {
+      const { preItems, items, productList } = this.state;
+      fetch("http://10.58.6.38:8001/" + path, {
+        method: "GET",
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          const result = res.data_list.slice(preItems, items);
+          const totalCount = res.data_list[0].total_count;
+          this.setState({
+            productList: [...productList, ...result],
+            totalCount: totalCount,
+          });
+        });
+    };
 
     infiniteScroll = () => {
       const { documentElement, body } = document;
@@ -68,7 +70,12 @@ export const withInfiniteScroll = (InputComponent) => {
     };
 
     render() {
-      return <InputComponent productList={this.state.productList} />;
+      return (
+        <InputComponent
+          productList={this.state.productList}
+          totalCount={this.state.totalCount}
+        />
+      );
     }
   };
 };

@@ -6,13 +6,13 @@ import "./Allitem.scss";
 
 class Allitem extends React.Component {
   render() {
-    const { productList } = this.props;
+    const { productList, totalCount } = this.props;
     return (
       <article className="Allitem">
         <div className="topInfo">
           <div className="totalItems">
             <p className="totalNum">
-              총 <span className="pointSpan">1541</span> 개의 상품이
+              총 <span className="pointSpan">{totalCount}</span> 개의 상품이
               조회되었습니다.
             </p>
           </div>
@@ -24,4 +24,4 @@ class Allitem extends React.Component {
   }
 }
 
-export default withInfiniteScroll(Allitem);
+export default withInfiniteScroll(Allitem, "product/16");

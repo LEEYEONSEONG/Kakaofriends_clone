@@ -9,9 +9,6 @@ import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
 import Terms from "./Pages/Terms/Terms";
 
-
-
-
 class Routes extends React.Component {
   render() {
     return (

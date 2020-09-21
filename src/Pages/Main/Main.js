@@ -5,88 +5,77 @@ import Newitem from "./Newitem/Newitem";
 import Saleitem from "./Saleitem/Saleitem";
 import Allitem from "./Allitem/Allitem";
 import TopBtn from "../../Components/TopBtn/TopBtn";
-import "./Main.scss";
 import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
+import "./Main.scss";
 
 export default class Main extends React.Component {
   state = {
     activeTab: 0,
     positionChange: 0,
+    footerPosition: 0,
+    isLeft: true,
   };
   divContainer = React.createRef();
 
-  componentDidMount() {
+  comeToCenter = () => {
     const position = this.divContainer.current.style;
     position.transform = `translateX(0)`;
+  };
+
+  componentDidMount() {
+    this.comeToCenter();
   }
 
   clickHandler = (id) => {
     const { activeTab } = this.state;
-    if (id > activeTab) {
-      console.log("newTab after oldTab");
-    } else if (id < activeTab) {
-      console.log("newTab before oldTab");
-    }
+    this.setState(
+      {
+        isLeft: id < activeTab,
+      },
+      console.log(this.state.isLeft)
+    );
     this.setState({ activeTab: id });
+    this.comeToCenter();
   };
-
-  // clickHandler = (id) => {
-  //   const position = this.divContainer.current.style;
-  //   const { activeTab } = this.state;
-  //   if (id > activeTab) {
-  //     console.log("newTab after oldTab");
-  //     this.setState(
-  //       {
-  //         positionChange: 100,
-  //       },
-  //       (position.transform = `translateX(0)`)
-  //     );
-  //   } else if (id < activeTab) {
-  //     console.log("newTab before oldTab");
-  //     this.setState(
-  //       {
-  //         positionChange: -100,
-  //       },
-  //       (position.transform = `translateX(0)`)
-  //     );
-  //   }
-  //   this.setState({ activeTab: id });
-  // };
-
-  //   setTimeout = () => {
-  //     this.setState({ position:1 }, 3000)};
 
   render() {
     const { activeTab } = this.state;
     return (
-      <main className="Main">
+      <>
         <Nav />
-        <div className="Maintab">
-          <ul className="menuTab">
-            {TAB_ARR.map((el, idx) => {
-              const isActive = activeTab === idx;
-              return (
-                <li key={el} onClick={() => this.clickHandler(idx)}>
-                  <button className={`${isActive && "highlightedBtn"}`}>
-                    {el}
-                  </button>
-                  <hr className={`highlightedTab ${isActive ? "on" : "off"}`} />
-                </li>
-              );
-            })}
-          </ul>
+        <div className="Main">
+          <main>
+            <div className="Maintab">
+              <ul className="menuTab">
+                {TAB_ARR.map((el, idx) => {
+                  const isActive = activeTab === idx;
+                  return (
+                    <li key={el} onClick={() => this.clickHandler(idx)}>
+                      <button className={`${isActive && "highlightedBtn"}`}>
+                        {el}
+                      </button>
+                      <hr
+                        className={`highlightedTab ${isActive ? "on" : "off"}`}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className="tabContainer">
+              <div
+                ref={this.divContainer}
+                className={`tabBox ${this.state.isLeft ? "left" : "right"}`}
+              >
+                {SHOWTAB[activeTab]}
+              </div>
+            </div>
+            <TopBtn />
+          </main>
         </div>
-        <div className="tabContainer">
-          <div
-            ref={this.divContainer}
-            className="tabBox"
-            // style={{ transform: `translateX(${this.state.positionChange})` }}
-          >
-            {SHOWTAB[activeTab]}
-          </div>
-        </div>
-        <TopBtn />
-      </main>
+        <Footer />
+      </>
     );
   }
 }

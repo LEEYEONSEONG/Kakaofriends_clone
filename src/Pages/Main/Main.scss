@@ -1,56 +1,64 @@
 @import "../../Styles/common.scss";
 
 .Main {
-  padding-top: 126px;
-  .Maintab {
-    top: 66px;
-    background-color: white;
-    position: fixed;
-    width: 100%;
-    z-index: 99;
+  // position: relative;
+  main {
+    padding-top: 126px;
+    // margin-bottom: 337px;
+    .Maintab {
+      top: 66px;
+      background-color: white;
+      position: fixed;
+      width: 100%;
+      z-index: 99;
 
-    .menuTab {
-      @include flexBox(center, center, row);
-      border-top: 1px solid rgb(237, 237, 237);
-      border-bottom: 1px solid rgb(237, 237, 237);
+      .menuTab {
+        @include flexBox(center, center, row);
+        border-top: 1px solid rgb(237, 237, 237);
+        border-bottom: 1px solid rgb(237, 237, 237);
 
-      button {
-        width: 106px;
-        height: 51px;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        font-size: 15px;
+        button {
+          width: 106px;
+          height: 51px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          font-size: 15px;
 
-        &.highlightedBtn {
-          font-weight: 700;
-        }
-      }
-
-      .highlightedTab {
-        height: 3px;
-        margin: 0 13px;
-        background: black;
-        border-style: initial;
-
-        &.off {
-          display: none;
+          &.highlightedBtn {
+            font-weight: 700;
+          }
         }
 
-        &.on {
-          display: block;
+        .highlightedTab {
+          height: 3px;
+          margin: 0 13px;
+          background: black;
+          border-style: initial;
+
+          &.off {
+            display: none;
+          }
+
+          &.on {
+            display: block;
+          }
         }
       }
     }
-  }
-  .tabContainer {
-    width: 1126px;
-    margin: 0 auto;
-    position: relative;
-    .tabBox {
-      position: absolute;
-      transform: translateX(100%);
-      transition: 0.5s;
+    .tabContainer {
+      width: 1126px;
+      margin: 0 auto;
+      position: relative;
+      .tabBox {
+        transition: 0.5s;
+        &.left {
+          transform: translateX(-100%);
+        }
+        &.right {
+          transform: translateX(100%);
+        }
+      }
     }
   }
 }

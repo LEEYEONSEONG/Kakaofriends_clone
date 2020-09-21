@@ -16,13 +16,20 @@ class DropDownMain extends React.Component {
       imgIndex: 0,
     };
   }
+  divContainer = React.createRef();
+
+  smoothAppear = () => {
+    const opacity = this.divContainer.current.style;
+    opacity.opacity = 1;
+  };
 
   componentDidMount() {
+    this.smoothAppear();
     this.setState({
       fixedMenu: CHARACTER,
     });
 
-    fetch("/data/mock.json")
+    fetch("/Data/mock.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -34,7 +41,7 @@ class DropDownMain extends React.Component {
 
   render() {
     return (
-      <div className="dropDownWrap">
+      <div ref={this.divContainer} className="dropDownWrap">
         <ul className="hoverMainMenu">
           {this.state.mainMenu.map((category) => {
             return (
