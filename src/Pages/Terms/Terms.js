@@ -20,43 +20,19 @@ class Terms extends React.Component {
   }
 
   handleAllCheck = () => {
+    const { isAllCheck } = this.state;
     this.setState({
-      isAllCheck: !this.state.isAllCheck,
+      isAllCheck: !isAllCheck,
+      isAgeCheck: !isAllCheck,
+      isMustCheck: !isAllCheck,
+      isMustServiceCheck: !isAllCheck,
+      isNotifyCheck: !isAllCheck,
+      isPersonalInfoCheck: !isAllCheck,
+      isLocationCheck: !isAllCheck,
+      isAgreeCheck: !isAllCheck,
+      isProfileCheck: !isAllCheck,
     });
-    if (this.state.isAllCheck === false) {
-      this.setState({
-        isAgeCheck: true,
-        isMustCheck: true,
-        isMustServiceCheck: true,
-        isNotifyCheck: true,
-        isPersonalInfoCheck: true,
-        isLocationCheck: true,
-        isProfileCheck: true,
-        isAgreeCheck: true,
-      });
-    } else if (this.state.isAllCheck === true) {
-      this.setState({
-        isAgeCheck: false,
-        isMustCheck: false,
-        isMustServiceCheck: false,
-        isNotifyCheck: false,
-        isPersonalInfoCheck: false,
-        isLocationCheck: false,
-        isProfileCheck: false,
-        isAgreeCheck: false,
-      });
-    }
   };
-
-  // handleAllCheck = () => {
-  //   this.setState({
-  //     isAllCheck: !this.state.isAllCheck,
-  //   });
-
-  //   this.setState({
-  //     isAllCheck: this.state
-  //   })
-  // };
 
   handleAgree = () => {
     if (
