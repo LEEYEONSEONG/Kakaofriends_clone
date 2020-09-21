@@ -1,0 +1,30 @@
+@mixin togle {
+  position: absolute;
+      bottom: 15px;
+      right: 5px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      outline: none;
+}
+
+
+.cardList {
+  position: relative;
+  img {
+    width: 97%;
+    height: 100%;
+    margin: 0px 6px 12px;
+    border-radius: 8px;
+  }
+  .checkBox {
+    .togle{
+      @include togle;
+      background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-grey.png) center center / 100% no-repeat;;
+    }
+    .On {
+      @include togle;
+      background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-pink.png) center center / 100% no-repeat;;
+    }
+  }
+}
