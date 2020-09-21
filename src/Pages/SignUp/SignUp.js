@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import "./SignUp.scss";
 
 class SignUp extends React.Component {
@@ -9,9 +10,12 @@ class SignUp extends React.Component {
       idValue: "",
       pwdValue: "",
       pwdCheckValue: "",
+      nameValue: "",
+      phoneValue: "",
       idErrorText: "",
       pwdErrorText: "",
       isConfirmForm: false,
+      isNextbtn: false,
     };
   }
 
@@ -39,7 +43,27 @@ class SignUp extends React.Component {
     const errorText = SIGNUP_STATUS[this.validata()];
     const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
 
-    if (!errorText) fetch();
+    if (!errorText) {
+      fetch("http://10.58.5.205:8000/account/signup", {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.state.idValue,
+          password: this.state.pwdValue,
+          name: this.state.nameValue,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          if (result.message === "SUCCESS") {
+            this.props.history.push("/signin");
+          } else if (result.message === "DUPLICATED_EMAIL") {
+            alert(
+              "이미 사용된 Daum 메일 주소여서 또 사용할 수 없어요. 다른 아이디를 입력해 주세요."
+            );
+          }
+        });
+    }
 
     if (errorText) {
       this.setState({
@@ -70,7 +94,12 @@ class SignUp extends React.Component {
       pwdCheckValue,
       pwdErrorText,
       isConfirmForm,
+      nameValue,
+      phoneValue,
     } = this.state;
+
+    const nextBtn = idValue.length && pwdValue && nameValue;
+
     return (
       <div className="SignUp">
         <div className="kakaoWrap">
@@ -128,7 +157,10 @@ class SignUp extends React.Component {
                   <input
                     className="nickUnfo"
                     placeholder="닉네임을 입력해주세요."
+                    onChange={this.handleIdPwdValue}
+                    value={nameValue}
                     type="search"
+                    name="nameValue"
                   />
                 </div>
               </div>
@@ -146,6 +178,9 @@ class SignUp extends React.Component {
                   className="phoneNumber"
                   placeholder="전화번호"
                   type="search"
+                  onChange={this.handleIdPwdValue}
+                  value={phoneValue}
+                  name="phoneValue"
                 />
               </div>
               <div className={isConfirmForm ? "selectPhone" : "closePhone"}>
@@ -161,7 +196,7 @@ class SignUp extends React.Component {
                 </button>
               </div>
               <div className="nextBtn" onClick={this.handleClick}>
-                <button>다음</button>
+                <button className={nextBtn ? "active" : "button"}>다음</button>
               </div>
             </div>
           </div>
@@ -187,7 +222,7 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);
 
 const INFO = [
   "이용약관",
