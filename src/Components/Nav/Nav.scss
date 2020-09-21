@@ -74,10 +74,12 @@
         left: 210px;
         @include flexBox(center, center, row);
         .iconLink {
-          margin: 23px 15px 23.5px 15px;
+          margin: 20px 10px;
 
           #myPage {
             display: inline-block;
+            position: relative;
+            padding: 25px 15px;
             width: 18px;
             height: 19px;
             background: url("/images/ico-header-mypage.png") no-repeat center;
@@ -86,13 +88,14 @@
 
           #cart {
             display: inline-block;
+            padding: 25px 15px;
             width: 17px;
             height: 21px;
             background: url("/images/ico-header-cart.png") no-repeat center;
             background-size: 17px 21px;
           }
           #language {
-            display: absolute;
+            padding: 25px 15px;
             left: 500px;
             background: url("/images/ico-header-lang.png") no-repeat center;
             display: inline-block;
