@@ -17,6 +17,14 @@ class List extends React.Component {
               dcprice={product.dcprice}
               dcpercent={product.dcpercent}
             />
+            // <Card
+            //   key={product.product_id}
+            //   img={product.main_image}
+            //   name={product.name}
+            //   price={product.price}
+            //   dcprice={product.discount_price}
+            //   dcpercent={product.discount_rate}
+            // />
           );
         })}
       </ul>

@@ -10,7 +10,14 @@ import "./Main.scss";
 export default class Main extends React.Component {
   state = {
     activeTab: 0,
+    positionChange: 0,
   };
+  divContainer = React.createRef();
+
+  componentDidMount() {
+    const position = this.divContainer.current.style;
+    position.transform = `translateX(0)`;
+  }
 
   clickHandler = (id) => {
     const { activeTab } = this.state;
@@ -21,6 +28,29 @@ export default class Main extends React.Component {
     }
     this.setState({ activeTab: id });
   };
+
+  // clickHandler = (id) => {
+  //   const position = this.divContainer.current.style;
+  //   const { activeTab } = this.state;
+  //   if (id > activeTab) {
+  //     console.log("newTab after oldTab");
+  //     this.setState(
+  //       {
+  //         positionChange: 100,
+  //       },
+  //       (position.transform = `translateX(0)`)
+  //     );
+  //   } else if (id < activeTab) {
+  //     console.log("newTab before oldTab");
+  //     this.setState(
+  //       {
+  //         positionChange: -100,
+  //       },
+  //       (position.transform = `translateX(0)`)
+  //     );
+  //   }
+  //   this.setState({ activeTab: id });
+  // };
 
   //   setTimeout = () => {
   //     this.setState({ position:1 }, 3000)};
@@ -45,7 +75,13 @@ export default class Main extends React.Component {
           </ul>
         </div>
         <div className="tabContainer">
-          <div className="tabBox">{SHOWTAB[activeTab]}</div>
+          <div
+            ref={this.divContainer}
+            className="tabBox"
+            // style={{ transform: `translateX(${this.state.positionChange})` }}
+          >
+            {SHOWTAB[activeTab]}
+          </div>
         </div>
         <TopBtn />
       </main>

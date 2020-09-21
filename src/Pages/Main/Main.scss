@@ -46,9 +46,11 @@
   .tabContainer {
     width: 1126px;
     margin: 0 auto;
-    // position: relative;
+    position: relative;
     .tabBox {
-      //   position: absolute;
+      position: absolute;
+      transform: translateX(100%);
+      transition: 0.5s;
     }
   }
 }

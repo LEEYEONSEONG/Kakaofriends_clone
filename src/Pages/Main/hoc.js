@@ -19,15 +19,33 @@ export const withInfiniteScroll = (InputComponent) => {
 
     getData = () => {
       const { preItems, items, productList } = this.state;
-      fetch("/Data/mock.json")
+      fetch("Data/mock.json", {
+        method: "GET",
+      })
         .then((res) => res.json())
         .then((res) => {
+          // console.log(res);
           const result = res.data.slice(preItems, items);
           this.setState({
             productList: [...productList, ...result],
           });
         });
     };
+
+    // getData = () => {
+    //   const { preItems, items, productList } = this.state;
+    //   fetch("http://10.58.6.38:8000/product/sale", {
+    //     method: "GET",
+    //   })
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //       console.log(res);
+    //       const result = res.data_list.slice(preItems, items);
+    //       this.setState({
+    //         productList: [...productList, ...result],
+    //       });
+    //     });
+    // };
 
     infiniteScroll = () => {
       const { documentElement, body } = document;

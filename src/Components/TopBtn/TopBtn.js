@@ -3,7 +3,7 @@ import "./TopBtn.scss";
 
 class TopBtn extends React.Component {
   state = {
-    isTopBtnActive: 0,
+    isTopBtnActive: false,
   };
 
   componentDidMount() {
@@ -17,7 +17,7 @@ class TopBtn extends React.Component {
     const scrollTop = Math.max(documentElement.scrollTop, body.scrollTop);
 
     this.setState({
-      isTopBtnActive: scrollTop >= clientHeight ? 1 : 0,
+      isTopBtnActive: scrollTop >= clientHeight,
     });
   };
 
