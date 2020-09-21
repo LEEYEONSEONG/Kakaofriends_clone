@@ -16,6 +16,7 @@ class SignUp extends React.Component {
       pwdErrorText: "",
       isConfirmForm: false,
       isNextbtn: false,
+      isModal: false,
     };
   }
 
@@ -58,9 +59,9 @@ class SignUp extends React.Component {
           if (result.message === "SUCCESS") {
             this.props.history.push("/signin");
           } else if (result.message === "DUPLICATED_EMAIL") {
-            alert(
-              "이미 사용된 Daum 메일 주소여서 또 사용할 수 없어요. 다른 아이디를 입력해 주세요."
-            );
+            this.setState({
+              isModal: !this.state.isModal,
+            });
           }
         });
     }
@@ -86,6 +87,12 @@ class SignUp extends React.Component {
     if (pwdCheck) return 400;
   };
 
+  checkOutModal = () => {
+    this.setState({
+      isModal: !this.state.isModal,
+    });
+  };
+
   render() {
     const {
       idValue,
@@ -96,6 +103,7 @@ class SignUp extends React.Component {
       isConfirmForm,
       nameValue,
       phoneValue,
+      isModal,
     } = this.state;
 
     const nextBtn = idValue.length && pwdValue && nameValue;
@@ -117,6 +125,7 @@ class SignUp extends React.Component {
                   onChange={this.handleIdPwdValue}
                   value={idValue}
                   name="idValue"
+                  autoComplete="off"
                 />
                 <div className="idError">
                   <p>{idErrorText}</p>
@@ -139,6 +148,7 @@ class SignUp extends React.Component {
                     value={pwdValue}
                     type="search"
                     name="pwdValue"
+                    autoComplete="off"
                   />
                   <input
                     className="pwdCheck"
@@ -147,6 +157,7 @@ class SignUp extends React.Component {
                     value={pwdCheckValue}
                     type="search"
                     name="pwdCheckValue"
+                    autoComplete="off"
                   />
                   <div className="pwdError">
                     <p>{pwdErrorText}</p>
@@ -161,6 +172,7 @@ class SignUp extends React.Component {
                     value={nameValue}
                     type="search"
                     name="nameValue"
+                    autoComplete="off"
                   />
                 </div>
               </div>
@@ -217,6 +229,22 @@ class SignUp extends React.Component {
             </span>
           </div>
         </footer>
+        <div className={isModal ? "modal none" : "modal"}>
+          <div className="modal_content">
+            <p>
+              이미 사용된 Daum 메일 주소여서 또 사용할 수 없어요. 다른 아이디를
+              입력해 주세요.
+            </p>
+            <button
+              type="button"
+              className="modal_close_btn"
+              onClick={this.checkOutModal}
+            >
+              확인
+            </button>
+          </div>
+          <div className="modal_layer"></div>
+        </div>
       </div>
     );
   }

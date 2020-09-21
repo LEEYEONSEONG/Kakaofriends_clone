@@ -220,4 +220,45 @@
       color: #7c7c7c;
     }
   }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+
+    &.none {
+      display: block;
+    }
+
+    .modal_content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      width: 100%;
+      max-width: 380px;
+      padding: 50px 30px 30px;
+      vertical-align: middle;
+      font-size: 14px;
+      text-align: left;
+      border-radius: 3px;
+      background-color: #fff;
+      color: #7c7c7c;
+      word-break: keep-all;
+    }
+  }
+  
+  .modal button {
+    display:inline-block;
+    width:100%;
+    height: 50px;
+    border: 0;
+    margin-top: 30px;
+    background-color: #ffe500;
+  }
+  
 }
