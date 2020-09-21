@@ -41,7 +41,6 @@ class SignIn extends React.Component {
       })
         .then((response) => response.json())
         .then((result) => {
-          console.log(result);
           if (result.Authorization) {
             localStorage.setItem("token", result.Authorization);
             this.props.history.push("/main");
@@ -72,8 +71,7 @@ class SignIn extends React.Component {
   };
 
   checkToken = () => {
-    const token = localStorage.getItem("token");
-    console.log(token);
+    localStorage.getItem("token");
   };
 
   render() {

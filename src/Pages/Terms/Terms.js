@@ -48,6 +48,16 @@ class Terms extends React.Component {
     }
   };
 
+  // handleAllCheck = () => {
+  //   this.setState({
+  //     isAllCheck: !this.state.isAllCheck,
+  //   });
+
+  //   this.setState({
+  //     isAllCheck: this.state
+  //   })
+  // };
+
   handleAgree = () => {
     if (
       this.state.isAllCheck ||
@@ -65,6 +75,18 @@ class Terms extends React.Component {
       this.state.isMustServiceCheck &&
       this.state.isPersonalInfoCheck;
 
+    const {
+      isAllCheck,
+      isAgeCheck,
+      isMustServiceCheck,
+      isMustCheck,
+      isNotifyCheck,
+      isLocationCheck,
+      isPersonalInfoCheck,
+      isAgreeCheck,
+      isProfileCheck,
+    } = this.state;
+
     return (
       <div className="Terms">
         <div className="kakaoWrap">
@@ -77,11 +99,7 @@ class Terms extends React.Component {
             </h2>
             <div className="termForm">
               <div className="termsAll" onClick={this.handleAllCheck}>
-                <button
-                  className={
-                    this.state.isAllCheck ? "allBtn AllCheck" : "allBtn"
-                  }
-                ></button>
+                <button className={isAllCheck ? "allBtn AllCheck" : "allBtn"} />
                 <span>모두 동의합니다.</span>
               </div>
               <div className="termsAllText">
@@ -95,27 +113,19 @@ class Terms extends React.Component {
               </div>
               <div
                 className="termAgeOver"
-                onClick={() =>
-                  this.setState({ isAgeCheck: !this.state.isAgeCheck })
-                }
+                onClick={() => this.setState({ isAgeCheck: !isAgeCheck })}
               >
                 <button
-                  className={
-                    this.state.isAgeCheck ? "allBtn AllCheck" : "allBtn"
-                  }
+                  className={isAgeCheck ? "allBtn AllCheck" : "allBtn"}
                 ></button>
                 <span>만 14세 이상입니다</span>
               </div>
               <div
                 className="termsWrap"
-                onClick={() =>
-                  this.setState({ isMustCheck: !this.state.isMustCheck })
-                }
+                onClick={() => this.setState({ isMustCheck: !isMustCheck })}
               >
                 <button
-                  className={
-                    this.state.isMustCheck ? "allBtn AllCheck" : "allBtn"
-                  }
+                  className={isMustCheck ? "allBtn AllCheck" : "allBtn"}
                 ></button>
                 <span>[필수] 카카오계정 약관</span>
               </div>
@@ -123,14 +133,12 @@ class Terms extends React.Component {
                 className="termsWrap"
                 onClick={() =>
                   this.setState({
-                    isMustServiceCheck: !this.state.isMustServiceCheck,
+                    isMustServiceCheck: !isMustServiceCheck,
                   })
                 }
               >
                 <button
-                  className={
-                    this.state.isMustServiceCheck ? "allBtn AllCheck" : "allBtn"
-                  }
+                  className={isMustServiceCheck ? "allBtn AllCheck" : "allBtn"}
                 ></button>
                 <span>[필수] 카카오 통합 서비스약관</span>
               </div>
@@ -145,14 +153,10 @@ class Terms extends React.Component {
               </div>
               <div
                 className="termsWrap"
-                onClick={() =>
-                  this.setState({ isNotifyCheck: !this.state.isNotifyCheck })
-                }
+                onClick={() => this.setState({ isNotifyCheck: !isNotifyCheck })}
               >
                 <button
-                  className={
-                    this.state.isNotifyCheck ? "allBtn AllCheck" : "allBtn"
-                  }
+                  className={isNotifyCheck ? "allBtn AllCheck" : "allBtn"}
                 ></button>
                 <span>[선택] 카카오알림 채널 추가 및 광고메시지 수신</span>
               </div>
@@ -160,16 +164,12 @@ class Terms extends React.Component {
                 className="termsWrap"
                 onClick={() =>
                   this.setState({
-                    isPersonalInfoCheck: !this.state.isPersonalInfoCheck,
+                    isPersonalInfoCheck: !isPersonalInfoCheck,
                   })
                 }
               >
                 <button
-                  className={
-                    this.state.isPersonalInfoCheck
-                      ? "allBtn AllCheck"
-                      : "allBtn"
-                  }
+                  className={isPersonalInfoCheck ? "allBtn AllCheck" : "allBtn"}
                 ></button>
                 <span>[필수] 개인정보 수집 및 이용 동의</span>
               </div>
@@ -177,38 +177,31 @@ class Terms extends React.Component {
                 className="termsWrap"
                 onClick={() =>
                   this.setState({
-                    isLocationCheck: !this.state.isLocationCheck,
+                    isLocationCheck: !isLocationCheck,
                   })
                 }
               >
                 <button
-                  className={
-                    this.state.isLocationCheck ? "allBtn AllCheck" : "allBtn"
-                  }
+                  className={isLocationCheck ? "allBtn AllCheck" : "allBtn"}
                 ></button>
                 <span>[선택] 위치정보 수집 및 이용 동의</span>
               </div>
               <div
                 className="termsWrap"
                 onClick={() =>
-                  this.setState({ isProfileCheck: !this.state.isProfileCheck })
+                  this.setState({ isProfileCheck: !isProfileCheck })
                 }
               >
                 <button
-                  className={
-                    this.state.isProfileCheck ? "allBtn AllCheck" : "allBtn"
-                  }
+                  className={isProfileCheck ? "allBtn AllCheck" : "allBtn"}
                 ></button>
                 <span>[선택] 프로필 정보 추가 수집 동의</span>
               </div>
             </div>
             <div className="nextBtn">
               <button
-                className={
-                  this.state.isAgreeCheck || necessary ? "btn active" : "btn"
-                }
+                className={isAgreeCheck || necessary ? "btn active" : "btn"}
                 onClick={this.handleAgree}
-                // onClick={() => this.props.history.push("/signup")}
               >
                 동의
               </button>
