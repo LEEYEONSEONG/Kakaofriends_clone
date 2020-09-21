@@ -32,7 +32,7 @@ class SignIn extends React.Component {
     const errorText = LOGIN_STATUS[this.validateIdPW()];
 
     if (!errorText)
-      fetch("http://10.58.4.99:8000/account/signin", {
+      fetch("http://10.58.5.205:8000/account/signin", {
         method: "POST",
         body: JSON.stringify({
           email: this.state.idValue,
@@ -111,6 +111,7 @@ class SignIn extends React.Component {
                   type="search"
                   value={idValue}
                   name="idValue"
+                  autocomplete="off"
                 />
                 <input
                   className="idPwForm"
@@ -119,6 +120,7 @@ class SignIn extends React.Component {
                   type="search"
                   value={pwdValue}
                   name="pwdValue"
+                  autocomplete="off"
                 />
                 <div className="setLogin" onClick={this.checkToken}>
                   <span
@@ -132,7 +134,9 @@ class SignIn extends React.Component {
                   </span>
                   <div className={isToolTip ? "toolTip" : "toolTip none"}>
                     <p>개인정보 보호를 위해 개인 PC에서만 사용해 주세요.</p>
-                    <a href="www">도움말 보기</a>
+                    <a href="https://cs.kakao.com/helps?category=166&locale=ko&service=52&articleId=1073192624&device=423">
+                      도움말 보기
+                    </a>
                   </div>
                 </div>
               </div>
