@@ -38,7 +38,7 @@ class SignUp extends React.Component {
     const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
 
     if (!errorText) {
-      fetch("http://10.58.5.205:8000/account/signup", {
+      fetch("http://10.58.1.216:8000/account/signup", {
         method: "POST",
         body: JSON.stringify({
           email: this.state.idValue,
@@ -48,9 +48,10 @@ class SignUp extends React.Component {
       })
         .then((response) => response.json())
         .then((result) => {
-          if (result.message === "SUCCESS") return;
-          this.props.history.push("/signin");
-          if (result.message === "DUPLICATED_EMAIL") return;
+          if (result.message === "SUCCESS") {
+            this.props.history.push("/signin");
+            return;
+          }
           this.setState({
             isModal: !this.state.isModal,
           });
