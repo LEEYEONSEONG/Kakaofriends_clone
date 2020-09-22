@@ -5,6 +5,7 @@ import Newitem from "./Newitem/Newitem";
 import Saleitem from "./Saleitem/Saleitem";
 import Allitem from "./Allitem/Allitem";
 import "./Main.scss";
+import Nav from "../../Components/Nav/Nav";
 
 export default class Main extends React.Component {
   state = {
@@ -19,6 +20,7 @@ export default class Main extends React.Component {
     const { activeTab } = this.state;
     return (
       <main className="Main">
+        <Nav />
         <div className="Maintab">
           <ul className="menuTab">
             {TAB_ARR.map((el, idx) => {
