@@ -4,7 +4,7 @@ import ProductDetails from "./Components/ProductDetails";
 import LiveRfq from "./Components/LiveRfq";
 import ReviewComment from "./Components/ReviewComment";
 import Suggestion from "./Components/Suggestion";
-import Purchase from "./Components/Purchase";
+import PurchaseBar from "./Components/PurchaseBar";
 import "./Details.scss";
 
 class Details extends React.Component {
@@ -16,7 +16,7 @@ class Details extends React.Component {
         <LiveRfq />
         <ReviewComment />
         <Suggestion />
-        <Purchase />
+        <PurchaseBar />
       </div>
     );
   }
