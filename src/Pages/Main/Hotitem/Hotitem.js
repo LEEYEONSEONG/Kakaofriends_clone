@@ -22,11 +22,13 @@ class Hotitem extends React.Component {
   }
 
   render() {
+    const { itemList } = this.state;
+
     return (
       <div className="Hotitem">
         <div className="HotCardList">
-          {this.state.itemList.map((el, i) => {
-            return <HotCard key={i} img={el.img} />;
+          {itemList.map((card, i) => {
+            return <HotCard key={i} img={card.img} />;
           })}
         </div>
       </div>

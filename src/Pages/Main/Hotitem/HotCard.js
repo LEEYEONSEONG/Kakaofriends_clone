@@ -4,6 +4,7 @@ import "./HotCard.scss";
 class HotCard extends Component {
   constructor() {
     super();
+
     this.state = {
       isTogle: false,
     };
@@ -11,9 +12,11 @@ class HotCard extends Component {
 
   render() {
     const { isTogle } = this.state;
+    const { img } = this.props;
+
     return (
       <div className="cardList">
-        <img src={this.props.img} alt="이미지"></img>
+        <img src={img} alt="이미지"></img>
         <div
           className="checkBox"
           onClick={() => this.setState({ isTogle: !isTogle })}
