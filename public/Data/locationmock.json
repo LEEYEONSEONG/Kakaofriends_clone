@@ -1,0 +1,320 @@
+{
+  "data" : [
+    {
+      "id": 1,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_gangnam_W.jpg",
+      "storeShop" : "강남 플래그십 스토어",
+      "phone" : "02-6494-1100 (매장), 02-596-9009 (3F 콰르텟 카페)",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "서울 서초구 서초동 1305-7 유창빌딩 1~3층",
+      "latitude" : "37.5008165",
+      "longitude" : "127.023557"
+    },
+    {
+      "id": 2,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_hongdae_W.jpg",
+      "storeShop" : "홍대 플래그십 스토어",
+      "phone" : "02-6010-0104",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "서울 마포구 양화로 162 (동교동, 동교동대아빌딩) 좋은사람들빌딩 1~3층",
+      "latitude" : "37.5524713",
+      "longitude" : "126.9199606"
+    },
+    {
+      "id": 3,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_busan_W.jpg",
+      "storeShop" : "부산 플래그십 스토어",
+      "phone" : "051-256-0815",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "부산 중구 광복로 62 (광복동2가)",
+      "latitude" : "35.0990376",
+      "longitude" : "129.0294186"
+    },
+    {
+      "id": 4,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_omotesando_W.jpg",
+      "storeShop" : "Apeach Omotesando",
+      "phone" : "+81-3-6459-2025",
+      "time" : "매일 11:00 - 20:00",
+      "adress" : "도쿄도 시부야구 진구마에 4-25-9",
+      "latitude" : "35.66879",
+      "longitude" : "139.7058248"
+    }
+  ],
+
+  "detailData" : [
+    {
+      "id": 1,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W001_incheon_T2.jpg",
+      "storeShop" : "인천공항 T2 면세점",
+      "phone" : "032-743-4759",
+      "time" : "매일 06:50 - 21:30",
+      "adress" : "인천 중구 공항로 272 (운서동,인천공항) T2 3층 서편 248",
+      "link" : "https://www.google.com/maps/place/%EC%8B%A0%EB%9D%BC%EB%A9%B4%EC%84%B8%EC%A0%90/@37.4488003,126.4496679,19z/data=!4m8!1m2!2m1!1z7J247LKc6rO17ZWtIOyLoOyEuOqzhOuptOyEuOygkA!3m4!1s0x357b9b2c9868020d:0x17d07c78fb40365c!8m2!3d37.4482831!4d126.4485449"
+    },
+    {
+      "id": 2,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W002_lotte.jpg",
+      "storeShop" : "롯데 영플라자 명동점",
+      "phone" : "02-2118-5150",
+      "time" : "매일 11:30 - 21:30",
+      "adress" : "서울 중구 남대문로 67 (남대문로2가, 롯데영플라자) 1층",
+      "link" : "https://www.google.com/maps/place/%EB%A1%AF%EB%8D%B0%EC%98%81%ED%94%84%EB%9D%BC%EC%9E%90/@37.5632432,126.9796979,17z/data=!4m8!1m2!2m1!1z7ISc7Jq47Yq567OE7IucIOykkeq1rCDrqoXrj5nso7zrs4Droa_rjbAg7JiB7ZSM65287J6Q7KCQIOy5tOy5tOyYpO2UhOugjOymiA!3m4!1s0x357ca2f1761b7d15:0xb006aae66852fddf!8m2!3d37.5630346!4d126.9820817"
+    },
+    {
+      "id": 3,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W003_Timesquare.jpg",
+      "storeShop" : "타임스퀘어점",
+      "phone" : "02-2638-2750",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "서울 영등포구 영중로 15 (영등포동4가, 타임스퀘어) 1층",
+      "link" : "https://www.google.com/maps/place/%ED%83%80%EC%9E%84%EC%8A%A4%ED%80%98%EC%96%B4/@37.5171711,126.9009994,17z/data=!4m8!1m2!2m1!1z7YOA7J6E7Iqk7YCY7Ja0IOyYgeuTse2PrOygkA!3m4!1s0x357c9efb5c308621:0x17d357f6aa05d974!8m2!3d37.5171639!4d126.9031758"
+    },
+    {
+      "id": 4,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W004_goyang.jpg",
+      "storeShop" : "스타필드 고양점",
+      "phone" : "031-5173-1007",
+      "time" : "매일 10:00 - 22:00 (연중무휴)",
+      "adress" : "경기 고양시 덕양구 고양대로 1955 (동산동, 스타필드 고양) 1층 1113호",
+      "link" : "https://www.google.com/maps/place/%EC%8A%A4%ED%83%80%ED%95%84%EB%93%9C+%EA%B3%A0%EC%96%91/@37.6467805,126.8926336,17z/data=!3m1!4b1!4m5!3m4!1s0x357c9713f6961e85:0x33d53c6fd0151b38!8m2!3d37.6467805!4d126.8948223"
+    },
+    {
+      "id": 5,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W005_busan.jpg",
+      "storeShop" : "부산 플래그십 스토어",
+      "phone" : "051-256-0815",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "부산 중구 광복로 62 (광복동2가)",
+      "link" : "hhttps://www.google.com/maps/place/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88+%EB%B6%80%EC%82%B0%ED%94%8C%EB%9E%98%EA%B7%B8%EC%8B%AD%EC%8A%A4%ED%86%A0%EC%96%B4/@35.0995418,129.0273965,16z/data=!4m8!1m2!2m1!1z67aA7IKwIO2UjOuemOq3uOyLrSDsiqTthqDslrQ!3m4!1s0x3568e90adde9576d:0x6f9203ac6a3b9cb8!8m2!3d35.0990398!4d129.0316086"
+    },
+    {
+      "id": 6,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W006_lotteworldtower.jpg",
+      "storeShop" : "롯데월드타워 면세점",
+      "phone" : "02-3213-6743~4",
+      "time" : "매일 9:30 - 21:00",
+      "adress" : "서울 송파구 올림픽로 300 (신천동) 월드타워점 8층",
+      "link" : "https://www.google.com/maps/place/%EB%A1%AF%EB%8D%B0%EB%A9%B4%EC%84%B8%EC%A0%90+%EC%9B%94%EB%93%9C%ED%83%80%EC%9B%8C%EC%A0%90/@37.5132307,127.1016425,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca5a720cc0a33:0x39683f425d3aa95a!8m2!3d37.5132307!4d127.1038312"
+    },
+    {
+      "id": 7,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W007_ddp.jpg",
+      "storeShop" : "DDP 동대문점",
+      "phone" : "02-2231-3552",
+      "time" : "매일 10:30 - 22:00 (매월 셋째주 월요일 휴무)",
+      "adress" : "서울 중구 을지로 281 (을지로7가) DDP 지하2층 어울림광장 앞",
+      "link" : "https://www.google.com/maps/place/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88+DDP%EC%A0%90/@37.5661304,127.0069494,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca33d22a26c29:0xad073aebbe173776!8m2!3d37.5661304!4d127.0091381"
+    },
+    {
+      "id": 8,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W008_dongdaegu.jpg",
+      "storeShop" : "신세계백화점 동대구점",
+      "phone" : "053-661-6942",
+      "time" : "매일 11:00 - 21:30 (쇼핑몰 전체 정기휴무일 휴점)",
+      "adress" : "대구 동구 동부로 149 (신천동) 신세계백화점 8층",
+      "link" : "https://www.google.com/maps/place/Kakao+Friends/@35.8780575,128.6272665,17z/data=!3m1!4b1!4m5!3m4!1s0x3565e192876dbd31:0x26fa2ad026158130!8m2!3d35.8780575!4d128.6294552"
+    },
+    {
+      "id": 9,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W009_hongdae.jpg",
+      "storeShop" : "홍대 플래그십 스토어",
+      "phone" : "02-6010-0104",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "서울 마포구 양화로 162 (동교동, 동교동대아빌딩) 좋은사람들빌딩 1~3층",
+      "link" : "https://www.google.com/maps/place/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88+%ED%99%8D%EB%8C%80%ED%94%8C%EB%9E%98%EA%B7%B8%EC%8B%AD%EC%8A%A4%ED%86%A0%EC%96%B4/@37.5564418,126.9216196,17z/data=!3m1!4b1!4m5!3m4!1s0x357c98c2e4a3edc7:0x140dd20564986561!8m2!3d37.5564418!4d126.9238083"
+    },
+    {
+      "id": 10,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W010_hanam.jpg",
+      "storeShop" : "스타필드 하남점",
+      "phone" : "031-8072-8231",
+      "time" : "매일 10:00 - 22:00",
+      "adress" : "경기 하남시 미사대로 750 (신장동 스타필드 하남) 스타필드 하남 1층",
+      "link" : "https://www.google.com/maps/place/%EC%8A%A4%ED%83%80%ED%95%84%EB%93%9C+%ED%95%98%EB%82%A8/@37.5456313,127.221339,17z/data=!3m1!4b1!4m5!3m4!1s0x357cb3d2021e0c6f:0xbf6f19bd4ac702bc!8m2!3d37.5456313!4d127.2235277"
+    },
+    {
+      "id": 11,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W011_silla.jpg",
+      "storeShop" : "신라아이파크 면세 용산점",
+      "phone" : "02-490-3927",
+      "time" : "매일 9:00 - 21:00",
+      "adress" : "서울 용산구 한강대로23길 55 (한강로3가, 용산민자역사) 아이파크몰 6층",
+      "link" : "https://www.google.com/maps/place/Shilla+I-Park+Duty+Free+Store/@37.5288539,126.961856,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca203479b1f7f:0xc7dc5ad49ace45a6!8m2!3d37.5288539!4d126.9640447"
+    },
+    {
+      "id": 12,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W012_gangnam.jpg",
+      "storeShop" : "강남 플래그십 스토어",
+      "phone" : "02-6494-1100 (매장), 02-596-9009 (3F 콰르텟 카페)",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "서울 서초구 서초동 1305-7 유창빌딩 1~3층",
+      "link" : "https://www.google.com/maps/place/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88+%EA%B0%95%EB%82%A8%ED%94%8C%EB%9E%98%EA%B7%B8%EC%8B%AD%EC%8A%A4%ED%86%A0%EC%96%B4/@37.5008429,127.0234929,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca158e3eb7817:0x9477be46958f3844!8m2!3d37.5008429!4d127.0256816"
+    },
+    {
+      "id": 13,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W013_ssg.jpg",
+      "storeShop" : "신세계면세점 명동점",
+      "phone" : "02-6370-4278",
+      "time" : "매일 9:00 - 20:30",
+      "adress" : "서울 중구 소공로 63 (충무로1가, 신세계백화점건물) 신세계면세점 11층",
+      "link" : "https://www.google.com/maps/place/%EC%8B%A0%EC%84%B8%EA%B3%84%EB%A9%B4%EC%84%B8%EC%A0%90/@37.5603075,126.9786419,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca2f402e427b1:0x926de623a14ef9fd!8m2!3d37.5603075!4d126.9808306"
+    },
+    {
+      "id": 14,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W014_lotte.jpg",
+      "storeShop" : "롯데월드몰 잠실점",
+      "phone" : "02-3213-4514",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "서울 송파구 올림픽로 300(신천동) 잠실 롯데월드몰 5층",
+      "link" : "https://www.google.com/maps/place/%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%ED%83%80%EC%9B%8C/@37.5132334,127.1013235,17z/data=!4m8!1m2!2m1!1z7J6g7IukIOuhr-uNsOyblOuTnOuqsA!3m4!1s0x357ca50a915f665b:0xabeb10cd5efdfce2!8m2!3d37.5127779!4d127.1025702"
+    },
+    {
+      "id": 15,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W016_pangyo.jpg",
+      "storeShop" : "현대백화점 판교점",
+      "phone" : "031-5170-2451",
+      "time" : "매일 10:30 - 20:00 (쇼핑몰 전체 정기휴무일 휴점)",
+      "adress" : "경기 성남시 분당구 판교역로 146번길 8 (백현동) 현대백화점 판교점 유플렉스 4층",
+      "link" : "https://www.google.com/maps/place/Hyundai+Department+Store/@37.3925707,127.1098073,17z/data=!3m1!4b1!4m5!3m4!1s0x357b585b10f7d4eb:0x23cd030dd3635aea!8m2!3d37.3925707!4d127.111996"
+    },
+    {
+      "id": 16,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W019_coex_renewal.jpg",
+      "storeShop" : "스타필드 코엑스몰점",
+      "phone" : "02-6002-1880",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "서울 강남구 영동대로 513 (삼성동, 코엑스) 코엑스몰. B1층 C108호",
+      "link" : "https://www.google.com/maps/place/%EC%8A%A4%ED%83%80%ED%95%84%EB%93%9C+%EC%BD%94%EC%97%91%EC%8A%A4%EB%AA%B0/@37.5116833,127.0569193,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca2012d6bd01b:0x30702ebd32133065!8m2!3d37.5116833!4d127.059108"
+    },
+    {
+      "id": 17,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W022_suwon_ak.jpg",
+      "storeShop" : "수원 AK점",
+      "phone" : "031-240-1293",
+      "time" : "매일 10:30 - 22:00",
+      "adress" : "경기도 수원시 팔달구 덕영대로 924 AK플라자수원점",
+      "link" : "https://www.google.com/maps/place/AK%ED%94%8C%EB%9D%BC%EC%9E%90+%EC%88%98%EC%9B%90%EC%A0%90/@37.2657879,126.9979137,17z/data=!4m8!1m2!2m1!1zQUvtlIzrnbzsnpAg7IiY7JuQ7KCQ!3m4!1s0x357b431c4eab2813:0x87d7679749e70fef!8m2!3d37.2654762!4d127.0003508"
+    },
+    {
+      "id": 18,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W025_jeju_jdc.jpg",
+      "storeShop" : "제주공항 JDC 면세점",
+      "phone" : "064-123-1234",
+      "time" : "매일 06:20 - 21:20",
+      "adress" : "제주특별자치도 제주시 공항로 2 제주국제공항합동청사 2층",
+      "link" : "https://www.google.com/maps/place/JDC%EB%A9%B4%EC%84%B8%EC%A0%90/@33.5059159,126.4935288,18z/data=!4m8!1m2!2m1!1z7KCc7KO86rO17ZWtIEpEQw!3m4!1s0x350cfb3b00720be5:0x6f3cd74e4ca57313!8m2!3d33.5067607!4d126.4929416"
+    },
+    {
+      "id": 19,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W026_giheung.jpg",
+      "storeShop" : "롯데프리미엄 아울렛 기흥점",
+      "phone" : "031-8036-3180",
+      "time" : "매일 11:00 - 20:30 (주말 21:00까지)",
+      "adress" : "경기도 용인시 기흥구 고매동 336 롯데프리미엄 아울렛 1층 F344",
+      "link" : "https://www.google.com/maps/place/%EB%A1%AF%EB%8D%B0%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%95%84%EC%9A%B8%EB%A0%9B+%EA%B8%B0%ED%9D%A5%EC%A0%90/@37.2255625,127.1194988,17z/data=!3m1!4b1!4m5!3m4!1s0x357b456a52573f59:0xa0a059032811366f!8m2!3d37.2255625!4d127.1216875"
+    },
+    {
+      "id": 20,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W027_timeworld.jpg",
+      "storeShop" : "갤러리아 타임월드",
+      "phone" : "042-341-3902",
+      "time" : "금토일 30분 연장 / 쇼핑몰 전체 정기휴무일 휴점",
+      "adress" : "대전광역시 서구 둔산동 1036번지 갤러리아 타임월드점 7층 카카오프렌즈",
+      "link" : "https://www.google.com/maps/place/%EA%B0%A4%EB%9F%AC%EB%A6%AC%EC%95%84%ED%83%80%EC%9E%84%EC%9B%94%EB%93%9C/@36.35195,127.3748363,17z/data=!4m5!3m4!1s0x35654be7498206ed:0x52cb6659e9fe4b5f!8m2!3d36.35195!4d127.377025"
+    },
+    {
+      "id": 21,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W025_studio_kakao_friends.jpg",
+      "storeShop" : "Studio Kakao Friends",
+      "phone" : "+81-3-6455-5556",
+      "time" : "매일 11:00 - 20:00",
+      "adress" : "도쿄도 시부야구 진구마에 4-25-11",
+      "link" : "https://www.google.com/maps/place/STUDIO_KAKAO+FRIENDS/@35.6686104,139.7056662,17z/data=!3m1!4b1!4m5!3m4!1s0x60188df6ecad001f:0xcdab89518d5b1eab!8m2!3d35.6686104!4d139.7078549"
+    },
+    {
+      "id": 22,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W026_apeach_omotesando.jpg",
+      "storeShop" : "Apeach Omotesando",
+      "phone" : "+81-3-6459-2025",
+      "time" : "매일 11:00 - 20:00",
+      "adress" : "도쿄도 시부야구 진구마에 4-25-9",
+      "link" : "https://www.google.com/maps/place/APEACH+OMOTESANDO/@35.6687822,139.7058391,17z/data=!3m1!4b1!4m5!3m4!1s0x60188d273984c333:0xef5f52cb3902e820!8m2!3d35.6687822!4d139.7080278"
+    },
+    {
+      "id": 23,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W028_giheung_expressway_service_area.jpg",
+      "storeShop" : "기흥휴게소점",
+      "phone" : "070-4821-0985",
+      "time" : "08:00 - 20:00",
+      "adress" : "경기 용인시 기흥구 공세로 173 가동",
+      "link" : "https://www.google.com/maps/place/%EA%B2%BD%EA%B8%B0%EB%8F%84+%EC%9A%A9%EC%9D%B8%EC%8B%9C+%EA%B8%B0%ED%9D%A5%EA%B5%AC+%EA%B8%B0%ED%9D%A5%EB%8F%99+%EA%B3%B5%EC%84%B8%EB%A1%9C+173/@37.236381,127.1023113,17z/data=!4m8!1m2!2m1!1z6rK96riwIOyaqeyduOyLnCDquLDtnaXqtawg6rO17IS466GcIDE3MyDqsIDrj5k!3m4!1s0x357b45408221a207:0x8ad4aabc62172a30!8m2!3d37.236381!4d127.1045054"
+    },
+    {
+      "id": 24,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W029_siheung_bridge_square.jpg",
+      "storeShop" : "시흥하늘휴게소점",
+      "phone" : "070-4821-0986",
+      "time" : "09:00 - 22:00",
+      "adress" : "경기도 시흥시 조남동 198-21 시흥하늘휴게소 (판교방향)",
+      "link" : "https://www.google.com/maps/place/%EC%8B%9C%ED%9D%A5%ED%95%98%EB%8A%98%ED%9C%B4%EA%B2%8C%EC%86%8C/@37.3837734,126.8549057,19z/data=!3m1!4b1!4m5!3m4!1s0x357b6431c1dd6487:0xaa60a262fab29d2d!8m2!3d37.3837734!4d126.8554542"
+    },
+    {
+      "id": 25,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W030_gapyeong_to_chuncheon.jpg",
+      "storeShop" : "가평(춘천방향)휴게소점",
+      "phone" : "070-4821-0718",
+      "time" : "08:00 - 20:00",
+      "adress" : "경기 가평군 설악면 미사리로 540번길 51",
+      "link" : "https://www.google.com/maps/place/%EA%B0%80%ED%8F%89%ED%9C%B4%EA%B2%8C%EC%86%8C+%EC%B6%98%EC%B2%9C%EB%B0%A9%ED%96%A5/@37.7019217,127.5457016,18z/data=!3m1!4b1!4m5!3m4!1s0x3563249974ec88bd:0x76295aa1b9c1baad!8m2!3d37.7019217!4d127.5467986"
+    },
+    {
+      "id": 26,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W031_gapyeong_to_seoul.jpg",
+      "storeShop" : "가평(서울방향)휴게소점",
+      "phone" : "070-4821-0719",
+      "time" : "08:30 - 20:30",
+      "adress" : "경기 가평군 설악면 미사리로 544",
+      "link" : "https://www.google.com/maps/place/%EA%B0%80%ED%8F%89%ED%9C%B4%EA%B2%8C%EC%86%8C+%EC%84%9C%EC%9A%B8%EB%B0%A9%ED%96%A5/@37.702098,127.542481,18z/data=!3m1!4b1!4m5!3m4!1s0x356325b36dfb54cf:0x4be6833b820748a3!8m2!3d37.702098!4d127.543578"
+    },
+    {
+      "id": 27,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W032_jeonju_hanok.jpg",
+      "storeShop" : "카카오프렌즈 전주한옥마을점",
+      "phone" : "063-285-1230",
+      "time" : "10:00 ~ 21:00",
+      "adress" : "전라북도 전주시 완산구 팔달로 126, 1층(전동)",
+      "link" : "https://www.google.co.kr/maps/place/%EC%A0%84%EB%9D%BC%EB%B6%81%EB%8F%84+%EC%A0%84%EC%A3%BC%EC%8B%9C+%EC%99%84%EC%82%B0%EA%B5%AC+%ED%92%8D%EB%82%A8%EB%8F%99+%ED%8C%94%EB%8B%AC%EB%A1%9C+126/@35.8139978,127.1483809,20z/data=!4m8!1m2!2m1!1s1st+Fl.,+126,+Paldal-ro,+Wansan-gu,+Jeonju-si,+Jeollabuk-do!3m4!1s0x3570249f0a9c607f:0x5df58258cbf5d309!8m2!3d35.8139879!4d127.1487541?hl=ko"
+    },
+    {
+      "id": 28,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/W035_shilla_duty_free_jeju.jpg",
+      "storeShop" : "신라면세점 제주점",
+      "phone" : "064-710-7375",
+      "time" : "매일 09:30 ∼ 19:00",
+      "adress" : "제주특별자치도 제주시 노연로 69 신라면세점 4층",
+      "link" : "https://www.google.com/maps/place/%EC%8B%A0%EB%9D%BC%EB%A9%B4%EC%84%B8%EC%A0%90+%EC%A0%9C%EC%A3%BC%EC%A0%90/@33.4860719,126.4853878,17z/data=!3m1!4b1!4m5!3m4!1s0x350cfb06f9de6a8f:0xf6671f800d13dd7d!8m2!3d33.4860719!4d126.4875765?hl=ko"
+    },
+    {
+      "id": 23,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/yongsan-popup-store.jpg",
+      "storeShop" : "용산역 팝업스토어",
+      "phone" : "070-4821-0987",
+      "time" : "08:00 ~ 22:00",
+      "adress" : "서울 용산구 한강대로 23길 55 용산역 3층 대합실",
+      "link" : "https://goo.gl/maps/bqkeSgxA2CVU9vtG7"
+    },
+    {
+      "id": 23,
+      "img" : "https://t1.kakaocdn.net/friends/prod/info/busan-station.jpg",
+      "storeShop" : "부산역점",
+      "phone" : "070-4821-0491",
+      "time" : "08:00 ~ 22:00",
+      "adress" : "부산 동구 중앙대로 206 부산역 2층 대합실",
+      "link" : "https://goo.gl/maps/LxoreB6qg7riM65e8"
+    }
+  ]
+
+
+}
+
