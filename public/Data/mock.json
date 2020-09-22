@@ -229,6 +229,385 @@
       "date": "2020-09-20",
       "comment": "선물용이라 투명상자 안에 아직 들어가 있는데 들여다만 봐도 눈이 힐링되네요ㅋㅋ 줄때까지 보면서 눈정화해야겠어요. 귀여워라~",
       "liked": ""
+  "MainMenu": [
+    {
+      "id": 1,
+      "category": "전체",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "판매량순",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "신상품순",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "낮은 가격순",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        },
+        {
+          "id": 4,
+          "category": "높은 가격순",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "테마 기획전",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "하비스트 프렌즈",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "아크메드라비",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "비치펍",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        },
+        {
+          "id": 4,
+          "category": "마린 블루",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 5,
+          "category": "얌얌프렌즈",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 6,
+          "category": "레몬테라스",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 7,
+          "category": "베이비드리밍",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 8,
+          "category": "해피워크",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 9,
+          "category": "강다니엘 에디션",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 10,
+          "category": "트와이스 에디션",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 11,
+          "category": "포레스트 라이언",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 12,
+          "category": "러블리 어피치",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "토이",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "미니인형",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "중형인형",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "대형인형",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        },
+        {
+          "id": 4,
+          "category": "키체인인형",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 5,
+          "category": "피규어/브릭",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "리빙",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "쿠션/방석",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "컵/텀블러",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "주방용품",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        },
+        {
+          "id": 4,
+          "category": "미용/욕실용품",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 5,
+          "category": "생활소품/잡화",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 6,
+          "category": "펫 용품",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 7,
+          "category": "탈취/방향제",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "잡화",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "신발",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "파우치/지갑/가방",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "패션소품",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        },
+        {
+          "id": 4,
+          "category": "우산",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 5,
+          "category": "시즌잡화",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "문구",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "필기구",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "필통/케이스 ",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "노트/메모",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        },
+        {
+          "id": 4,
+          "category": "파일",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 5,
+          "category": "스티커",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 6,
+          "category": "데스크 소품",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 7,
+          "category": "카드/엽서",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        },
+        {
+          "id": 8,
+          "category": "선물 포장",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "의류",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "여성",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "남성",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "속옷",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        },
+        {
+          "id": 4,
+          "category": "양말",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,desc"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "파자마",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "여성",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "남성",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "키즈",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=salePrice,asc"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "여행/레저",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "여행",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "레저",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "생활테크",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "노트북 액세서리",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "소형 전자",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "에어팟 케이스",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 4,
+          "category": "에어팟 액세서리",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "폰 엑세서리",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "휴대폰 케이스",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "휴대폰 액세서리",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        },
+        {
+          "id": 3,
+          "category": "충전기",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "식품",
+      "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "스낵",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc"
+        },
+        {
+          "id": 2,
+          "category": "음료",
+          "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=createDatetime,desc"
+        }
+      ]
     }
   ]
 }

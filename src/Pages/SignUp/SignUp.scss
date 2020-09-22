@@ -1,1 +1,212 @@
 @import "../../Styles/common.scss";
+
+.SignUp {
+  ::placeholder {
+    color: rgb(214, 214, 214);
+  }
+  .kakaoWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    .kakaoHead {
+      text-align: center;
+      width: 400px;
+      img {
+        width: 85px;
+        height: 25px;
+      }
+    }
+
+    .kakaoContent {
+      margin: 40px auto;
+      border: 1px solid #817171;
+      padding: 60px 60px 60px;
+      h2 {
+        margin-bottom: 40px;
+        font-size: 24px;
+        font-weight: normal;
+      }
+      .signUpForm {
+        font-size: 12px;
+        .signUp {
+          position: relative;
+          input {
+            width: 100%;
+            height: 47px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #e5e5e5;
+            cursor: pointer;
+
+            &::-webkit-search-cancel-button {
+              -webkit-appearance: none;
+              height: 20px;
+              width: 20px;
+              background-repeat: no-repeat;
+              background-size: 20px;
+              background-position: center left;
+              background-image: url("/Images/cancel.png");
+            }
+          }
+          input:focus {
+            border-bottom: 2px solid #7c7c7c;
+          }
+          .idError {
+            margin-top: 10px;
+            color: red;
+          }
+          .liskText {
+            margin-top: 22px;
+            color: #999999;
+          }
+          .pwdText {
+            margin-top: 40px;
+          }
+          .pwdInfo {
+            input {
+              -webkit-text-security: disc;
+            }
+          }
+          .pwdError {
+            margin-top: 10px;
+            color: red;
+            font-size: 12px;
+          }
+          .nickNameText {
+            margin-top: 40px;
+          }
+        }
+      }
+      .phoneNumForm {
+        font-size: 12px;
+        .phoneText {
+          margin-top: 40px;
+        }
+        .wrapPhone {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 47px;
+          border-bottom: 1px solid #e5e5e5;
+
+          div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 20%;
+            height: 40%;
+            border-right: 1px solid #e5e5e5;
+            :nth-child(1) {
+              font-size: 15px;
+            }
+            :nth-child(2) {
+              display: inline-block;
+              width: 12px;
+              height: 10px;
+              background-position: -180px -30px;
+              background-image: url(https://accounts.kakao.com/assets/weblogin/techin/ico_account-67003a8801d64e752d199ecb1da00b59d187f7a59811689eabb53c665e00c4d9.png);
+              background-size: 200px 300px;
+            }
+          }
+          .phoneNumber {
+            width: 76%;
+            height: 100%;
+            padding: 0;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+
+            &::-webkit-search-cancel-button {
+              -webkit-appearance: none;
+              height: 20px;
+              width: 20px;
+              background-repeat: no-repeat;
+              background-size: 20px;
+              background-position: center left;
+              background-image: url("/Images/cancel.png");
+            }
+          }
+        }
+        .confirm {
+          display: flex;
+          justify-content: flex-end;
+          //   flex-direction: row-reverse;
+          margin: 30px 0 70px;
+          button {
+            height: 42px;
+            padding: 0 31px;
+            color: #252525;
+            border: 1px solid #dbdbdb;
+            border-radius: 30px;
+            box-sizing: border-box;
+            background-color: white;
+            cursor: pointer;
+          }
+        }
+        .nextBtn {
+          display: flex;
+          justify-content: center;
+          button {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            border: 0;
+            border-radius: 4px;
+            font-size: 15px;
+            color: #333;
+            background-color: #f6f6f6;
+            cursor: pointer;
+          }
+          button:hover {
+            background-color: #e7e7e7;
+          }
+        }
+      }
+      .selectPhone {
+        input {
+          width: 100%;
+          height: 47px;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid #e5e5e5;
+          cursor: pointer;
+
+          &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: center left;
+            background-image: url("/Images/cancel.png");
+          }
+        }
+      }
+      .closePhone {
+        display: none;
+      }
+    }
+  }
+  .information {
+    padding: 20px 0 60px;
+    font-size: 12px;
+    .infoTop {
+      display: flex;
+      justify-content: center;
+      li {
+        a {
+          margin: 0 10px;
+        }
+      }
+    }
+    .infoBot {
+      display: flex;
+      justify-content: center;
+      font-size: 11px;
+      margin-top: 8px;
+      color: #7c7c7c;
+    }
+  }
+}
