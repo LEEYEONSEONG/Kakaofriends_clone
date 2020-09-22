@@ -15,32 +15,43 @@ export default class Main extends React.Component {
     positionChange: 0,
     footerPosition: 0,
     isLeft: true,
+    posX: "-100%",
+    opacity: 1,
   };
+
   divContainer = React.createRef();
 
   comeToCenter = () => {
-    const position = this.divContainer.current.style;
-    position.transform = `translateX(0)`;
+    this.setState({ posX: "0", opacity: 1 });
   };
 
   componentDidMount() {
     this.comeToCenter();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.activeTab !== this.state.activeTab) {
+      this.setState(
+        { posX: this.state.isLeft ? "-100%" : "100%", opacity: 0 },
+        () =>
+          setTimeout(() => {
+            this.comeToCenter();
+          }, 500)
+      );
+    }
+  }
+
   clickHandler = (id) => {
     const { activeTab } = this.state;
-    this.setState(
-      {
-        isLeft: id < activeTab,
-      },
-      console.log(this.state.isLeft)
-    );
+    this.setState({
+      isLeft: id < activeTab,
+    });
     this.setState({ activeTab: id });
-    this.comeToCenter();
   };
 
   render() {
     const { activeTab } = this.state;
+
     return (
       <>
         <Nav />
@@ -66,7 +77,11 @@ export default class Main extends React.Component {
             <div className="tabContainer">
               <div
                 ref={this.divContainer}
-                className={`tabBox ${this.state.isLeft ? "left" : "right"}`}
+                className="tabBox"
+                style={{
+                  transform: `translateX(${this.state.posX})`,
+                  opacity: this.state.opacity,
+                }}
               >
                 {SHOWTAB[activeTab]}
               </div>

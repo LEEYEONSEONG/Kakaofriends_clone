@@ -18,36 +18,35 @@ export const withInfiniteScroll = (InputComponent, path) => {
       window.removeEventListener("scroll", this.infiniteScroll);
     }
 
-    // getData = () => {
-    //   const { preItems, items, productList } = this.state;
-    //   fetch("Data/mock.json", {
-    //     method: "GET",
-    //   })
-    //     .then((res) => res.json())
-    //     .then((res) => {
-    //       // console.log(res);
-    //       const result = res.data.slice(preItems, items);
-    //       this.setState({
-    //         productList: [...productList, ...result],
-    //       });
-    //     });
-    // };
-
     getData = () => {
       const { preItems, items, productList } = this.state;
-      fetch("http://10.58.2.50:8001/" + path, {
+      fetch("Data/mock.json", {
         method: "GET",
       })
         .then((res) => res.json())
         .then((res) => {
-          const result = res.data_list.slice(preItems, items);
-          const totalCount = res.data_list[0].total_count;
+          const result = res.data.slice(preItems, items);
           this.setState({
             productList: [...productList, ...result],
-            totalCount: totalCount,
           });
         });
     };
+
+    // getData = () => {
+    //   const { preItems, items, productList } = this.state;
+    //   fetch("http://10.58.2.50:8001/" + path, {
+    //     method: "GET",
+    //   })
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //       const result = res.data_list.slice(preItems, items);
+    //       const totalCount = res.data_list[0].total_count;
+    //       this.setState({
+    //         productList: [...productList, ...result],
+    //         totalCount: totalCount,
+    //       });
+    //     });
+    // };
 
     infiniteScroll = () => {
       const { documentElement, body } = document;
