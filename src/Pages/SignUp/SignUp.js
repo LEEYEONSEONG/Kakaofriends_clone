@@ -34,13 +34,6 @@ class SignUp extends React.Component {
   };
 
   handleClick = () => {
-    const SIGNUP_STATUS = {
-      100: "카카오계정 이메일을 입력해주세요.",
-      200: "이메일 형식이 올바르지 않습니다.",
-      300: "카카오계정 비밀번호를 입력해주세요.(영문자/숫자/특수문자",
-      400: "입력한 비밀번호와 재입력학 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.",
-    };
-
     const errorText = SIGNUP_STATUS[this.validata()];
     const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
 
@@ -55,14 +48,12 @@ class SignUp extends React.Component {
       })
         .then((response) => response.json())
         .then((result) => {
-          console.log(result);
-          if (result.message === "SUCCESS") {
-            this.props.history.push("/signin");
-          } else if (result.message === "DUPLICATED_EMAIL") {
-            this.setState({
-              isModal: !this.state.isModal,
-            });
-          }
+          if (result.message === "SUCCESS") return;
+          this.props.history.push("/signin");
+          if (result.message === "DUPLICATED_EMAIL") return;
+          this.setState({
+            isModal: !this.state.isModal,
+          });
         });
     }
 
@@ -260,3 +251,10 @@ const INFO = [
   "공지사항",
   "한국어",
 ];
+
+const SIGNUP_STATUS = {
+  100: "카카오계정 이메일을 입력해주세요.",
+  200: "이메일 형식이 올바르지 않습니다.",
+  300: "카카오계정 비밀번호를 입력해주세요.(영문자/숫자/특수문자",
+  400: "입력한 비밀번호와 재입력학 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.",
+};
