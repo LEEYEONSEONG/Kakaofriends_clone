@@ -4,7 +4,7 @@ import "./Slide.scss";
 
 class Slide extends React.Component {
   render() {
-    var settings = {
+    const settings = {
       dots: true,
       infinite: true,
       speed: 500,
@@ -16,39 +16,24 @@ class Slide extends React.Component {
     };
     return (
       <Slider {...settings} className="babo">
-        <div>
-          <img
-            src="https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_01_W_180219.jpg"
-            alt="라이언"
-          />
-        </div>
-        <div>
-          <img
-            src="https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_02_W.jpg"
-            alt="라이언"
-          />
-        </div>
-        <div>
-          <img
-            src="https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_03_W.jpg"
-            alt="라이언"
-          />
-        </div>
-        <div>
-          <img
-            src="https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_04_W.jpg"
-            alt="라이언"
-          />
-        </div>
-        <div>
-          <img
-            src="https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_05_W.jpg"
-            alt="라이언"
-          />
-        </div>
+        {SLIDERS.map((slide) => {
+          return (
+            <div>
+              <img src={slide} alt="라이언" />
+            </div>
+          );
+        })}
       </Slider>
     );
   }
 }
 
 export default Slide;
+
+const SLIDERS = [
+  "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_01_W_180219.jpg",
+  "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_02_W.jpg",
+  "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_03_W.jpg",
+  "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_04_W.jpg",
+  "https://t1.kakaocdn.net/friends/prod/info/bg_storeInfo_05_W.jpg",
+];

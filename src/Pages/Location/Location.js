@@ -25,6 +25,8 @@ class Location extends React.Component {
   }
 
   render() {
+    const { shopList, shopDetailList } = this.state;
+
     return (
       <div className="location">
         <Slide />
@@ -37,8 +39,8 @@ class Location extends React.Component {
             <li>中文(繁體)</li>
           </ul>
         </div>
-        {this.state.shopList.map((el, i) => {
-          return <LocationInfo key={i} shop={el} />;
+        {shopList.map((info, i) => {
+          return <LocationInfo key={i} shop={info} />;
         })}
         <div className="kakakoDetail">
           <ul className="kakaoShop">
@@ -48,8 +50,8 @@ class Location extends React.Component {
           </ul>
         </div>
         <div className="detailList">
-          {this.state.shopDetailList.map((el, i) => {
-            return <LocationDetail key={i} detailShop={el} />;
+          {shopDetailList.map((detailInfo, i) => {
+            return <LocationDetail key={i} detailShop={detailInfo} />;
           })}
         </div>
         <div className="bottomBanner">

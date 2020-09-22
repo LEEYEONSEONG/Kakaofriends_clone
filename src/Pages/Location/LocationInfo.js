@@ -49,7 +49,7 @@ class LocationInfo extends React.Component {
           <div className="MapApi">
             <div>
               <Map
-                containerStyle={yeonseong}
+                containerStyle={mapStyle}
                 google={this.props.google}
                 zoom={17}
                 initialCenter={{ lat: latitude, lng: longitude }}
@@ -72,7 +72,7 @@ export default GoogleApiWrapper({
   apiKey: "AIzaSyD_OTGEAMBOHRJRlP891YETExxSwn_0bJ8",
 })(LocationInfo);
 
-const yeonseong = {
+const mapStyle = {
   width: "500px",
   height: "200px",
   right: "36px",
