@@ -35,7 +35,7 @@ export const withInfiniteScroll = (InputComponent, path) => {
 
     getData = () => {
       const { preItems, items, productList } = this.state;
-      fetch("http://10.58.6.38:8001/" + path, {
+      fetch("http://10.58.2.50:8001/" + path, {
         method: "GET",
       })
         .then((res) => res.json())

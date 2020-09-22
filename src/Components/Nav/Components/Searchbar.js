@@ -22,9 +22,7 @@ class Searchbar extends React.Component {
         this.setState(
           {
             allProduct: [...result],
-          },
-          () => console.log(this.state.allProduct)
-        );
+          });
       });
   }
   // componentDidMount() {
@@ -58,9 +56,7 @@ class Searchbar extends React.Component {
         matchArr: searchValue
           ? allProduct.filter((el) => el.name.includes(searchValue))
           : [],
-      },
-      () => console.log(this.state.matchArr)
-    );
+      });
   };
 
   render() {

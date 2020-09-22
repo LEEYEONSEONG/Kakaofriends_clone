@@ -72,7 +72,7 @@
 
     .hoverFixMenu {
       width: 328px;
-      margin-left: 20px;
+      margin: 0 10px;
       background-color: #ffffff;
       @include flexBox(center, flex-start, row);
       flex-wrap: wrap;
@@ -111,7 +111,7 @@
     }
     .dropBannerWrap {
       width: 328px;
-      margin-left: 20px;
+      margin: 0 10px;
       padding: 0 20px;
       @include flexBox(space-between, center, row);
 
