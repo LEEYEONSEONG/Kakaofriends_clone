@@ -229,6 +229,9 @@
       "date": "2020-09-20",
       "comment": "선물용이라 투명상자 안에 아직 들어가 있는데 들여다만 봐도 눈이 힐링되네요ㅋㅋ 줄때까지 보면서 눈정화해야겠어요. 귀여워라~",
       "liked": ""
+    }
+  ],
+
   "MainMenu": [
     {
       "id": 1,
@@ -327,6 +330,7 @@
     {
       "id": 3,
       "category": "토이",
+      "banner": "https://t1.daumcdn.net/friends/prod/category/category_toy_W.jpg",
       "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
       "subcategory": [
         {
@@ -433,6 +437,7 @@
     {
       "id": 6,
       "category": "문구",
+      "banner": "https://t1.daumcdn.net/friends/prod/category/category_toy_W.jpg",
       "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
       "subcategory": [
         {

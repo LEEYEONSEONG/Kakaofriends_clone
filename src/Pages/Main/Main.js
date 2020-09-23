@@ -20,7 +20,7 @@ export default class Main extends React.Component {
     const { activeTab } = this.state;
     return (
       <main className="Main">
-        <Nav />
+        {/* <Nav /> */}
         <div className="Maintab">
           <ul className="menuTab">
             {TAB_ARR.map((el, idx) => {
