@@ -17,7 +17,6 @@ class Nav extends React.Component {
   }
 
   componentDidMount() {
-    // 장바구니 상품 개수 가져와서 업데이트
     fetch(URL + "cart/products", {
       method: "GET",
       headers: {
@@ -48,7 +47,7 @@ class Nav extends React.Component {
               >
                 카테고리
                 <span className="categoryTri" />
-                {hoverOn ? <DropDownMain /> : null}
+                {hoverOn && <DropDownMain />}
               </div>
             </li>
             <li className="category">
@@ -76,7 +75,7 @@ class Nav extends React.Component {
                 onMouseLeave={() => this.setState({ hoverUser: false })}
               >
                 <span id="myPage" className="icon" />
-                {hoverUser ? <UserModal isLogin={isLogin} /> : null}
+                {hoverUser && <UserModal isLogin={isLogin} />}
               </a>
               <a className="iconLink" href="/cart">
                 <span id="cart" className="icon" />

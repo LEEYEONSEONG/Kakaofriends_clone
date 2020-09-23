@@ -10,6 +10,7 @@
   background-color: white;
   border-radius: 3.2px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px;
+  transition: opacity 0.5s ease-in-out;
   li {
     max-width: 190px;
     display: block;

@@ -6,13 +6,24 @@ class UserModal extends React.Component {
     super();
     this.state = {
       hoverOn: false,
+      opacity: 0,
     };
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ opacity: 1 });
+    }, 0);
+  }
+
   render() {
     const { isLogin } = this.props;
     return (
       <ul
-        className={"UserModal"}
+        style={{
+          opacity: this.state.opacity,
+        }}
+        className="UserModal"
         onMouseOver={() => {
           this.setState({ hoverOn: true });
         }}

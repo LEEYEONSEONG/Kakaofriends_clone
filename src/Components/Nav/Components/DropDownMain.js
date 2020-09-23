@@ -9,25 +9,19 @@ class DropDownMain extends React.Component {
     this.state = {
       mainMenu: [],
       subMenu: [],
-      fixedMenu: [],
+      fixedMenu: CHARACTER,
       hoverOn: false,
       hoverImg: false,
       subIndex: 0,
       imgIndex: 0,
+      opacity: 0,
     };
   }
-  divContainer = React.createRef();
-
-  smoothAppear = () => {
-    const opacity = this.divContainer.current.style;
-    opacity.opacity = 1;
-  };
 
   componentDidMount() {
-    this.smoothAppear();
-    this.setState({
-      fixedMenu: CHARACTER,
-    });
+    setTimeout(() => {
+      this.setState({ opacity: 1 });
+    }, 0);
 
     fetch("/Data/mock.json")
       .then((res) => res.json())
@@ -41,7 +35,7 @@ class DropDownMain extends React.Component {
 
   render() {
     return (
-      <div ref={this.divContainer} className="dropDownWrap">
+      <div style={{ opacity: this.state.opacity }} className="dropDownWrap">
         <ul className="hoverMainMenu">
           {this.state.mainMenu.map((category) => {
             return (
