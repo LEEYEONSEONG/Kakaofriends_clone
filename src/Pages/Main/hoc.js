@@ -15,6 +15,16 @@ export const withInfiniteScroll = (InputComponent, path) => {
       window.addEventListener("scroll", this.infiniteScroll);
     }
 
+    // componentDidUpdate() {
+    //   this.setState({
+    //     productList: [],
+    //     items: 10,
+    //     preItems: 0,
+    //     totalCount: 0,
+    //   });
+    //   this.getData();
+    // }
+
     componentWillUnmount() {
       window.removeEventListener("scroll", this.infiniteScroll);
     }
@@ -49,6 +59,33 @@ export const withInfiniteScroll = (InputComponent, path) => {
         });
     };
 
+    changeOrder = (option = "") => {
+      console.log(`changeOrderWorked option: `, option);
+      this.setState(
+        {
+          productList: [],
+          items: 10,
+          preItems: 0,
+          totalCount: 0,
+        },
+        () => {
+          console.log(this.state);
+          const { preItems, items, productList } = this.state;
+          fetch(URL + path + option, {
+            method: "GET",
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              const result = res.data_list.slice(preItems, items);
+              this.setState({
+                productList: [...productList, ...result],
+                totalCount: result[0].total_count,
+              });
+            });
+        }
+      );
+    };
+
     infiniteScroll = () => {
       const { documentElement, body } = document;
       const { items } = this.state;
@@ -70,10 +107,12 @@ export const withInfiniteScroll = (InputComponent, path) => {
     };
 
     render() {
+      const { productList, totalCount } = this.state;
       return (
         <InputComponent
-          productList={this.state.productList}
-          totalCount={this.state.totalCount}
+          productList={productList}
+          totalCount={totalCount}
+          changeOrder={(option) => this.changeOrder(option)}
         />
       );
     }

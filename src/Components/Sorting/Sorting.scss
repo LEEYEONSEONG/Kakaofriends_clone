@@ -60,6 +60,7 @@
           padding: 7px 17px;
           box-sizing: border-box;
           color: rgb(154, 154, 158);
+          cursor: pointer;
 
           &:hover {
             background-color: #f7f7f7;
@@ -108,6 +109,7 @@
                 position: relative;
                 width: 60px;
                 height: 60px;
+                cursor: pointer;
 
                 span {
                   width: 100%;

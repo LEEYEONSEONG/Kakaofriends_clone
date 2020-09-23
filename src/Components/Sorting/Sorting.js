@@ -23,6 +23,7 @@ class Sorting extends React.Component {
 
   render() {
     const { charList, whichModalShown } = this.state;
+    const { changeOrder } = this.props;
     return (
       <div className="Sorting">
         <ul className="sortItems">
@@ -41,24 +42,34 @@ class Sorting extends React.Component {
             >
               <ul className="sortType">
                 <li className="selectModalItem">
-                  <a className="selectModalOption orderHot" href="/main">
+                  <p
+                    className="selectModalOption orderHot"
+                    onClick={() => changeOrder("")}
+                  >
                     판매량순
-                  </a>
+                  </p>
                 </li>
                 <li className="selectModalItem">
-                  <a className="selectModalOption orderNew" href="/main">
+                  <p
+                    className="selectModalOption orderNew"
+                    onClick={() => changeOrder("/new")}
+                  >
                     신상품순
-                  </a>
+                  </p>
                 </li>
-                <li className="selectModalItem">
-                  <a className="selectModalOption orderLowPrice" href="/main">
-                    낮은 가격순
-                  </a>
+                <li
+                  className="selectModalItem"
+                  onClick={() => changeOrder("?ordering=-price")}
+                >
+                  <p className="selectModalOption orderLowPrice">낮은 가격순</p>
                 </li>
-                <li className="selectModalItem">
-                  <a className="selectModalOption orderHighPrice" href="/main">
+                <li
+                  className="selectModalItem"
+                  onClick={() => changeOrder("?ordering=price")}
+                >
+                  <p className="selectModalOption orderHighPrice">
                     높은 가격순
-                  </a>
+                  </p>
                 </li>
               </ul>
             </div>

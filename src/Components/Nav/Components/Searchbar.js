@@ -27,7 +27,7 @@ class Searchbar extends React.Component {
   //     });
   // }
   componentDidMount() {
-    fetch(URL + "products?main-category=6", {
+    fetch(URL + "products", {
       method: "GET",
     })
       .then((res) => res.json())

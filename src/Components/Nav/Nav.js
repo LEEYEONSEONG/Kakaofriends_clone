@@ -52,7 +52,7 @@ class Nav extends React.Component {
               </div>
             </li>
             <li className="category">
-              <a className="categoryLink" href="/#">
+              <a className="categoryLink" href="/location">
                 매장안내
               </a>
             </li>

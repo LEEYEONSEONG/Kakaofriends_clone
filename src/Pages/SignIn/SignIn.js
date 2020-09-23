@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import URL from "../../url";
 import "./SignIn.scss";
 
 class SignIn extends React.Component {
@@ -32,7 +33,7 @@ class SignIn extends React.Component {
     const errorText = LOGIN_STATUS[this.validateIdPW()];
 
     if (!errorText)
-      fetch("http://10.58.1.216:8000/account/signin", {
+      fetch(URL + "account/signin", {
         method: "POST",
         body: JSON.stringify({
           email: this.state.idValue,

@@ -5,8 +5,22 @@ import { withInfiniteScroll } from "../hoc";
 import "./Allitem.scss";
 
 class Allitem extends React.Component {
+  // changeOrder = (option) => {
+  //   fetch(URL + "products" + option, {
+  //     method: "GET",
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       const result = res.data_list;
+  //       this.setState({
+  //         productList: result,
+  //         totalCount: result[0].total_count,
+  //       });
+  //     });
+  // };
+
   render() {
-    const { productList, totalCount } = this.props;
+    const { productList, totalCount, changeOrder } = this.props;
     return (
       <article className="Allitem">
         <div className="topInfo">
@@ -16,7 +30,7 @@ class Allitem extends React.Component {
               조회되었습니다.
             </p>
           </div>
-          <Sorting />
+          <Sorting changeOrder={changeOrder} />
         </div>
         <List productList={productList} />
       </article>
@@ -24,4 +38,4 @@ class Allitem extends React.Component {
   }
 }
 
-export default withInfiniteScroll(Allitem, "products?main-category=6");
+export default withInfiniteScroll(Allitem, "products");

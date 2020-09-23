@@ -18,4 +18,4 @@ class Saleitem extends React.Component {
   }
 }
 
-export default withInfiniteScroll(Saleitem, "product/sale");
+export default withInfiniteScroll(Saleitem, "products/sale");
