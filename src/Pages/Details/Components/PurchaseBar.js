@@ -6,7 +6,7 @@ export class PurchaseBar extends Component {
     super();
     this.state = {
       count: 1,
-      price: 35000,
+      price: this.props.productDetails.price,
     };
   }
 
