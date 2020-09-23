@@ -8,6 +8,7 @@ import Location from "./Pages/Location/Location";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
 import Terms from "./Pages/Terms/Terms";
+import SearchResult from "./Pages/SearchResult/SearchResult";
 
 class Routes extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class Routes extends React.Component {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/terms" component={Terms} />
+          <Route exact path="/search" component={SearchResult} />
         </Switch>
       </Router>
     );

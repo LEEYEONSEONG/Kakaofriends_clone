@@ -24,4 +24,4 @@ class Allitem extends React.Component {
   }
 }
 
-export default withInfiniteScroll(Allitem, "product/16");
+export default withInfiniteScroll(Allitem, "products/4");

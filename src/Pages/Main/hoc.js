@@ -1,4 +1,5 @@
 import React from "react";
+import URL from "../url";
 
 export const withInfiniteScroll = (InputComponent, path) => {
   return class OutputComponent extends InputComponent {
@@ -34,7 +35,7 @@ export const withInfiniteScroll = (InputComponent, path) => {
 
     // getData = () => {
     //   const { preItems, items, productList } = this.state;
-    //   fetch("http://10.58.2.50:8001/" + path, {
+    //   fetch(URL + path, {
     //     method: "GET",
     //   })
     //     .then((res) => res.json())

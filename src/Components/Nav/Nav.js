@@ -10,10 +10,21 @@ class Nav extends React.Component {
     this.state = {
       hoverOn: false,
       hoverUser: false,
+      itemInCart: 0,
     };
   }
 
+  componentDidMount() {
+    // 장바구니 상품 개수 가져와서 업데이트
+    fetch("", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => console.log("결과: ", res));
+  }
+
   render() {
+    const { hoverOn, hoverUser, itemInCart } = this.state;
     return (
       <nav className="Nav">
         <div className="Container">
@@ -27,7 +38,7 @@ class Nav extends React.Component {
               >
                 카테고리
                 <span className="categoryTri" />
-                {this.state.hoverOn ? <DropDownMain /> : null}
+                {hoverOn ? <DropDownMain /> : null}
               </div>
             </li>
             <li className="category">
@@ -55,10 +66,13 @@ class Nav extends React.Component {
                 onMouseLeave={() => this.setState({ hoverUser: false })}
               >
                 <span id="myPage" className="icon" />
-                {this.state.hoverUser ? <UserModal /> : null}
+                {hoverUser ? <UserModal /> : null}
               </a>
               <a className="iconLink" href="/cart">
                 <span id="cart" className="icon" />
+                <span className={`cartAlert ${itemInCart === 0 && "noItem"}`}>
+                  {itemInCart}
+                </span>
               </a>
               <a className="iconLink" href="/#">
                 <span id="language" className="icon" />

@@ -2,18 +2,37 @@ import React from "react";
 import "./Card.scss";
 
 class Card extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       isCartAdd: false,
+      productID: this.props.id,
     };
   }
 
   handleCart = () => {
-    this.setState({
-      isCartAdd: !this.state.isCartAdd,
-    });
+    this.setState(
+      {
+        isCartAdd: !this.state.isCartAdd,
+      },
+      () => this.putItemCart()
+    );
+  };
+
+  putItemCart = () => {
+    fetch("http://10.58.1.216:8000/cart/products", {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify({
+        product: this.state.productID,
+        count: this.state.isCartAdd ? 1 : -1,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log("결과: ", result));
   };
 
   render() {

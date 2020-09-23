@@ -75,6 +75,22 @@
         @include flexBox(center, center, row);
         .iconLink {
           margin: 20px 10px;
+          .cartAlert {
+            position: absolute;
+            left: 74px;
+            top: 33px;
+            padding: 0 5px;
+            min-width: 16px;
+            height: 16px;
+            background-color: rgb(255, 101, 130);
+            border-radius: 8px;
+            font-size: 9px;
+            color: white;
+            line-height: 16px;
+            &.noItem {
+              display: none;
+            }
+          }
 
           #myPage {
             display: inline-block;

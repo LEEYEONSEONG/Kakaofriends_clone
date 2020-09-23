@@ -15,15 +15,16 @@ class TopBtn extends React.Component {
   }
 
   topbtnHandler = () => {
+    const { isTopBtnActive } = this.state;
     const { documentElement, body } = document;
     const clientHeight = documentElement.clientHeight;
     const scrollTop = Math.max(documentElement.scrollTop, body.scrollTop);
 
-    !this.state.isTopBtnActive &&
+    !isTopBtnActive &&
       this.setState({
         isTopBtnActive: scrollTop >= clientHeight,
       });
-    scrollTop === 0 &&
+    !scrollTop &&
       this.setState({
         isTopBtnActive: false,
       });
