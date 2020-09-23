@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./../../Components/Nav/Nav";
 import Sorting from "../../Components/Sorting/Sorting";
 import List from "../../Components/List/List";
-import URL from "../url";
+import URL from "../../url";
 import "./SearchResult.scss";
 
 class SearchResult extends React.Component {
@@ -71,6 +71,3 @@ class SearchResult extends React.Component {
 }
 
 export default SearchResult;
-// export default withInfiniteScroll(SearchResult, `/search/${this.state.keyword}`);
-
-// withInfiniteScroll 연결, query String 써서 검색 결과 List 로 추출

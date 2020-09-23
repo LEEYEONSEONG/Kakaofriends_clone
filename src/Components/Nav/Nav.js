@@ -2,7 +2,7 @@ import React from "react";
 import DropDownMain from "./Components/DropDownMain";
 import Searchbar from "./Components/Searchbar";
 import UserModal from "./Components/UserModal";
-import URL from "../../Pages/url";
+import URL from "../../url";
 import "./Nav.scss";
 
 class Nav extends React.Component {
@@ -11,7 +11,8 @@ class Nav extends React.Component {
     this.state = {
       hoverOn: false,
       hoverUser: false,
-      itemInCart: "",
+      itemInCart: 0,
+      isLogin: false,
     };
   }
 
@@ -27,12 +28,13 @@ class Nav extends React.Component {
       .then((res) => {
         this.setState({
           itemInCart: res.total_count,
+          isLogin: true,
         });
       });
   }
 
   render() {
-    const { hoverOn, hoverUser, itemInCart } = this.state;
+    const { hoverOn, hoverUser, itemInCart, isLogin } = this.state;
     return (
       <nav className="Nav">
         <div className="Container">
@@ -74,11 +76,11 @@ class Nav extends React.Component {
                 onMouseLeave={() => this.setState({ hoverUser: false })}
               >
                 <span id="myPage" className="icon" />
-                {hoverUser ? <UserModal /> : null}
+                {hoverUser ? <UserModal isLogin={isLogin} /> : null}
               </a>
               <a className="iconLink" href="/cart">
                 <span id="cart" className="icon" />
-                <span className={`cartAlert ${itemInCart === "" && "noItem"}`}>
+                <span className={`cartAlert ${!itemInCart && "noItem"}`}>
                   {itemInCart}
                 </span>
               </a>

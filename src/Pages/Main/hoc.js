@@ -1,5 +1,5 @@
 import React from "react";
-import URL from "../url";
+import URL from "../../url";
 
 export const withInfiniteScroll = (InputComponent, path) => {
   return class OutputComponent extends InputComponent {

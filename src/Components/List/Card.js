@@ -1,5 +1,5 @@
 import React from "react";
-import URL from "../../Pages/url";
+import URL from "../../url";
 import "./Card.scss";
 
 class Card extends React.Component {

@@ -4,21 +4,25 @@
   width: 1080px;
   margin: 0 auto;
   margin-top: 66px;
+
   .resultKeywords {
     @include flexBox(center, center, row);
     width: 1080px;
     margin: 0 auto;
     padding: 56px 0 40px;
     border-bottom: 1px solid rgb(227, 229, 232);
+
     h1 {
       font-weight: normal;
       font-size: 36px;
       line-height: 48px;
+
       span {
         font-weight: bold;
       }
     }
   }
+
   .topInfo {
     @include flexBox(space-between, center, row);
     margin-top: 28px;

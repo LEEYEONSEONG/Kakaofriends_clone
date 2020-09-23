@@ -1,6 +1,6 @@
 import React from "react";
 import "./Searchbar.scss";
-import URL from "../../../Pages/url";
+import URL from "../../../url";
 import { withRouter } from "react-router";
 
 class Searchbar extends React.Component {
