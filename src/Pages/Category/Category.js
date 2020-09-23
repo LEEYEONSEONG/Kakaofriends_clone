@@ -21,7 +21,14 @@ class Category extends React.Component {
       .then((res) => {
         this.setState({
           category: res.MainMenu,
-          productList: res.data,
+        });
+      });
+
+    fetch("http://10.58.6.7:8001/products?main-category=2")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          productList: res.data_list,
         });
       });
   }

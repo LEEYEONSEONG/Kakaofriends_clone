@@ -29,11 +29,11 @@ class Card extends React.Component {
           <p className="productName">{name}</p>
           {dcprice !== 0 && (
             <p className="productDiscountPrice bold">
-              {dcpercent}% {dcprice.toLocaleString()}원
+              {dcpercent}% {dcprice?.toLocaleString()}원
             </p>
           )}
           <p className={`productPrice bold ${dcprice !== 0 && "original"}`}>
-            {price.toLocaleString()}원
+            {price?.toLocaleString()}원
           </p>
         </div>
         <div className="cartWrap">
