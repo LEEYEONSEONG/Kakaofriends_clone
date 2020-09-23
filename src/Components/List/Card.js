@@ -52,14 +52,9 @@ class Card extends React.Component {
     }
   };
 
-  // goToDetail = (id) => {
-  //   console.log(id);
-  //   this.props.history.push("/detail", id);
-  // };
-
   render() {
     const { isCartAdd } = this.state;
-    const { id, name, img, price, dcprice, dcpercent } = this.props;
+    const { name, img, price, dcprice, dcpercent } = this.props;
     return (
       <li className="Card">
         <div>

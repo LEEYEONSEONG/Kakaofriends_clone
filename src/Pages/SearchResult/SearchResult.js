@@ -81,6 +81,7 @@ class SearchResult extends React.Component {
           ) : (
             <div className="notFound">
               <img
+                alt="혼란스러운 지형"
                 className="ryanConfused"
                 src="https://t1.kakaocdn.net/friends/new_store/2.0/common/img_empty_ryan.png"
               />

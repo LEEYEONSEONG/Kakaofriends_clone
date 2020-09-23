@@ -14,18 +14,6 @@ class Searchbar extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch("/Data/mock.json", {
-  //     method: "GET",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       const result = res.data;
-  //       this.setState({
-  //         products: result,
-  //       });
-  //     });
-  // }
   componentDidMount() {
     fetch(URL + "products", {
       method: "GET",
@@ -42,6 +30,9 @@ class Searchbar extends React.Component {
   searchItems = (e) => {
     e.preventDefault();
     console.log(this.state.searchValue);
+    this.setState({
+      matchArr: [],
+    });
     this.props.history.push("/search", this.state.searchValue);
   };
 
