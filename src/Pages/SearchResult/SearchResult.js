@@ -55,6 +55,6 @@ class SearchResult extends React.Component {
 }
 
 export default SearchResult;
-// export default withInfiniteScroll(SearchResult);
+// export default withInfiniteScroll(SearchResult, `/search/${this.state.keyword}`);
 
 // withInfiniteScroll 연결, query String 써서 검색 결과 List 로 추출
