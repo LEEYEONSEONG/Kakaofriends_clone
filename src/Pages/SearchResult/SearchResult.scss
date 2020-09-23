@@ -21,6 +21,7 @@
   }
   .topInfo {
     @include flexBox(space-between, center, row);
+    margin-top: 28px;
     margin-bottom: 35px;
 
     .totalNum {

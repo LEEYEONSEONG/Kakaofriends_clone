@@ -1,4 +1,5 @@
 import React from "react";
+import URL from "../../Pages/url";
 import "./Card.scss";
 
 class Card extends React.Component {
@@ -21,7 +22,7 @@ class Card extends React.Component {
   };
 
   putItemCart = () => {
-    fetch("http://10.58.1.216:8000/cart/products", {
+    fetch(URL + "cart/products", {
       method: "POST",
       headers: {
         Authorization: localStorage.getItem("token"),

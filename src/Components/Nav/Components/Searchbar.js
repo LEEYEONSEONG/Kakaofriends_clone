@@ -1,5 +1,6 @@
 import React from "react";
 import "./Searchbar.scss";
+import URL from "../../../Pages/url";
 import { withRouter } from "react-router";
 
 class Searchbar extends React.Component {
@@ -13,33 +14,30 @@ class Searchbar extends React.Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch("/Data/mock.json", {
+  //     method: "GET",
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       const result = res.data;
+  //       this.setState({
+  //         products: result,
+  //       });
+  //     });
+  // }
   componentDidMount() {
-    fetch("/Data/mock.json", {
+    fetch(URL + "products?main-category=6", {
       method: "GET",
     })
       .then((res) => res.json())
       .then((res) => {
-        const result = res.data;
+        const result = res.data_list;
         this.setState({
           products: result,
         });
       });
   }
-  // componentDidMount() {
-  //   fetch("http://10.58.2.50:8001/ products/4", {
-  //     method: "GET",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       const result = res.data_list;
-  //       this.setState(
-  //         {
-  //          products: [...result],
-  //         },
-  //         () => console.log(this.stat  products)
-  //       );
-  //     });
-  // }
 
   // searchItems = (e) => {
   //   e.preventDefault();
@@ -51,27 +49,18 @@ class Searchbar extends React.Component {
 
   searchItems = (e) => {
     e.preventDefault();
-    console.log("this state searchValue: ", this.state.searchValue);
-    console.log("this state this.props.history: ", this.props.history);
-    console.log(
-      "this state this.props.history.location.state: ",
-      this.props.history.location.state
-    );
     this.props.history.push("/search", this.state.searchValue);
   };
 
   checkMatch = (e) => {
     const searchValue = e.target.value;
     const { products } = this.state;
-    this.setState(
-      {
-        searchValue: searchValue,
-        matchArr: searchValue
-          ? products.filter((el) => el.name.includes(searchValue))
-          : [],
-      },
-      () => console.log(this.state.searchValue)
-    );
+    this.setState({
+      searchValue: searchValue,
+      matchArr: searchValue
+        ? products.filter((product) => product.name.includes(searchValue))
+        : [],
+    });
   };
 
   render() {

@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./../../Components/Nav/Nav";
 import Sorting from "../../Components/Sorting/Sorting";
 import List from "../../Components/List/List";
-import { withInfiniteScroll } from "../Main/hoc";
+import URL from "../url";
 import "./SearchResult.scss";
 
 class SearchResult extends React.Component {
@@ -15,8 +15,7 @@ class SearchResult extends React.Component {
     };
   }
 
-  componentDidMount() {
-    // console.log(this.props.history.location.state);
+  showResult = () => {
     const keyword = this.props.history.location.state;
     this.setState(
       {
@@ -24,11 +23,28 @@ class SearchResult extends React.Component {
       },
       () => console.log(this.state.searchValue)
     );
-    // fetch(`http://주소/search=${키워드}`);
+    fetch(URL + `products?name=${keyword}`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          productList: res.data_list,
+          totalCount: res.data_list[0].total_count,
+        });
+      });
+  };
+  componentDidMount() {
+    this.showResult();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.searchValue !== this.state.searchValue) {
+      this.showResult();
+    }
   }
 
   render() {
-    const { productList, totalCount } = this.props;
+    const { productList, totalCount } = this.state;
     return (
       <div className="SearchResult">
         <Nav />
@@ -46,9 +62,9 @@ class SearchResult extends React.Component {
               조회되었습니다.
             </p>
           </div>
-          {/* <Sorting /> */}
+          <Sorting />
         </div>
-        {/* <List productList={productList} /> */}
+        <List productList={productList} />
       </div>
     );
   }

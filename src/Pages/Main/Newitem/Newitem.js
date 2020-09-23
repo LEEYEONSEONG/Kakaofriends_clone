@@ -53,4 +53,4 @@ class Newitem extends React.Component {
     );
   }
 }
-export default withInfiniteScroll(Newitem, "product/new");
+export default withInfiniteScroll(Newitem, "products/new");

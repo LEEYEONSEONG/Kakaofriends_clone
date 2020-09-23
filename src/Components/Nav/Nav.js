@@ -2,6 +2,7 @@ import React from "react";
 import DropDownMain from "./Components/DropDownMain";
 import Searchbar from "./Components/Searchbar";
 import UserModal from "./Components/UserModal";
+import URL from "../../Pages/url";
 import "./Nav.scss";
 
 class Nav extends React.Component {
@@ -10,17 +11,24 @@ class Nav extends React.Component {
     this.state = {
       hoverOn: false,
       hoverUser: false,
-      itemInCart: 0,
+      itemInCart: "",
     };
   }
 
   componentDidMount() {
     // 장바구니 상품 개수 가져와서 업데이트
-    fetch("", {
+    fetch(URL + "cart/products", {
       method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
     })
       .then((res) => res.json())
-      .then((res) => console.log("결과: ", res));
+      .then((res) => {
+        this.setState({
+          itemInCart: res.total_count,
+        });
+      });
   }
 
   render() {
@@ -70,7 +78,7 @@ class Nav extends React.Component {
               </a>
               <a className="iconLink" href="/cart">
                 <span id="cart" className="icon" />
-                <span className={`cartAlert ${itemInCart === 0 && "noItem"}`}>
+                <span className={`cartAlert ${itemInCart === "" && "noItem"}`}>
                   {itemInCart}
                 </span>
               </a>
