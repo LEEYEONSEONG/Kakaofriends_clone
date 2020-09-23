@@ -49,13 +49,11 @@ class Sorting extends React.Component {
                     판매량순
                   </p>
                 </li>
-                <li className="selectModalItem">
-                  <p
-                    className="selectModalOption orderNew"
-                    onClick={() => changeOrder("/new")}
-                  >
-                    신상품순
-                  </p>
+                <li
+                  className="selectModalItem"
+                  onClick={() => changeOrder("/new")}
+                >
+                  <p className="selectModalOption orderNew">신상품순</p>
                 </li>
                 <li
                   className="selectModalItem"

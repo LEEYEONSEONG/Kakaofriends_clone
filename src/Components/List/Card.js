@@ -13,15 +13,6 @@ class Card extends React.Component {
   }
 
   handleCart = () => {
-    this.setState(
-      {
-        isCartAdd: !this.state.isCartAdd,
-      },
-      () => this.putItemCart()
-    );
-  };
-
-  putItemCart = () => {
     fetch(URL + "cart/products", {
       method: "POST",
       headers: {
@@ -29,11 +20,19 @@ class Card extends React.Component {
       },
       body: JSON.stringify({
         product: this.state.productID,
-        count: this.state.isCartAdd ? 1 : -1,
+        count: !this.state.isCartAdd ? "1" : "-1",
       }),
     })
       .then((res) => res.json())
-      .then((result) => console.log("결과: ", result));
+      .then((res) => {
+        if (res.message !== "SUCCESS") {
+          alert("로그인해주세요!");
+          return;
+        }
+        this.setState({
+          isCartAdd: !this.state.isCartAdd,
+        });
+      });
   };
 
   render() {

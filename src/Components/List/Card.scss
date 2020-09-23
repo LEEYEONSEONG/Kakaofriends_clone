@@ -60,6 +60,7 @@
     left: 226px;
     width: 32px;
     height: 32px;
+    cursor: pointer;
 
     button {
       width: 100%;
@@ -71,6 +72,7 @@
       border: none;
       border-radius: 3px;
       font-size: 1px;
+      cursor: pointer;
 
       &.addCart {
         background: url(https://t1.kakaocdn.net/friends/new_store/2.0/common/basket-pink.png)
