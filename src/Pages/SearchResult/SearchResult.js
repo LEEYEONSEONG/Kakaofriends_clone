@@ -15,48 +15,17 @@ class SearchResult extends React.Component {
     };
   }
 
-  // 1안
-  // showResult = () => {
-  //   const keyword = this.props.history.location.state;
-  //   this.setState(
-  //     {
-  //       searchValue: keyword,
-  //     },
-  //     this.getSearchResult()
-  //   );
-  // };
-
-  // getSearchResult() {
-  //   const keyword = this.props.history.location.state;
-  //   fetch(URL + `products?name=${keyword}`, {
-  //     method: "GET",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       this.setState({
-  //         productList: res.data_list,
-  //         totalCount: res.data_list[0].total_count,
-  //       });
-  //     });
-  // }
-
-  // componentDidMount() {
-  //   this.showResult();
-  // }
-  // 2안
   showResult = () => {
-    const keyword = this.props.history.location.state;
-    this.setState(
-      {
-        searchValue: keyword,
-      },
-      () => console.log(this.state.searchValue)
-    );
+    let keyword = this.props.history.location.state;
+    this.setState({
+      searchValue: keyword,
+    });
     fetch(URL + `products?name=${keyword}`, {
       method: "GET",
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         this.setState({
           productList: res.data_list,
           totalCount: res.data_list[0].total_count,
@@ -68,17 +37,10 @@ class SearchResult extends React.Component {
     this.showResult();
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.searchValue !== this.state.searchValue) {
+    if (prevProps.history.location.state !== this.state.searchValue) {
       this.showResult();
     }
   }
-
-  // 지우기
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.searchValue !== this.state.searchValue) {
-  //     this.showResult();
-  //   }
-  // }
 
   render() {
     console.log(this.props.history.location.state);
