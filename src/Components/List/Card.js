@@ -13,31 +13,53 @@ class Card extends React.Component {
   }
 
   handleCart = () => {
-    fetch(URL + "cart/products", {
-      method: "POST",
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        product: this.state.productID,
-        count: !this.state.isCartAdd ? "1" : "-1",
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.message !== "SUCCESS") {
-          alert("로그인해주세요!");
-          return;
-        }
-        this.setState({
-          isCartAdd: !this.state.isCartAdd,
+    const { isCartAdd } = this.state;
+    if (!isCartAdd) {
+      fetch(URL + "cart/products", {
+        method: "POST",
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+          product: this.state.productID,
+          count: "1",
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.message !== "SUCCESS") {
+            alert("로그인해주세요!");
+            return;
+          }
+          this.setState({
+            isCartAdd: !this.state.isCartAdd,
+          });
         });
+    } else {
+      fetch(URL + "cart/products", {
+        method: "DELETE",
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+          product: this.state.productID,
+          // count: "1",
+        }),
       });
+      this.setState({
+        isCartAdd: !this.state.isCartAdd,
+      });
+    }
   };
+
+  // goToDetail = (id) => {
+  //   console.log(id);
+  //   this.props.history.push("/detail", id);
+  // };
 
   render() {
     const { isCartAdd } = this.state;
-    const { name, img, price, dcprice, dcpercent } = this.props;
+    const { id, name, img, price, dcprice, dcpercent } = this.props;
     return (
       <li className="Card">
         <div>
