@@ -117,9 +117,10 @@
   @include flexBox(center, center, column);
 
   .detailsSub {
+    max-width: 1080px;
     padding-left: 8px;
     font-size: 15px;
-    line-height: 24px;
+    line-height: 35px;
     letter-spacing: -0.2px;
     color: rgb(51, 51, 51);
     list-style: none;
@@ -168,17 +169,6 @@
   border-top: 1px solid rgb(227, 229, 232);
   @include flexBox(center, flex-start, column);
 
-  li::before {
-    content: "";
-    top: 10.75px;
-    position: absolute;
-    left: 0px;
-    width: px;
-    height: 2.5px;
-    background-color: rgb(51, 51, 51);
-    border-radius: 50%;
-  }
-
   .shippingHeader {
     width: 100%;
     padding: 38px 0px 10px;
@@ -222,7 +212,20 @@
             margin-top: 20px;
             font-weight: bold;
             .subjectDetail {
+              position: relative;
+              padding-left: 8px;
               font-weight: lighter;
+              line-height: 24px;
+            }
+            .subjectDetail:before {
+              content: "";
+              top: 10.75px;
+              position: absolute;
+              left: 0px;
+              width: 2.5px;
+              height: 2.5px;
+              background-color: black;
+              border-radius: 50%;
             }
           }
         }
@@ -249,8 +252,22 @@
             font-size: 15px;
             margin-top: 20px;
             font-weight: bold;
+
             .subjectDetail {
+              position: relative;
               font-weight: lighter;
+              padding-left: 8px;
+              line-height: 24px;
+            }
+            .subjectDetail:before {
+              content: "";
+              top: 10.75px;
+              position: absolute;
+              left: 0px;
+              width: 2.5px;
+              height: 2.5px;
+              background-color: black;
+              border-radius: 50%;
             }
           }
         }
