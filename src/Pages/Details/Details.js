@@ -10,6 +10,7 @@ import PurchaseBar from "./Components/PurchaseBar";
 import "./Details.scss";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
+import TopBtn from "../../Components/TopBtn/TopBtn";
 
 class Details extends React.Component {
   constructor() {
@@ -42,6 +43,7 @@ class Details extends React.Component {
         <ReviewComment productInfo={this.state.productDetails} />
         <Suggestion />
         <PurchaseBar productInfo={this.state.productDetails} />
+        <TopBtn />
         <Footer />
       </div>
     );
