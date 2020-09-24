@@ -8,7 +8,7 @@ class SaleCard extends React.Component {
     return (
       <ul className="SaleCard">
         {productList.map((product) => {
-          return <SaleCardEach product={product} />;
+          return <SaleCardEach product={product} key={product.id} />;
         })}
       </ul>
     );

@@ -1,0 +1,64 @@
+@import "../../Styles/common.scss";
+
+.SearchResult {
+  width: 1080px;
+  margin: 0 auto;
+  margin-top: 66px;
+
+  .resultKeywords {
+    @include flexBox(center, center, row);
+    width: 1080px;
+    margin: 0 auto;
+    padding: 56px 0 40px;
+    border-bottom: 1px solid rgb(227, 229, 232);
+
+    h1 {
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 48px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .topInfo {
+    @include flexBox(space-between, center, row);
+    margin-top: 28px;
+    margin-bottom: 35px;
+
+    .totalNum {
+      color: $subtext;
+
+      .pointSpan {
+        color: black;
+        font-weight: 700;
+      }
+    }
+  }
+  .notFound {
+    @include flexBox(center, center, column);
+    width: 1080px;
+    img {
+      width: 117px;
+      height: auto;
+      margin-top: 168px;
+      margin-bottom: 16px;
+    }
+    h3 {
+      margin-bottom: 5px;
+      color: $subBlack;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+    p {
+      margin-bottom: 300px;
+      color: $subtext;
+      font-size: 13px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+}

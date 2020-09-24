@@ -1,1 +1,133 @@
 @import "../../Styles/common.scss";
+
+.Nav {
+  @include flexBox(center, center, row);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: $subBlack;
+  background-color: #ffffff;
+  z-index: 10000;
+
+  .Container {
+    @include flexBox(space-between, center, row);
+    position: relative;
+    width: 1080px;
+    height: 60px;
+    margin: 0 auto;
+    @media (min-width: 1280px) {
+      height: 66px;
+    }
+
+    .leftMenu {
+      @include flexBox(flex-start, center, row);
+      width: 265px;
+      height: 100%;
+      padding: 15px 0px;
+
+      .category {
+        @include flexBox(flex-start, center, row);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-right: 11px;
+        cursor: pointer;
+
+        &Link {
+          @include flexBox(center, center, row);
+          width: 70px;
+          height: 100%;
+          margin: 0;
+          font-size: 15px;
+
+          .categoryTri {
+            display: inline-block;
+            width: 7px;
+            height: 4px;
+            margin-left: 3px;
+            background: url("/images/ico-header-triangle.png") no-repeat center;
+            background-size: 7px 4px;
+          }
+        }
+      }
+    }
+
+    .logoWrap {
+      @include flexBox(center, center, row);
+      height: 60px;
+
+      .logo {
+        position: absolute;
+        left: 460px;
+        width: 165px;
+        height: 27px;
+      }
+    }
+
+    .rightMenu {
+      position: absolute;
+      left: 780px;
+      @include flexBox(center, center, row);
+
+      .icons {
+        @include flexBox(center, center, row);
+        position: absolute;
+        left: 210px;
+
+        .iconLink {
+          margin: 20px 10px;
+
+          .cartAlert {
+            position: absolute;
+            left: 74px;
+            top: 33px;
+            padding: 0 5px;
+            min-width: 16px;
+            height: 16px;
+            background-color: rgb(255, 101, 130);
+            border-radius: 8px;
+            font-size: 9px;
+            font-weight: 500;
+            color: white;
+            line-height: 16px;
+
+            &.noItem {
+              display: none;
+            }
+          }
+
+          #myPage {
+            display: inline-block;
+            position: relative;
+            padding: 25px 15px;
+            width: 18px;
+            height: 19px;
+            background: url("/images/ico-header-mypage.png") no-repeat center;
+            background-size: 18px 19px;
+          }
+
+          #cart {
+            display: inline-block;
+            padding: 25px 15px;
+            width: 17px;
+            height: 21px;
+            background: url("/images/ico-header-cart.png") no-repeat center;
+            background-size: 17px 21px;
+          }
+
+          #language {
+            padding: 25px 15px;
+            left: 500px;
+            background: url("/images/ico-header-lang.png") no-repeat center;
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            background-size: 23px;
+          }
+        }
+      }
+    }
+  }
+}

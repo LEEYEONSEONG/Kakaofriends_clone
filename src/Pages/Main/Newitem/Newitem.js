@@ -2,7 +2,8 @@ import Slider from "react-slick";
 import React from "react";
 import List from "../../../Components/List/List";
 import { SETTINGS } from "./NewitemSettings";
-import NEWITEMUPPER from "./NewitemUpperData";
+import { withInfiniteScroll } from "../hoc";
+import NEW_ITEM_UPPER from "./NewitemUpperData";
 import BANNER from "./NewitemBanner";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,7 +11,7 @@ import "./Newitem.scss";
 
 class Newitem extends React.Component {
   state = {
-    productListUpper: NEWITEMUPPER,
+    productListUpper: NEW_ITEM_UPPER,
   };
 
   render() {
@@ -52,4 +53,4 @@ class Newitem extends React.Component {
     );
   }
 }
-export default Newitem;
+export default withInfiniteScroll(Newitem, "products/new");
