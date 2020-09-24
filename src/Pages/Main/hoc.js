@@ -29,20 +29,6 @@ export const withInfiniteScroll = (InputComponent, path) => {
       window.removeEventListener("scroll", this.infiniteScroll);
     }
 
-    // getData = () => {
-    //   const { preItems, items, productList } = this.state;
-    //   fetch("Data/mock.json", {
-    //     method: "GET",
-    //   })
-    //     .then((res) => res.json())
-    //     .then((res) => {
-    //       const result = res.data.slice(preItems, items);
-    //       this.setState({
-    //         productList: [...productList, ...result],
-    //       });
-    //     });
-    // };
-
     getData = () => {
       const { preItems, items, productList } = this.state;
       fetch(URL + path, {
@@ -60,7 +46,6 @@ export const withInfiniteScroll = (InputComponent, path) => {
     };
 
     changeOrder = (option = "") => {
-      console.log(`changeOrderWorked option: `, option);
       this.setState(
         {
           productList: [],
@@ -69,11 +54,8 @@ export const withInfiniteScroll = (InputComponent, path) => {
           totalCount: 0,
         },
         () => {
-          console.log(this.state);
           const { preItems, items, productList } = this.state;
-          fetch(URL + path + option, {
-            method: "GET",
-          })
+          fetch(URL + path + option)
             .then((res) => res.json())
             .then((res) => {
               const result = res.data_list.slice(preItems, items);
