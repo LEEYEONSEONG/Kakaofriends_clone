@@ -18,7 +18,7 @@ class Details extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.2.50:8001/products/product/250")
+    fetch("http://10.58.6.7:8001/products/product/250")
       .then((res) => res.json())
       .then((res) => {
         this.setState({

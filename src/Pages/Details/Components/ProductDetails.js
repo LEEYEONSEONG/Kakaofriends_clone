@@ -5,13 +5,13 @@ export class ProductDetails extends Component {
   render() {
     return (
       <div>
-        {/* {this.state.productDetails.map((el) => (
+        {this.props.productInfo.map((el) => (
           <div
             dangerouslySetInnerHTML={{
               __html: el.detail,
             }}
           />
-        ))} */}
+        ))}
       </div>
     );
   }

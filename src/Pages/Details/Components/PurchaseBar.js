@@ -23,11 +23,7 @@ export class PurchaseBar extends Component {
               className={this.state.count === 1 ? "minusBtnOff" : "minusBtnOn"}
               onClick={
                 this.state.count > 1
-                  ? () =>
-                      this.setState(
-                        { count: this.state.count - 1 },
-                        () => this.multiply
-                      )
+                  ? () => this.setState({ count: this.state.count - 1 })
                   : null
               }
             ></button>
@@ -38,12 +34,7 @@ export class PurchaseBar extends Component {
             ></input>
             <button
               className="plusBtn"
-              onClick={() =>
-                this.setState(
-                  { count: this.state.count + 1 },
-                  () => this.multiply
-                )
-              }
+              onClick={() => this.setState({ count: this.state.count + 1 })}
             ></button>
           </div>
           <div className="totalPrice">
