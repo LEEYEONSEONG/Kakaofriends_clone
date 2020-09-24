@@ -1,12 +1,7 @@
 @import "../../Styles/common.scss";
 
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-    AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
-  box-sizing: content-box;
-}
-
 .Nav {
+  @include flexBox(center, center, row);
   position: fixed;
   width: 100%;
   top: 0;
@@ -14,38 +9,38 @@
   right: 0;
   color: $subBlack;
   background-color: #ffffff;
-  z-index: 1;
-  @include flexBox(center, center, row);
+  z-index: 10000;
 
   .Container {
+    @include flexBox(space-between, center, row);
     position: relative;
-    width: 1060px;
+    width: 1080px;
     height: 60px;
     margin: 0 auto;
-    @include flexBox(space-between, center, row);
     @media (min-width: 1280px) {
       height: 66px;
     }
 
     .leftMenu {
+      @include flexBox(flex-start, center, row);
       width: 265px;
       height: 100%;
       padding: 15px 0px;
-      @include flexBox(flex-start, center, row);
 
       .category {
+        @include flexBox(flex-start, center, row);
         position: relative;
         width: 100%;
         height: 100%;
         padding-right: 11px;
-        @include flexBox(flex-start, center, row);
+        cursor: pointer;
 
         &Link {
+          @include flexBox(center, center, row);
           width: 70px;
           height: 100%;
           margin: 0;
           font-size: 15px;
-          @include flexBox(center, center, row);
 
           .categoryTri {
             display: inline-block;
@@ -59,60 +54,54 @@
       }
     }
 
-    .logo {
-      position: absolute;
-      left: 460px;
-      width: 165px;
-      height: 27px;
+    .logoWrap {
+      @include flexBox(center, center, row);
+      height: 60px;
+
+      .logo {
+        position: absolute;
+        left: 460px;
+        width: 165px;
+        height: 27px;
+      }
     }
 
     .rightMenu {
       position: absolute;
-      left: 790px;
+      left: 780px;
       @include flexBox(center, center, row);
 
-      .searchbar {
-        padding-right: 20px;
-        &Box {
-          width: 216px;
-          height: auto;
-          max-height: 40px;
-          margin-right: 10px;
-          border: 1px solid #ededed;
-          border-radius: 3.2px;
-          @include flexBox(flex-start, center, row);
-
-          .searchbarBtn {
-            border: none;
-            padding-left: 6px;
-            background: none;
-
-            .searchbarIcon {
-              display: inline-block;
-              width: 14.4px;
-              height: 14.4px;
-              background: url("/images/ico-header-search.png") no-repeat center;
-              background-size: 14.4px 14.4px;
-            }
-          }
-          .searchbarInput {
-            border: none;
-            padding: 9px 0;
-            outline: none;
-            font-size: 15px;
-          }
-        }
-      }
-
       .icons {
+        @include flexBox(center, center, row);
         position: absolute;
         left: 210px;
-        @include flexBox(center, center, row);
+
         .iconLink {
-          margin: 23px 2px 23.5px 15px;
+          margin: 20px 10px;
+
+          .cartAlert {
+            position: absolute;
+            left: 74px;
+            top: 33px;
+            padding: 0 5px;
+            min-width: 16px;
+            height: 16px;
+            background-color: rgb(255, 101, 130);
+            border-radius: 8px;
+            font-size: 9px;
+            font-weight: 500;
+            color: white;
+            line-height: 16px;
+
+            &.noItem {
+              display: none;
+            }
+          }
 
           #myPage {
             display: inline-block;
+            position: relative;
+            padding: 25px 15px;
             width: 18px;
             height: 19px;
             background: url("/images/ico-header-mypage.png") no-repeat center;
@@ -121,13 +110,15 @@
 
           #cart {
             display: inline-block;
+            padding: 25px 15px;
             width: 17px;
             height: 21px;
             background: url("/images/ico-header-cart.png") no-repeat center;
             background-size: 17px 21px;
           }
+
           #language {
-            display: absolute;
+            padding: 25px 15px;
             left: 500px;
             background: url("/images/ico-header-lang.png") no-repeat center;
             display: inline-block;

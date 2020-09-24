@@ -10,12 +10,13 @@ class List extends React.Component {
         {productList.map((product) => {
           return (
             <Card
-              key={product.id}
-              img={product.img}
+              key={product.product_id}
+              id={product.product_id}
+              img={product.main_image}
               name={product.name}
               price={product.price}
-              dcprice={product.dcprice}
-              dcpercent={product.dcpercent}
+              dcprice={product.discount_price}
+              dcpercent={product.discount_rate}
             />
           );
         })}
