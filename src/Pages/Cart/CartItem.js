@@ -1,4 +1,5 @@
 import React from "react";
+import URL from "../../url";
 import "./CartItem.scss";
 
 class CartItem extends React.Component {
@@ -17,24 +18,24 @@ class CartItem extends React.Component {
     })
   }
 
-  handleDelete = () => {
-    fetch(URL + "cart", {
+  handleDelete = (cart_id) => {
+    fetch(URL + "cart/" + cart_id, {
       method: "DELETE",
       headers: {
         Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        product: this.state.cardID,
-      }),
-    });
+      }
+    })
+    alert(" 정말 저를 삭제하시겠습니까 :( ");
+     window.location.reload(false);
   }
 
 
   render() {
     const {isChecked} = this.state;
   
-    const { product, image, name, price, count } = this.props.carts
-
+    const { cart_id, product, main_image, name, price, count } = this.props.carts
+    console.log(cart_id)
+    
     const OPTIONS_COUNT = 30
     const OPTIONS = Array(OPTIONS_COUNT).fill(1).map((option, index) => option + index)
 
@@ -50,8 +51,9 @@ class CartItem extends React.Component {
               <a className="image1" href="https://store.kakaofriends.com/kr/products/7187">
                 <span itemtype="basket" className="thumbnail">
                   <span class="img__Wrap-sc-1ck9vd1-0 kukZNN">
-                  <img src={image} 
-                  alt="마우스패드_죠르디" class="thumbnailImage"/>
+                  <img src={main_image} 
+                  alt="떰네일"
+                   class="thumbnailImage"/>
                   </span>
                 </span>
               </a>  
@@ -79,7 +81,7 @@ class CartItem extends React.Component {
                       <span>{price.toLocaleString()}</span>
                       원
                     </div> 
-                    <button class="removeButton" onClick={this.handleDelete}></button>
+                    <button class="removeButton" onClick={() => this.handleDelete(cart_id)}></button>
                 </div>
               </div>
             </div>

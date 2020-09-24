@@ -1,5 +1,6 @@
 import React from "react";
 import CartItem from "./CartItem";
+import URL from "../../url";
 import "./Cart.scss";
 
 
@@ -17,11 +18,15 @@ class Cart extends React.Component {
 
   componentDidMount() {
     let isTotalPrice = 0;
-    fetch("/data/carts.json", {
-      method: 'GET'
+    fetch(URL + "cart", {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
     })
     .then((res) => res.json())
     .then((res) => {
+      console.log(res)
       this.setState({
         carts: res.carts
       }, () => {
@@ -40,6 +45,7 @@ class Cart extends React.Component {
     })
   }
 
+
   render() {
 
     const delivery = this.state.isTotalPrice >= 30000
@@ -50,7 +56,7 @@ class Cart extends React.Component {
     <div className="Cart">
       {
         !carts.length 
-        ?     <div className="EmptyCart">
+        ?     (<div className="EmptyCart">
       <p className="cartHeader">
         장바구니
       </p>
@@ -63,8 +69,8 @@ class Cart extends React.Component {
         <span className="linkMessage">인기 상품 보기</span>
       </a>
       </div>
-    </div>
-        :     <div className="FilledCart">
+    </div>)
+        :     (<div className="FilledCart">
         <div className="cartHeaderWrap">
           <p className="cartHeader">
             장바구니
@@ -136,7 +142,7 @@ class Cart extends React.Component {
           주문 하기
           </button>
         </div>
-      </div>
+      </div>)
       }
     </div>
     );

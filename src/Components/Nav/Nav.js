@@ -17,7 +17,7 @@ class Nav extends React.Component {
   }
 
   componentDidMount() {
-    fetch(URL + "cart/products", {
+    fetch(URL + "cart", {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("token"),

@@ -15,7 +15,7 @@ class Card extends React.Component {
   handleCart = () => {
     const { isCartAdd } = this.state;
     if (!isCartAdd) {
-      fetch(URL + "cart/products", {
+      fetch(URL + "cart", {
         method: "POST",
         headers: {
           Authorization: localStorage.getItem("token"),
@@ -27,7 +27,7 @@ class Card extends React.Component {
       })
         .then((res) => res.json())
         .then((res) => {
-          if (res.message !== "SUCCESS") {
+          if (!res.message) {
             alert("로그인해주세요!");
             return;
           }
