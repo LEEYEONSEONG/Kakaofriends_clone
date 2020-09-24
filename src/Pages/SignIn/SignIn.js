@@ -24,7 +24,7 @@ class SignIn extends React.Component {
     this.setState({ [name]: value });
   };
 
-  handleClick = () => {
+  tryLogin = () => {
     const LOGIN_STATUS = {
       100: "이메일을 입력해주세요.",
       200: "이메일 형식이 올바르지 않습니다.",
@@ -54,6 +54,15 @@ class SignIn extends React.Component {
         });
 
     if (errorText) this.setState({ errorText });
+  };
+
+  handleClick = () => {
+    this.tryLogin();
+  };
+
+  onFormSubmit = (e) => {
+    e.preventDefault();
+    this.tryLogin();
   };
 
   validateIdPW = () => {
@@ -103,7 +112,7 @@ class SignIn extends React.Component {
                 src="/Images/bannerlogo.png"
               />
             </div>
-            <div className="loginForm">
+            <form onSubmit={this.onFormSubmit} className="loginForm">
               <div className="loginTop">
                 <input
                   className="idPwForm"
@@ -154,10 +163,11 @@ class SignIn extends React.Component {
                   <div className="inLine" />
                 </div>
                 <button className="qrCode">
-                  <img src="/Images/qrimage.png" alt="qr"></img>QR코드 로그인
+                  <img src="/Images/qrimage.png" alt="qr" />
+                  QR코드 로그인
                 </button>
               </div>
-            </div>
+            </form>
             <div className="infoUser">
               <p onClick={this.handleTerms}>회원가입</p>
               <ul className="infoSearch">
