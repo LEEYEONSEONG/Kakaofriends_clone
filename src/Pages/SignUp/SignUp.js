@@ -1,6 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+<<<<<<< HEAD
+=======
 import URL from "../../url";
+>>>>>>> master
 import "./SignUp.scss";
 
 class SignUp extends React.Component {
@@ -39,7 +42,11 @@ class SignUp extends React.Component {
     const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
 
     if (!errorText) {
+<<<<<<< HEAD
+      fetch("http://10.58.1.216:8000/account/signup", {
+=======
       fetch(URL + "account/signup", {
+>>>>>>> master
         method: "POST",
         body: JSON.stringify({
           email: this.state.idValue,
