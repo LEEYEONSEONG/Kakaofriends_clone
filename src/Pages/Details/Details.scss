@@ -1,1 +1,504 @@
 @import "../../Styles/common.scss";
+
+.slideWrap {
+  outline: none;
+  .slideImg {
+    height: 675px;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.slick-dots li button {
+  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/ico-indicator-default.png");
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 8px;
+  height: 8px;
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-active {
+  background: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/ico-indicator-selected.png");
+  width: 10px;
+  height: 10px;
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: auto;
+  z-index: 1;
+}
+
+.Shipping {
+  width: 1080px;
+  height: auto;
+  margin: 0 auto;
+  border-top: 1px solid rgb(227, 229, 232);
+  @include flexBox(center, flex-start, column);
+
+  .shippingHeader {
+    width: 100%;
+    padding: 38px 0px 10px;
+    font-size: 28px;
+
+    .subText {
+      font-size: 15px;
+      color: rgb(154, 154, 158);
+      margin-left: 15px;
+      line-height: 1.5;
+    }
+  }
+  .section {
+    width: 100%;
+
+    .contents {
+      margin-top: 40px;
+      @include flexBox(center, flex-start, row);
+      .domestic {
+        width: 50%;
+        margin-bottom: 20px;
+        padding-right: 90px;
+
+        .titles {
+          width: 100%;
+          text-align: center;
+          color: rgb(51, 51, 51);
+          font-size: 15px;
+          line-height: 15px;
+          padding-bottom: 16px;
+          height: 31px;
+          margin-right: 90px;
+          font-weight: bold;
+          border-bottom: 1px solid rgb(60, 64, 75);
+        }
+        .domesticCont {
+          .subject {
+            font-size: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+            .subjectDetail {
+              font-weight: lighter;
+            }
+          }
+        }
+      }
+      .global {
+        width: 50%;
+        margin-bottom: 20px;
+        padding-right: 90px;
+
+        .titles {
+          width: 100%;
+          text-align: center;
+          color: rgb(51, 51, 51);
+          font-size: 15px;
+          line-height: 15px;
+          padding-bottom: 16px;
+          height: 31px;
+          margin-right: 90px;
+          font-weight: bold;
+          border-bottom: 1px solid rgb(60, 64, 75);
+        }
+        .globalCont {
+          .subject {
+            font-size: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+            .subjectDetail {
+              font-weight: lighter;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.LiveRfq {
+  @include flexBox(center, flex-start, row);
+  &Wrap {
+    width: 1080px;
+    height: 135px;
+    border-top: 1px solid #e3e5e8;
+    @include flexBox(space-between, center, row);
+  }
+  .text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e1e1e;
+  }
+  .consultBtn {
+    width: 152px;
+    border-radius: 4px;
+    border: 1px solid #e3e5e8;
+    background-color: #ffffff;
+    padding: 3px 23px;
+    @include flexBox(center, center, row);
+
+    .consultImg {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/ico-talk-gry.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 18px 18px;
+      margin-right: 5px;
+    }
+    .consultText {
+      height: 30px;
+      line-height: 1.5;
+      font-size: 13px;
+      letter-spacing: -0.2px;
+      @include flexBox(center, center, row);
+    }
+  }
+}
+
+.ReviewComment {
+  width: 1080px;
+  position: relative;
+  padding-top: 36px;
+  margin: 0 auto;
+  border-top: 1px solid #e3e5e8;
+  @include flexBox(center, flex-start, row);
+
+  .review {
+    @include flexBox(space-between, center, row);
+
+    .reviewWrap {
+      .title {
+        position: absolute;
+        left: 0;
+        margin-right: 23px;
+        font-size: 28px;
+        height: 35px;
+        line-height: 1.33;
+      }
+      .stars {
+        position: absolute;
+        left: 130px;
+        line-height: 1.5;
+        @include flexBox(center, center, row);
+
+        .eachStar {
+          display: inline-block;
+          width: 22px;
+          height: 20px;
+          margin: 0px 3.5px 3px;
+          background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/star_on.png");
+          background-position: left center;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+        }
+
+        .revScore {
+          border-right: 2px solid #e9e9e9;
+          padding: 0 5px;
+          margin: 0 3px;
+          font-size: 16px;
+          height: 20px;
+          line-height: 20px;
+        }
+
+        .revScoreOutof {
+          color: #9a9a9e;
+          font-size: 16px;
+          height: 20px;
+          margin-left: 3px;
+          line-height: 20px;
+        }
+      }
+    }
+    .leaveReviewBtn {
+      position: absolute;
+      right: 0;
+      top: 38px;
+      width: 270px;
+      height: 52px;
+      font-size: 15px;
+      border-radius: 4px;
+      margin-right: 7px;
+      padding-right: 10px;
+      background-color: #3c404b;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      display: inline-block;
+      background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/review_pen.png");
+      background-position: left 17% center;
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      @include flexBox(center, center, row);
+    }
+  }
+
+  .commentWrap {
+    margin-top: 110px;
+    width: 100%;
+
+    .sortByLike {
+      font-size: 13px;
+      width: 64px;
+      height: 30px;
+      margin-right: 6px;
+      line-height: 1.5;
+      border: 1px solid #8d92a1;
+      border-radius: 8vw;
+      padding: 0;
+      color: #ffffff;
+      background: #8d92a1;
+      cursor: pointer;
+    }
+    .sortByDate {
+      font-size: 13px;
+      width: 64px;
+      height: 30px;
+      margin-right: 6px;
+      line-height: 1.5;
+      border: 1px solid #e4e4e4;
+      border-radius: 8vw;
+      padding: 0;
+      color: #8d92a1;
+      background: #ffffff;
+      cursor: pointer;
+    }
+    .commentList {
+      display: block;
+      margin-top: 15px;
+      width: 100%;
+
+      .commentListLi {
+        display: block;
+        padding: 40px 0;
+        border-top: 1px solid #e9e9e9;
+        @include flexBox(space-between, center, row);
+
+        .listWrap {
+          @include flexBox(center, flex-start, column);
+
+          .nickName {
+            font-weight: bold;
+          }
+          .score {
+            margin-top: 6px;
+            margin-bottom: 12px;
+            @include flexBox(flex-start, center, row);
+
+            .smallStar {
+              display: inline-block;
+              width: 14.3px;
+              height: 13px;
+              margin: 0px 2.25px;
+              background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/star_on.png");
+              background-position: left center;
+              background-repeat: no-repeat;
+              background-size: auto 100%;
+            }
+
+            .date {
+              display: inline-block;
+              color: #9a9a9e15;
+              font-size: 13px;
+              height: 13px;
+              margin-left: 8px;
+            }
+          }
+          .comment {
+            line-height: 1.5;
+            font-size: 15px;
+            max-width: 680px;
+          }
+        }
+
+        .likeBtn {
+          .mainBtn {
+            width: 134px;
+            height: 44px;
+            padding-left: 60px;
+            border: 1px solid rgb(228, 228, 228);
+            border-radius: 3px;
+            font-size: 13px;
+            color: #9a9a9e;
+            background: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/ryan_gray.png")
+              0% 0% / auto 100% no-repeat;
+            background-size: 24px;
+            background-position: 27px center;
+            background-color: #f7f7f7;
+          }
+          .likeRec {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #9a9a9e;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    display: block;
+    bottom: 0;
+    position: absolute;
+    font-size: 15px;
+    letter-spacing: -0.23px;
+    color: black;
+    height: 19px;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.Suggestion {
+  position: relative;
+  width: 1080px;
+  margin: 0 auto;
+  color: black;
+  @include flexBox(flex-start, flex-start, column);
+
+  &Wrap {
+    padding-top: 38px;
+    margin: 60px auto 0;
+    border-top: 1px solid #e3e5e8;
+    @include flexBox(flex-start, flex-start, column);
+
+    .header {
+      line-height: 28px;
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+  }
+}
+
+.PurchaseBar {
+  position: sticky;
+  margin: 0 auto;
+  width: 1080px;
+  height: 50px;
+  bottom: 0;
+  @include flexBox(flex-start, center, row);
+
+  .counter {
+    max-width: 1080px;
+    height: 100%;
+    background: #ffffff;
+    @include flexBox(flex-start, center, row);
+
+    &Wrap {
+      height: 100%;
+      margin: 0;
+      border: 1px solid rgb(227, 229, 232);
+      background-color: #ffffff;
+      @include flexBox(flex-start, center, row);
+
+      .minusBtnOff {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-right: 1px solid rgb(227, 229, 232);
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        background: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/product-detail-button-dec-off.svg")
+          center center no-repeat;
+        background-size: 10px;
+      }
+      .minusBtnOn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-right: 1px solid rgb(227, 229, 232);
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        background: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/product-detail-button-dec-on.svg")
+          center center no-repeat;
+        background-size: 10px;
+      }
+
+      .typeCount {
+        font-size: 15px;
+        height: 100%;
+        width: 238px;
+        line-height: 50px;
+        min-width: 50px;
+        padding: 0;
+        border: none;
+        text-align: center;
+      }
+
+      .plusBtn {
+        width: 45px;
+        height: 100%;
+        border: none;
+        border-left: 1px solid rgb(227, 229, 232);
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+
+        background: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/product-detail-button-inc-on.svg")
+          center center no-repeat;
+        background-size: 10px;
+      }
+    }
+    .totalPrice {
+      height: 50px;
+      padding: 0 20px;
+      width: 340px;
+      border-top: 1px solid rgb(227, 229, 232);
+      border-bottom: 1px solid rgb(227, 229, 232);
+      @include flexBox(space-between, center, row);
+
+      .totalText {
+        line-height: 50px;
+        font-size: 13px;
+        text-align: left;
+        font-weight: bold;
+        color: rgb(154, 154, 158);
+      }
+      .price {
+        font-size: 15px;
+        line-height: 50px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+
+  .addToCart {
+    background-color: rgb(60, 64, 75);
+    width: 100%;
+    height: 100%;
+
+    .submit {
+      @include flexBox(space-between, center, row);
+      .toCart {
+        width: 55px;
+        height: 50px;
+        border: none;
+        border-right: 1px solid rgb(99, 99, 99);
+        background-size: 15px 19px;
+        outline: none;
+        background: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/product-detail-cart-off.svg")
+          center center / 15px 19px no-repeat;
+      }
+      .toPurchase {
+        width: 100%;
+        color: #ffffff;
+        font-weight: bold;
+        background: none;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

@@ -17,6 +17,15 @@ class Nav extends React.Component {
   }
 
   componentDidMount() {
+    if (localStorage.getItem("token")) {
+      this.setState({
+        isLogin: true,
+      });
+    }
+    this.getCartInfo();
+  }
+
+  getCartInfo = () => {
     fetch(URL + "cart", {
       method: "GET",
       headers: {
@@ -27,10 +36,9 @@ class Nav extends React.Component {
       .then((res) => {
         this.setState({
           itemInCart: res.total_count,
-          isLogin: true,
         });
       });
-  }
+  };
 
   render() {
     const { hoverOn, hoverUser, itemInCart, isLogin } = this.state;
@@ -41,7 +49,6 @@ class Nav extends React.Component {
             <li className="category">
               <div
                 className="categoryLink"
-                href="https://localhost:3000/main"
                 onMouseEnter={() => this.setState({ hoverOn: true })}
                 onMouseLeave={() => this.setState({ hoverOn: false })}
               >
@@ -63,7 +70,7 @@ class Nav extends React.Component {
             </li>
           </ul>
           <a className="logoWrap" href="/main">
-            <img className="logo" alt="" src="images/kakaologo.png" />
+            <img className="logo" alt="" src="/Images/kakaologo.png" />
           </a>
           <div className="rightMenu">
             <Searchbar />

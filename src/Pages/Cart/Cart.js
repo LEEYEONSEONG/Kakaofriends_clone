@@ -1,4 +1,6 @@
 import React from "react";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 import CartItem from "./CartItem";
 import URL from "../../url";
 import "./Cart.scss";
