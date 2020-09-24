@@ -9,10 +9,11 @@ class Card extends React.Component {
     this.state = {
       isCartAdd: false,
       productID: this.props.id,
+      cartID: 0,
     };
   }
 
-  handleCart = () => {
+  handleCart = (cartID) => {
     const { isCartAdd } = this.state;
     if (!isCartAdd) {
       fetch(URL + "cart/products", {
@@ -33,10 +34,11 @@ class Card extends React.Component {
           }
           this.setState({
             isCartAdd: !this.state.isCartAdd,
+            cartID: res.cart_id,
           });
         });
     } else {
-      fetch(URL + "cart/products", {
+      fetch(URL + "cart/" + cartID, {
         method: "DELETE",
         headers: {
           Authorization: localStorage.getItem("token"),
@@ -75,7 +77,7 @@ class Card extends React.Component {
         <div className="cartWrap">
           <button
             className={isCartAdd ? "addCart" : ""}
-            onClick={this.handleCart}
+            onClick={this.handleCart(this.state.cartID)}
             type="button"
           >
             담기

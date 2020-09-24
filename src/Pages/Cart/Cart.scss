@@ -1,78 +1,13 @@
 @import "../../Styles/common.scss";
 @import "../../Styles/reset.scss";
 
-.EmptyCart {
-  margin: 0;
-  padding: 0;
-  width: 1777px;
-  height: 1033px;
-  @include flexBox(flex-start, center, column);
-
-  .cartHeader {
-    width: 1080px;
-    height: 150px;
-    padding: 56px 0 34px 0;
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.67;
-    letter-spacing: -0.36px;
-    margin: 66px auto 0;
-  }
-
-  .emptyBasket {
-    bottom: 5000px;
-    width: 1080px;
-    height: 302px;
-    padding: 0px;
-    border-top: 1px solid #e2e5e8;
-    border-bottom: 1px solid #e2e5e8;
-
-    .emptyCartMessage {
-      width: 258px;
-      height: 167px;
-      margin: 0 411px;
-      color: #9a9a9e;
-      font-size: 15px;
-      letter-spacing: -0.19px;
-      text-align: center;
-      padding-top: 98px;
-      padding-bottom: 25px;
-      line-height: 1.47;
-    }
-
-    .linkButton {
-      width: 140px;
-      height: 36px;
-      margin: 0px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 4px;
-      background-color: #3c404b;
-    }
-
-    .linkMessage {
-      width: 100px;
-      height: 16px;
-      font-size: 12px;
-      color: #ffffff;
-      text-align: center;
-      letter-spacing: -0.2px;
-      line-height: normal;
-    }
-  }
-}
-
-.FilledCart {
-  margin: 0;
-  padding: 0;
-  width: 1777px;
-  height: 1033px;
-  @include flexBox(center, center, column);
-
-  .cartHeaderWrap {
-    width: 1080px;
-    height: 188px;
+.Cart {
+  .EmptyCart {
+    margin: 0 auto;
+    padding: 0;
+    width: 1777px;
+    height: 1033px;
+    @include flexBox(flex-start, center, column);
 
     .cartHeader {
       width: 1080px;
@@ -82,424 +17,491 @@
       font-weight: bold;
       line-height: 1.67;
       letter-spacing: -0.36px;
-      color: #000000;
+      margin: 66px auto 0;
     }
 
-    .filledCartHeader {
-      display: flex;
-      position: static;
+    .emptyBasket {
+      bottom: 5000px;
       width: 1080px;
-      height: 38px;
-      padding: 0px 0px 8px;
-      justify-content: space-between;
-      background: #ffffff;
-      left: 0px;
-      right: 0px;
+      height: 302px;
+      padding: 0px;
+      border-top: 1px solid #e2e5e8;
+      border-bottom: 1px solid #e2e5e8;
 
-      .subHeader {
-        display: flex;
-        align-items: center;
-        width: 540px;
-        height: 30px;
-
-        .checker {
-          content: "";
-          width: 30px;
-          height: 25px;
-          margin-right: 10px;
-          background-size: 25px 25px;
-          cursor: default;
-          background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked_ok.png)
-            center center / 80% no-repeat;
-          &.unchecked {
-            background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked.png)
-              center center / 80% no-repeat;
-          }
-
-          input:checked[type="checkbox"] {
-            display: none;
-            color: #1e1e1e;
-            background-color: #ffffff;
-            width: 30px;
-            height: 25px;
-            line-height: 21px;
-            margin-right: 10px;
-          }
-        }
-
-        .total {
-          font-size: 15px;
-          height: 30px;
-          line-height: 1.5;
-          letter-spacing: -0.2px;
-          padding-top: 0px;
-          display: flex;
-          color: #333333;
-        }
-
-        .null {
-          width: 7.5px;
-          height: 30px;
-          padding-top: 5px;
-          line-height: 1.5;
-        }
-
-        .totalCount {
-          font-size: 15px;
-          font-weight: bold;
-          height: 30px;
-          line-height: 1.5;
-          color: #333333;
-        }
+      .emptyCartMessage {
+        width: 258px;
+        height: 167px;
+        margin: 0 411px;
+        color: #9a9a9e;
+        font-size: 15px;
+        letter-spacing: -0.19px;
+        text-align: center;
+        padding-top: 98px;
+        padding-bottom: 25px;
+        line-height: 1.47;
       }
 
-      .headerDelete {
+      .linkButton {
+        width: 140px;
+        height: 36px;
+        margin: 0px auto;
         display: flex;
-        justify-content: flex-end;
-        vertical-align: middle;
-        width: 540px;
-        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background-color: #3c404b;
+      }
 
-        .delete {
-          font-size: 15px;
-          color: #666666;
-          padding-right: 8px;
-          letter-spacing: -0.2px;
-          line-height: 32px;
-        }
-
-        .deleteButton {
-          font-size: 14px;
-          width: 16px;
-          height: 30px;
-          background-size: 16px 17px;
-          background: url("https://t1.kakaocdn.net/friends/new_store/2.0/basket/trashcan-btn.png")
-            center center / 100% no-repeat;
-          border: none;
-          padding: 0px;
-          line-height: 21px;
-          outline: none;
-        }
+      .linkMessage {
+        width: 100px;
+        height: 16px;
+        font-size: 12px;
+        color: #ffffff;
+        text-align: center;
+        letter-spacing: -0.2px;
+        line-height: normal;
       }
     }
   }
 
-  .filledCartWrap {
-    width: 1080px;
-    padding: 0px;
-    background-color: #ffffff;
-    border-top: 0px;
-    border-bottom: 0px;
+  .FilledCart {
+    margin: 0 auto;
+    padding: 0;
+    width: 1777px;
+    height: 1033px;
+    @include flexBox(center, center, column);
 
-    .filledCartDetail {
-      .filledCartDetailHeader {
-        width: 1080px;
-        height: 53px;
-        display: flex;
-        justify-content: space-between;
-        background-color: #ffffff;
-        padding: 16px;
-        border-top: 1px solid #000000;
-        border-bottom: 1px solid #e3e5e8;
-        margin: auto;
-
-        .productName,
-        .option,
-        .quantity,
-        .price {
-          font-size: 13px;
-          text-align: center;
-          line-height: 19.5px;
-          letter-spacing: -0.19px;
-          text-align: center;
-        }
-
-        .productName {
-          width: 287px;
-          height: 19px;
-          padding-left: 130px;
-        }
-
-        .option {
-          width: 317px;
-          height: 19px;
-          padding-left: 160px;
-        }
-
-        .quantity {
-          width: 207px;
-          height: 19px;
-          padding-left: 50px;
-        }
-
-        .price {
-          width: 207px;
-          height: 19px;
-          padding-right: 50px;
-        }
-      }
-    }
-
-    .cartItemWrapper {
-      border-bottom: 1px solid #e2e5e8;
-      margin: auto;
+    .cartHeaderWrap {
       width: 1080px;
-      height: 130px;
+      height: 188px;
 
-      .cartItemWrap {
+      .cartHeader {
+        width: 1080px;
+        height: 150px;
+        padding: 56px 0 34px 0;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 1.67;
+        letter-spacing: -0.36px;
+        color: #000000;
+      }
+
+      .filledCartHeader {
         display: flex;
-        align-items: center;
-        padding: 0px 20px 0px 0px;
+        position: static;
+        width: 1080px;
+        height: 38px;
+        padding: 0px 0px 8px;
+        justify-content: space-between;
+        background: #ffffff;
+        left: 0px;
+        right: 0px;
 
-        .itemChecker {
-          content: "";
-          width: 30px;
-          height: 25px;
-          margin-right: 10px;
-          background-size: 25px 25px;
-          background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked_ok.png)
-            center center / 80% no-repeat;
-          &.unchecked {
-            background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked.png)
-              center center / 80% no-repeat;
-          }
-          .itemCheckBox {
-            display: none;
-            color: #1e1e1e;
-            background-color: #ffffff;
+        .subHeader {
+          display: flex;
+          align-items: center;
+          width: 540px;
+          height: 30px;
+
+          .checker {
+            content: "";
             width: 30px;
             height: 25px;
-            line-height: 21px;
             margin-right: 10px;
+            background-size: 25px 25px;
+            cursor: default;
+            background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked_ok.png)
+              center center / 80% no-repeat;
+            &.unchecked {
+              background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked.png)
+                center center / 80% no-repeat;
+            }
+
+            input:checked[type="checkbox"] {
+              display: none;
+              color: #1e1e1e;
+              background-color: #ffffff;
+              width: 30px;
+              height: 25px;
+              line-height: 21px;
+              margin-right: 10px;
+            }
           }
-        }
 
-        .thumbnailImage {
-          width: 100px;
-          height: 100px;
-          margin-right: 14px;
-          padding: 0px;
-          background: rgba(0, 0, 0, 0.02);
-        }
-
-        .itemTitle {
-          width: 906.63px;
-          height: 35px;
-          padding: 0px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin: 47.5px 0px;
-          font-size: 15px;
-
-          .titleItemTitle {
-            height: unset;
+          .total {
             font-size: 15px;
-            max-width: 304px;
-            width: 100%;
-            line-height: 1.47;
-            letter-spacing: -0.19px;
-          }
-
-          .choiceWrap {
-            display: flex;
-            justify-content: space-between;
-            width: 646px;
-
-            .optionButton {
-              width: 138px;
-              height: 33px;
-              margin-left: 50px;
-            }
-
-            .optionWrap {
-              padding-left: 40px;
-              border-width: 0px 1px;
-              width: 160px;
-
-              .selectQuantity {
-                width: 78px;
-                height: 33px;
-                border: 1px solid #e2e5e8;
-                border-radius: 4px;
-                box-sizing: border-box;
-                padding-left: 10px;
-                outline: none;
-              }
-            }
-
-            .priceWrap {
-              display: flex;
-              align-items: center;
-              margin-right: 25px;
-            }
-
-            .removeButton {
-              align-self: center;
-              width: 13px;
-              height: 13px;
-              background-size: 13px;
-              background: url(https://t1.kakaocdn.net/friends/new_store/btn_remove.png)
-                center center / 50% no-repeat;
-              font-size: 1px;
-              cursor: pointer;
-              vertical-align: middle;
-              border: none;
-              outline: none;
-            }
-          }
-        }
-      }
-    }
-
-    .totalPriceBox {
-      display: flex;
-      width: 1080px;
-      height: 171px;
-      padding: 0px 86.5px 0px 33px;
-      margin-bottom: 51px;
-      align-items: center;
-      border-top: 1px solid #000000;
-      background-color: #f7f7f7;
-
-      .totalPriceBarWrap {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 480.25px;
-        height: 35px;
-        line-height: 1.5;
-        color: #1e1e1e;
-        font-size: 14px;
-
-        .deliveryCountry {
-          font-size: 15px;
-          line-height: 30px;
-          letter-spacing: -0.19px;
-        }
-
-        .selectBox {
-          margin-left: 26px;
-          width: 201px;
-
-          .selectBoxLabel::before {
-            content: "한국";
-            position: absolute;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-
-          .selectBoxLabel {
-            width: 199px;
-            height: 33px;
-            left: 0px;
-            top: 0px;
-            z-index: 100;
-            font-size: 14px;
+            height: 30px;
             line-height: 1.5;
-            border-radius: 4px;
+            letter-spacing: -0.2px;
+            padding-top: 0px;
+            display: flex;
+            color: #333333;
+          }
+
+          .null {
+            width: 7.5px;
+            height: 30px;
+            padding-top: 5px;
+            line-height: 1.5;
+          }
+
+          .totalCount {
+            font-size: 15px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 1.5;
+            color: #333333;
+          }
+        }
+
+        .headerDelete {
+          display: flex;
+          justify-content: flex-end;
+          vertical-align: middle;
+          width: 540px;
+          height: 30px;
+
+          .delete {
+            font-size: 15px;
+            color: #666666;
+            padding-right: 8px;
+            letter-spacing: -0.2px;
+            line-height: 32px;
+          }
+
+          .deleteButton {
+            font-size: 14px;
+            width: 16px;
+            height: 30px;
+            background-size: 16px 17px;
+            background: url("https://t1.kakaocdn.net/friends/new_store/2.0/basket/trashcan-btn.png")
+              center center / 100% no-repeat;
+            border: none;
+            padding: 0px;
             line-height: 21px;
-            border: 1px solid #e2e5e8;
-            padding-left: 10px;
             outline: none;
           }
         }
       }
+    }
 
-      .totalPrice {
-        display: flex;
-        justify-content: flex-end;
-        width: 480.25px;
-        height: 138px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-        line-height: 1.5;
-        color: #1e1e1e;
+    .filledCartWrap {
+      width: 1080px;
+      padding: 0px;
+      background-color: #ffffff;
+      border-top: 0px;
+      border-bottom: 0px;
 
-        .totalOrder,
-        .deliveryFee,
-        .totalFee {
-          padding-top: 9px;
-        }
+      .filledCartDetail {
+        .filledCartDetailHeader {
+          width: 1080px;
+          height: 53px;
+          display: flex;
+          justify-content: space-between;
+          background-color: #ffffff;
+          padding: 16px;
+          border-top: 1px solid #000000;
+          border-bottom: 1px solid #e3e5e8;
+          margin: auto;
 
-        .totalOrder {
-          @include flexBox(space-between, center, row);
-          width: 480.25px;
-          height: 40px;
-
-          .totalPriceLabel {
-            width: auto;
-            height: 30px;
-            font-size: 15px;
+          .productName,
+          .option,
+          .quantity,
+          .price {
+            font-size: 13px;
+            text-align: center;
+            line-height: 19.5px;
+            letter-spacing: -0.19px;
+            text-align: center;
           }
 
-          .totalPriceWon {
+          .productName {
+            width: 287px;
+            height: 19px;
+            padding-left: 130px;
+          }
+
+          .option {
+            width: 317px;
+            height: 19px;
+            padding-left: 160px;
+          }
+
+          .quantity {
+            width: 207px;
+            height: 19px;
+            padding-left: 50px;
+          }
+
+          .price {
+            width: 207px;
+            height: 19px;
+            padding-right: 50px;
+          }
+        }
+      }
+
+      .cartItemWrapper {
+        border-bottom: 1px solid #e2e5e8;
+        margin: auto;
+        width: 1080px;
+        height: 130px;
+
+        .cartItemWrap {
+          display: flex;
+          align-items: center;
+          padding: 0px 20px 0px 0px;
+
+          .itemChecker {
+            content: "";
+            width: 30px;
+            height: 25px;
+            margin-right: 10px;
+            background-size: 25px 25px;
+            background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked_ok.png)
+              center center / 80% no-repeat;
+            &.unchecked {
+              background: url(https://t1.kakaocdn.net/friends/new_store/ico_checked.png)
+                center center / 80% no-repeat;
+            }
+            .itemCheckBox {
+              display: none;
+              color: #1e1e1e;
+              background-color: #ffffff;
+              width: 30px;
+              height: 25px;
+              line-height: 21px;
+              margin-right: 10px;
+            }
+          }
+
+          .thumbnailImage {
+            width: 100px;
+            height: 100px;
+            margin-right: 14px;
+            padding: 0px;
+            background: rgba(0, 0, 0, 0.02);
+          }
+
+          .itemTitle {
+            width: 906.63px;
+            height: 35px;
+            padding: 0px;
             display: flex;
-            text-align: right;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
+            margin: 47.5px 0px;
+            font-size: 15px;
+
+            .titleItemTitle {
+              height: unset;
+              font-size: 15px;
+              max-width: 304px;
+              width: 100%;
+              line-height: 1.47;
+              letter-spacing: -0.19px;
+            }
+
+            .choiceWrap {
+              display: flex;
+              justify-content: space-between;
+              width: 646px;
+
+              .optionButton {
+                width: 138px;
+                height: 33px;
+                margin-left: 50px;
+              }
+
+              .optionWrap {
+                padding-left: 40px;
+                border-width: 0px 1px;
+                width: 160px;
+
+                .selectQuantity {
+                  width: 78px;
+                  height: 33px;
+                  border: 1px solid #e2e5e8;
+                  border-radius: 4px;
+                  box-sizing: border-box;
+                  padding-left: 10px;
+                  outline: none;
+                }
+              }
+
+              .priceWrap {
+                display: flex;
+                align-items: center;
+                margin-right: 25px;
+              }
+
+              .removeButton {
+                align-self: center;
+                width: 13px;
+                height: 13px;
+                background-size: 13px;
+                background: url(https://t1.kakaocdn.net/friends/new_store/btn_remove.png)
+                  center center / 100% no-repeat;
+                font-size: 1px;
+                cursor: pointer;
+                vertical-align: middle;
+                border: none;
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+
+      .totalPriceBox {
+        display: flex;
+        width: 1080px;
+        height: 171px;
+        padding: 0px 86.5px 0px 33px;
+        margin-bottom: 51px;
+        align-items: center;
+        border-top: 1px solid #000000;
+        background-color: #f7f7f7;
+
+        .totalPriceBarWrap {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 480.25px;
+          height: 35px;
+          line-height: 1.5;
+          color: #1e1e1e;
+          font-size: 14px;
+
+          .deliveryCountry {
+            font-size: 15px;
+            line-height: 30px;
+            letter-spacing: -0.19px;
+          }
+
+          .selectBox {
+            margin-left: 26px;
+            width: 201px;
+
+            .selectBoxLabel::before {
+              content: "한국";
+              position: absolute;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+
+            .selectBoxLabel {
+              width: 199px;
+              height: 33px;
+              left: 0px;
+              top: 0px;
+              z-index: 100;
+              font-size: 14px;
+              line-height: 1.5;
+              border-radius: 4px;
+              line-height: 21px;
+              border: 1px solid #e2e5e8;
+              padding-left: 10px;
+              outline: none;
+            }
+          }
+        }
+
+        .totalPrice {
+          display: flex;
+          justify-content: flex-end;
+          width: 480.25px;
+          height: 138px;
+          display: block;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          line-height: 1.5;
+          color: #1e1e1e;
+
+          .totalOrder,
+          .deliveryFee,
+          .totalFee {
+            padding-top: 9px;
+          }
+
+          .totalOrder {
+            @include flexBox(space-between, center, row);
+            width: 480.25px;
+            height: 40px;
+
+            .totalPriceLabel {
+              width: auto;
+              height: 30px;
+              font-size: 15px;
+            }
+
+            .totalPriceWon {
+              display: flex;
+              text-align: right;
+              justify-content: flex-end;
+              font-size: 20px;
+              font-weight: bold;
+              line-height: 1.5;
+              letter-spacing: -0.25px;
+              text-align: right;
+            }
+          }
+
+          .deliveryFee {
+            @include flexBox(space-between, center, row);
+            width: 480.25px;
+            height: 40px;
+            .deliveryFeeLabel {
+              font-size: 15px;
+            }
+
+            .deliveryFeeWon {
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+
+          .totalFee {
+            @include flexBox(space-between, center, row);
             font-size: 20px;
             font-weight: bold;
             line-height: 1.5;
             letter-spacing: -0.25px;
             text-align: right;
-          }
-        }
+            width: 480.25px;
+            height: 58px;
 
-        .deliveryFee {
-          @include flexBox(space-between, center, row);
-          width: 480.25px;
-          height: 40px;
-          .deliveryFeeLabel {
-            font-size: 15px;
-          }
+            .totalFeeLabel {
+              font-size: 20px;
+            }
 
-          .deliveryFeeWon {
-            font-size: 20px;
-            font-weight: bold;
-          }
-        }
-
-        .totalFee {
-          @include flexBox(space-between, center, row);
-          font-size: 20px;
-          font-weight: bold;
-          line-height: 1.5;
-          letter-spacing: -0.25px;
-          text-align: right;
-          width: 480.25px;
-          height: 58px;
-
-          .totalFeeLabel {
-            font-size: 20px;
-          }
-
-          .totalFeeWon {
-            font-size: 24px;
+            .totalFeeWon {
+              font-size: 24px;
+            }
           }
         }
       }
     }
-  }
 
-  .orderButtonWrap {
-    width: 1080px;
-    height: 60px;
-    text-align: center;
-    justify-content: center;
-
-    .orderButton {
-      width: 270px;
+    .orderButtonWrap {
+      width: 1080px;
       height: 60px;
-      border-radius: 4px;
-      border: none;
-      background-color: #3c404b;
-      opacity: 95%;
-      font-size: 15px;
-      color: #ffffff;
-      line-height: 22.5px;
+      text-align: center;
+      justify-content: center;
+
+      .orderButton {
+        width: 270px;
+        height: 60px;
+        border-radius: 4px;
+        border: none;
+        background-color: #3c404b;
+        opacity: 95%;
+        font-size: 15px;
+        color: #ffffff;
+        line-height: 22.5px;
+      }
     }
   }
 }

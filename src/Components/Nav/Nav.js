@@ -41,7 +41,7 @@ class Nav extends React.Component {
             <li className="category">
               <div
                 className="categoryLink"
-                href="https://localhost:3000/main"
+                // href="/main"
                 onMouseEnter={() => this.setState({ hoverOn: true })}
                 onMouseLeave={() => this.setState({ hoverOn: false })}
               >
@@ -63,7 +63,7 @@ class Nav extends React.Component {
             </li>
           </ul>
           <a className="logoWrap" href="/main">
-            <img className="logo" alt="" src="images/kakaologo.png" />
+            <img className="logo" alt="" src="Images/kakaologo.png" />
           </a>
           <div className="rightMenu">
             <Searchbar />
