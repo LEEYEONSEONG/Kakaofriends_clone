@@ -24,14 +24,19 @@ class SaleCardEach extends React.Component {
         <div>
           <div className="thumnailWrap">
             <div className="imgWrap" />
-            <img className="cardImage" alt="상품이미지" src={product.img} />
+            <img
+              className="cardImage"
+              alt="상품이미지"
+              src={product.main_image}
+            />
           </div>
           <div className="productInfo">
             <p className="productName">{product.name}</p>
             <p className="productDiscountPrice">
-              {product.dcpercent}% {product.dcprice.toLocaleString()}원
+              {product.discount_rate}%{" "}
+              {product.discount_price?.toLocaleString()}원
             </p>
-            <p className="productPrice">{product.price.toLocaleString()}원</p>
+            <p className="productPrice">{product.price?.toLocaleString()}원</p>
           </div>
         </div>
         <div className="cartWrap">
