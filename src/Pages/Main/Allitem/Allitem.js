@@ -5,20 +5,6 @@ import { withInfiniteScroll } from "../hoc";
 import "./Allitem.scss";
 
 class Allitem extends React.Component {
-  // changeOrder = (option) => {
-  //   fetch(URL + "products" + option, {
-  //     method: "GET",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       const result = res.data_list;
-  //       this.setState({
-  //         productList: result,
-  //         totalCount: result[0].total_count,
-  //       });
-  //     });
-  // };
-
   render() {
     const { productList, totalCount, changeOrder } = this.props;
     return (

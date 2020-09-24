@@ -15,9 +15,7 @@ class Searchbar extends React.Component {
   }
 
   componentDidMount() {
-    fetch(URL + "products", {
-      method: "GET",
-    })
+    fetch(`${URL}products`)
       .then((res) => res.json())
       .then((res) => {
         const result = res.data_list;

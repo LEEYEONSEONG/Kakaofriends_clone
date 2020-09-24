@@ -6,27 +6,26 @@ import URL from "../../url";
 import "./Nav.scss";
 
 class Nav extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      hoverOn: false,
-      hoverUser: false,
-      itemInCart: 0,
-      isLogin: false,
-    };
-  }
+  state = {
+    hoverOn: false,
+    hoverUser: false,
+    itemInCart: 0,
+    isLogin: false,
+  };
 
   componentDidMount() {
     if (localStorage.getItem("token")) {
-      this.setState({
-        isLogin: true,
-      });
+      this.setState(
+        {
+          isLogin: true,
+        },
+        () => this.getCartInfo()
+      );
     }
-    this.getCartInfo();
   }
 
   getCartInfo = () => {
-    fetch(URL + "cart", {
+    fetch(`${URL}cart`, {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("token"),
@@ -70,7 +69,11 @@ class Nav extends React.Component {
             </li>
           </ul>
           <a className="logoWrap" href="/main">
-            <img className="logo" alt="" src="/Images/kakaologo.png" />
+            <img
+              className="logo"
+              alt="카카오로고"
+              src="/Images/kakaologo.png"
+            />
           </a>
           <div className="rightMenu">
             <Searchbar />
