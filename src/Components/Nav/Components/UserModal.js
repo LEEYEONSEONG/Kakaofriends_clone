@@ -29,7 +29,7 @@ class UserModal extends React.Component {
         }}
       >
         <li>
-          <a href="/signin">로그인</a>
+          <a href="/signin">{!isLogin ? "로그인" : "로그아웃"} </a>
         </li>
         <li className={!isLogin && "notAllowed"}>주문내역</li>
         <li className={!isLogin && "notAllowed"}>찜</li>

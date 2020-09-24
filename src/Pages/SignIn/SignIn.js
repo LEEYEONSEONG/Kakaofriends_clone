@@ -112,7 +112,7 @@ class SignIn extends React.Component {
                   type="search"
                   value={idValue}
                   name="idValue"
-                  autocomplete="off"
+                  autoComplete="off"
                 />
                 <input
                   className="idPwForm"
@@ -121,7 +121,7 @@ class SignIn extends React.Component {
                   type="search"
                   value={pwdValue}
                   name="pwdValue"
-                  autocomplete="off"
+                  autoComplete="off"
                 />
                 <div className="setLogin" onClick={this.checkToken}>
                   <span
