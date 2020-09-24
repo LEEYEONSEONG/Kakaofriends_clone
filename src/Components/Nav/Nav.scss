@@ -1,5 +1,13 @@
 @import "../../Styles/common.scss";
 
+<<<<<<< HEAD
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+=======
+>>>>>>> master
 .Nav {
   @include flexBox(center, center, row);
   position: fixed;
