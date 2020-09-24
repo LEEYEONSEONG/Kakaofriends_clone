@@ -14,34 +14,31 @@ export class PurchaseBar extends Component {
     e.target.preventDefault();
   };
 
+  increaseQty = () => {
+    return this.state.count > 1
+      ? () => this.setState({ count: this.state.count - 1 })
+      : null;
+  };
+
   render() {
+    const { count, price } = this.state;
     return (
       <div className="PurchaseBar">
         <div className="counter">
           <div className="counterWrap">
             <button
-              className={this.state.count === 1 ? "minusBtnOff" : "minusBtnOn"}
-              onClick={
-                this.state.count > 1
-                  ? () => this.setState({ count: this.state.count - 1 })
-                  : null
-              }
+              className={count === 1 ? "minusBtnOff" : "minusBtnOn"}
+              onClick={this.increaseQty}
             ></button>
-            <input
-              className="typeCount"
-              type="textbox"
-              value={this.state.count}
-            ></input>
+            <input className="typeCount" type="textbox" value={count}></input>
             <button
               className="plusBtn"
-              onClick={() => this.setState({ count: this.state.count + 1 })}
+              onClick={() => this.setState({ count: count + 1 })}
             ></button>
           </div>
           <div className="totalPrice">
             <span className="totalText">총 상품금액</span>
-            <span className="price">
-              {(this.state.price * this.state.count)?.toLocaleString()}원
-            </span>
+            <span className="price">{(price * count)?.toLocaleString()}원</span>
           </div>
         </div>
         <div className="addToCart">

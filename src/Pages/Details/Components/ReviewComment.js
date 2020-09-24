@@ -4,8 +4,9 @@ import "../Details.scss";
 export class ReviewComment extends Component {
   constructor() {
     super();
+
     this.state = {
-      commentData: [],
+      comment: [],
       starCount: [],
     };
   }
@@ -14,19 +15,20 @@ export class ReviewComment extends Component {
     fetch("/Data/mock.json")
       .then((res) => res.json())
       .then((res) => {
-        let result = res.comment;
+        const result = res.comment;
         this.setState({
-          commentData: result,
+          comment: result,
         });
       });
   }
 
   render() {
+    const { comment } = this.state;
     return (
       <div className="ReviewComment">
         <div className="review">
           <div className="reviewWrap">
-            <h3 className="title">리뷰 {this.state.commentData.length}개</h3>
+            <h3 className="title">리뷰 {comment.length}개</h3>
             <div className="stars">
               <span className="eachStar"></span>
               <span className="eachStar"></span>
@@ -43,24 +45,24 @@ export class ReviewComment extends Component {
           <button className="sortByLike">좋아요순</button>
           <button className="sortByDate">최신순</button>
           <ul className="commentList">
-            {this.state.commentData.map((el) => {
+            {comment.map((comment) => {
               return (
-                <li className="commentListLi" key={el.id}>
+                <li className="commentListLi" key={comment.id}>
                   <div className="listWrap">
-                    <div className="nickName">{el.name}</div>
+                    <div className="nickName">{comment.name}</div>
                     <div className="score">
                       <span className="smallStar"></span>
                       <span className="smallStar"></span>
                       <span className="smallStar"></span>
                       <span className="smallStar"></span>
                       <span className="smallStar"></span>
-                      <p className="date">{el.date}</p>
+                      <p className="date">{comment.date}</p>
                     </div>
-                    <div className="comment">{el.comment}</div>
+                    <div className="comment">{comment.comment}</div>
                   </div>
                   <div className="likeBtn">
                     <button className="mainBtn">좋아요</button>
-                    <p className="likeRec">{el.liked}</p>
+                    <p className="likeRec">{comment.liked}</p>
                   </div>
                 </li>
               );
