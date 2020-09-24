@@ -6,6 +6,7 @@ import LiveRfq from "./Components/LiveRfq";
 import ReviewComment from "./Components/ReviewComment";
 import Suggestion from "./Components/Suggestion";
 import PurchaseBar from "./Components/PurchaseBar";
+import TopBtn from "../../Components/TopBtn/TopBtn";
 import "./Details.scss";
 
 class Details extends React.Component {
@@ -36,6 +37,7 @@ class Details extends React.Component {
         <ReviewComment />
         <Suggestion />
         <PurchaseBar productInfo={this.state.productDetails} />
+        <TopBtn />
       </div>
     );
   }

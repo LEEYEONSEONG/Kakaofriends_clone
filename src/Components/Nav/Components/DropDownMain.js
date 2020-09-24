@@ -15,6 +15,7 @@ class DropDownMain extends React.Component {
       subIndex: 0,
       imgIndex: 0,
       opacity: 0,
+      url: "",
     };
   }
 
@@ -33,6 +34,18 @@ class DropDownMain extends React.Component {
       });
   }
 
+  reroute = () => {
+    if (this.state.subIndex === 3) {
+      this.setState({
+        url: "http://localhost:3000/category/",
+      });
+    } else if (this.state.subIndex === 6) {
+      this.setState({
+        url: "http://localhost:3000/category/",
+      });
+    }
+  };
+
   render() {
     return (
       <div style={{ opacity: this.state.opacity }} className="dropDownWrap">
@@ -43,16 +56,16 @@ class DropDownMain extends React.Component {
                 key={category.id}
                 className="mainDropList"
                 onMouseOver={() => {
-                  this.setState({
-                    hoverOn: true,
-                    subIndex: category.id,
-                  });
+                  this.setState(
+                    {
+                      hoverOn: true,
+                      subIndex: category.id,
+                    },
+                    this.reroute
+                  );
                 }}
               >
-                <a
-                  className="mainDropLink"
-                  href="https://store.kakaofriends.com/kr/index?tab=home"
-                >
+                <a className="mainDropLink" href={this.state.url}>
                   {category.category}
                 </a>
               </li>
