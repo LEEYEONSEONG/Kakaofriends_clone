@@ -13,42 +13,39 @@
     }
 
     .shopDetail {
-    height: 250px;
-    padding: 30px 24px 26px;
-    border-width: 0px 1px 1px;
-    border-style: none solid solid;
-    border-right-color: rgb(238, 238, 238);
-    border-bottom-color: rgb(238, 238, 238);
-    border-left-color: rgb(238, 238, 238);
+      height: 250px;
+      padding: 30px 24px 26px;
+      border-width: 0px 1px 1px;
+      border-style: none solid solid;
+      border-right-color: rgb(238, 238, 238);
+      border-bottom-color: rgb(238, 238, 238);
+      border-left-color: rgb(238, 238, 238);
 
-    strong {
-      font-size: 22px;
-    }
-    
-    .wrapText {
-      margin-top: 13px;
-      
-      img {
-        width: 25px;
-        height: 25px;
-        margin-right: 10px;
+      strong {
+        font-size: 22px;
       }
 
-      .textinfo {
-        display: flex;
-        margin-bottom: 10px;
-        font-size: 15px;
-        line-height: 27px;
+      .wrapText {
+        margin-top: 13px;
 
-        a {
-          text-decoration: underline;
-          color: cornflowerblue;
+        img {
+          width: 25px;
+          height: 25px;
+          margin-right: 10px;
+        }
+
+        .textinfo {
+          display: flex;
+          margin-bottom: 10px;
+          font-size: 15px;
+          line-height: 23px;
+
+          a {
+            text-decoration: underline;
+            color: cornflowerblue;
+          }
         }
       }
-
     }
-
-    }
-
   }
 }

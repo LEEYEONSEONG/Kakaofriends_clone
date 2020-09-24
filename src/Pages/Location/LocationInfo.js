@@ -4,8 +4,6 @@ import "./LocationInfo.scss";
 
 class LocationInfo extends React.Component {
   render() {
-    console.log(this.props);
-
     const {
       img,
       storeShop,

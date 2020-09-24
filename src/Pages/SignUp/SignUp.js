@@ -34,7 +34,7 @@ class SignUp extends React.Component {
     });
   };
 
-  handleClick = () => {
+  trySignUp = () => {
     const errorText = SIGNUP_STATUS[this.validata()];
     const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
 
@@ -64,6 +64,15 @@ class SignUp extends React.Component {
         [idPwdStatus]: errorText,
       });
     }
+  };
+
+  handleClick = () => {
+    this.trySignUp();
+  };
+
+  onFormSubmit = (e) => {
+    e.preventDefault();
+    this.trySignUp();
   };
 
   validata = () => {
@@ -103,7 +112,7 @@ class SignUp extends React.Component {
 
     return (
       <div className="SignUp">
-        <div className="kakaoWrap">
+        <form onSubmit={this.onFormSubmit} className="kakaoWrap">
           <div className="kakaoHead">
             <img alt="logo" src="/Images/bannerlogo.png" />
           </div>
@@ -205,7 +214,7 @@ class SignUp extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </form>
         <footer className="information">
           <ul className="infoTop">
             {INFO.map((el, i) => {
