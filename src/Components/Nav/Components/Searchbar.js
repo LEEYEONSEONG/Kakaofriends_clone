@@ -29,7 +29,6 @@ class Searchbar extends React.Component {
 
   searchItems = (e) => {
     e.preventDefault();
-    console.log(this.state.searchValue);
     this.setState({
       matchArr: [],
     });
