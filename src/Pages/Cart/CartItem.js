@@ -3,20 +3,7 @@ import React from "react";
 import "./CartItem.scss";
 
 class CartItem extends React.Component {
-  state = {
-    isChecked: true,
-    isPrice: "",
-  };
-
-  handleCheck = () => {
-    this.setState({
-      isChecked: !this.state.isChecked,
-    });
-  };
-
   render() {
-    const { isChecked } = this.state;
-
     const {
       cart_id,
       product,
@@ -25,6 +12,9 @@ class CartItem extends React.Component {
       price,
       count,
     } = this.props.carts;
+
+    const { idx, icon } = this.props;
+    console.log(icon);
 
     const OPTIONS_COUNT = 30;
     const OPTIONS = Array(OPTIONS_COUNT)
@@ -35,27 +25,17 @@ class CartItem extends React.Component {
       <div key={product} className="CartItem">
         <ul className="cartItemWrapper">
           <li className="cartItemWrap">
-            <label className={`itemChecker ${isChecked ? "" : "unchecked"}`}>
-              <input
-                onClick={this.handleCheck}
-                type="checkbox"
-                className="itemCheckBox"
-                checked={isChecked ? "checked" : "unchecked"}
-              ></input>
-            </label>
+            <label
+              onClick={() => this.props.check(idx)}
+              className={`itemChecker ${icon ? "" : "unchecked"}`}
+            />
             <div className="imageWrap">
-              <a
-                className="image1"
-                href="https://store.kakaofriends.com/kr/products/7187"
-              >
-                <span itemtype="basket" className="thumbnail">
-                  <span class="img__Wrap-sc-1ck9vd1-0 kukZNN">
-                    <img src={main_image} alt="떰네일" class="thumbnailImage" />
-                  </span>
+              <span itemtype="basket" className="thumbnail">
+                <span class="img__Wrap-sc-1ck9vd1-0 kukZNN">
+                  <img src={main_image} alt="떰네일" class="thumbnailImage" />
                 </span>
-              </a>
+              </span>
             </div>
-
             <div className="basketItem">
               <div className="itemTitle">
                 <div className="titleItemTitle">{name}</div>
@@ -64,7 +44,7 @@ class CartItem extends React.Component {
                   <div className="optionWrap">
                     <label content="1" className="selectQuantityBox">
                       <select className="selectQuantity">
-                        {OPTIONS.map((el) => {
+                        {OPTIONS.map(el => {
                           return (
                             <option
                               onChange={this.handlePrice}

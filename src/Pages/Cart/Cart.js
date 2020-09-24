@@ -8,6 +8,8 @@ class Cart extends React.Component {
     carts: [],
     totalPrice: "",
     isChecked: true,
+    allBtnCheck: true,
+    isAllChecked: [],
   };
 
   componentDidMount() {
@@ -15,51 +17,91 @@ class Cart extends React.Component {
   }
 
   getCartItem = () => {
-    fetch(URL + "cart", {
+    fetch(`${URL}cart`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
     })
-      .then((res) => res.json())
+      .then(res => res.json())
       .then(({ carts }) => {
         let totalPrice = 0;
+        let emptyArr = [];
         for (let i = 0; carts.length > i; i++) {
           totalPrice += carts[i].price * carts[i].count;
+          emptyArr.push(true);
         }
 
-        this.setState({ carts, totalPrice });
+        this.setState({
+          carts,
+          totalPrice,
+          isAllChecked: emptyArr,
+        });
       });
   };
 
-  handleCheck = () => {
+  handleCheck = e => {
+    let anotherArr = this.state.isAllChecked;
+    anotherArr[e] = !anotherArr[e];
+    this.setState(
+      {
+        isAllChecked: anotherArr,
+        allBtnCheck: !anotherArr.includes(false),
+      },
+      () => this.handleTotal()
+    );
+  };
+
+  handleTotal = () => {
+    const { carts } = this.state;
+    let checkedIdx = this.state.isAllChecked.reduce((arr, e, i) => {
+      e === true && arr.push(i);
+      return arr;
+    }, []);
+    let totalFee = 0;
+
+    for (let i = 0; i < carts.length; i++) {
+      if (checkedIdx.includes(i)) {
+        totalFee += carts[i].price * carts[i].count;
+      }
+    }
     this.setState({
-      isChecked: !this.state.isChecked,
+      totalPrice: totalFee,
     });
   };
 
+  handleAllcheck = () => {
+    let trueArr = [];
+    for (let i = 0; i < this.state.isAllChecked.length; i++) {
+      trueArr.push(true);
+    }
+    let falseArr = [];
+    for (let i = 0; i < this.state.isAllChecked.length; i++) {
+      falseArr.push(false);
+    }
+    this.setState(
+      {
+        allBtnCheck: !this.state.allBtnCheck,
+        isAllChecked: this.state.allBtnCheck ? falseArr : trueArr,
+      },
+      () => this.handleTotal()
+    );
+  };
+
   handleDelete = (cart_id, cart_idx) => {
-    fetch(URL + "cart/" + cart_id, {
+    fetch(`${URL}cart/${cart_id}`, {
       method: "DELETE",
       headers: {
         Authorization: localStorage.getItem("token"),
       },
     });
-    // alert("정말 저를 삭제하시겠습니까 :( ");
-
     const newCart = this.state.carts.filter((_, idx) => idx !== cart_idx);
-
     this.setState({ carts: newCart });
-    // window.location.reload(false);
-  };
-
-  handleDeleteCheck = () => {
-    console.log("야호");
   };
 
   render() {
-    const { carts, totalPrice, isChecked } = this.state;
-    const isDelivery = totalPrice >= 30000;
-
+    const { carts, totalPrice, allBtnCheck } = this.state;
+    const freeDelivery = totalPrice >= 30000;
+    console.log("render launched", this.state.isAllChecked);
     return (
       <div className="Cart">
         {!carts.length ? (
@@ -84,14 +126,10 @@ class Cart extends React.Component {
               <p className="cartHeader">장바구니</p>
               <div className="filledCartHeader">
                 <div className="subHeader">
-                  <label className={`checker ${isChecked ? "" : "unchecked"}`}>
-                    <input
-                      onClick={this.handleCheck}
-                      type="checkbox"
-                      className="checkBox"
-                      checked={isChecked ? "checked" : "unchecked"}
-                    ></input>
-                  </label>
+                  <label
+                    onClick={this.handleAllcheck}
+                    className={`checker ${allBtnCheck ? "" : "unchecked"}`}
+                  />
                   <span className="total">전체</span>
                   <span className="null">&nbsp;</span>
                   <span className="totalCount">3</span>
@@ -118,7 +156,9 @@ class Cart extends React.Component {
                     idx={idx}
                     carts={carts}
                     check={this.handleCheck}
+                    All
                     handleDelete={this.handleDelete}
+                    icon={this.state.isAllChecked[idx]}
                   />
                 );
               })}
@@ -137,22 +177,29 @@ class Cart extends React.Component {
                   <div className="totalOrder">
                     <span className="totalPriceLabel">총 주문금액</span>
                     <span className="totalPriceWon">
-                      {totalPrice.toLocaleString()}원
+                      {totalPrice?.toLocaleString()}원
                     </span>
                   </div>
                   <div className="deliveryFee">
                     <span class="deliveryFeeLabel">배송비</span>
                     <span className="deliveryFeeWon">
-                      <span>{isDelivery ? "무료" : "3,000원"}</span>
+                      <span>
+                        {!freeDelivery && totalPrice && "3,000원"}
+                        {freeDelivery && totalPrice && "무료"}
+                        {!totalPrice && "원"}
+                      </span>
                     </span>
                   </div>
                   <div className="totalFee">
                     <span class="totalFeeLabel">총 결제금액</span>
                     <span className="totalFeeWon">
-                      {isDelivery
-                        ? totalPrice.toLocaleString()
-                        : (totalPrice + 3000).toLocaleString()}
-                      원
+                      {!freeDelivery &&
+                        totalPrice &&
+                        (totalPrice + 3000)?.toLocaleString()}
+                      {freeDelivery &&
+                        totalPrice &&
+                        totalPrice?.toLocaleString()}
+                      {!totalPrice && ""}원
                     </span>
                   </div>
                 </div>
