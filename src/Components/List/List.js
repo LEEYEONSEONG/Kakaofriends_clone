@@ -11,6 +11,7 @@ class List extends React.Component {
           return (
             <Card
               key={product.product_id}
+              id={product.product_id}
               img={product.main_image}
               name={product.name}
               price={product.price}

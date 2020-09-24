@@ -1,16 +1,39 @@
 import React from "react";
+import DropDownMain from "./Components/DropDownMain";
+import Searchbar from "./Components/Searchbar";
+import UserModal from "./Components/UserModal";
+import URL from "../../url";
 import "./Nav.scss";
-import DropDownMain from "./Components/DropDownMain.js";
 
 class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
       hoverOn: false,
+      hoverUser: false,
+      itemInCart: 0,
+      isLogin: false,
     };
   }
 
+  componentDidMount() {
+    fetch(URL + "cart/products", {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          itemInCart: res.total_count,
+          isLogin: true,
+        });
+      });
+  }
+
   render() {
+    const { hoverOn, hoverUser, itemInCart, isLogin } = this.state;
     return (
       <nav className="Nav">
         <div className="Container">
@@ -24,44 +47,44 @@ class Nav extends React.Component {
               >
                 카테고리
                 <span className="categoryTri" />
-                {this.state.hoverOn ? <DropDownMain /> : null}
+                {hoverOn && <DropDownMain />}
               </div>
             </li>
             <li className="category">
-              <a className="categoryLink" href="#">
+              <a className="categoryLink" href="/location">
                 매장안내
               </a>
             </li>
 
             <li className="category">
-              <a className="categoryLink" href="#">
+              <a className="categoryLink" href="/#">
                 고객센터
               </a>
             </li>
           </ul>
-          <img className="logo" alt="" src="images/kakaologo.png" />
+          <a className="logoWrap" href="/main">
+            <img className="logo" alt="" src="images/kakaologo.png" />
+          </a>
           <div className="rightMenu">
-            <form className="searchbar">
-              <div className="searchbarBox">
-                <button className="searchbarBtn">
-                  <span className="searchbarIcon"></span>
-                </button>
-                <input
-                  className="searchbarInput"
-                  type="textbox"
-                  placeholder="무엇을 찾으세요?"
-                ></input>
-              </div>
-            </form>
+            <Searchbar />
             <aside className="icons">
-              <a className="iconLink" href="#">
-                <span id="myPage" className="icon"></span>
+              <a
+                className="iconLink"
+                href="/signin"
+                onMouseEnter={() => this.setState({ hoverUser: true })}
+                onMouseLeave={() => this.setState({ hoverUser: false })}
+              >
+                <span id="myPage" className="icon" />
+                {hoverUser && <UserModal isLogin={isLogin} />}
               </a>
-              <a className="iconLink" href="#">
-                <span id="cart" className="icon"></span>
+              <a className="iconLink" href="/cart">
+                <span id="cart" className="icon" />
+                <span className={`cartAlert ${!itemInCart && "noItem"}`}>
+                  {itemInCart}
+                </span>
               </a>
-              <a className="iconLink" href="#">
-                <span id="language" className="icon"></span>
+              <a className="iconLink" href="/#">
+                <span id="language" className="icon" />
               </a>
             </aside>
           </div>

@@ -9,20 +9,21 @@ class DropDownMain extends React.Component {
     this.state = {
       mainMenu: [],
       subMenu: [],
-      fixedMenu: [],
+      fixedMenu: CHARACTER,
       hoverOn: false,
       hoverImg: false,
       subIndex: 0,
       imgIndex: 0,
+      opacity: 0,
     };
   }
 
   componentDidMount() {
-    this.setState({
-      fixedMenu: CHARACTER,
-    });
+    setTimeout(() => {
+      this.setState({ opacity: 1 });
+    }, 0);
 
-    fetch("/data/mock.json")
+    fetch("/Data/mock.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -34,7 +35,7 @@ class DropDownMain extends React.Component {
 
   render() {
     return (
-      <div className="dropDownWrap">
+      <div style={{ opacity: this.state.opacity }} className="dropDownWrap">
         <ul className="hoverMainMenu">
           {this.state.mainMenu.map((category) => {
             return (

@@ -4,6 +4,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export class ImgSlider extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      source: this.props.productDetails.image_list,
+    };
+  }
+
   render() {
     var settings = {
       dots: true,
@@ -17,27 +25,13 @@ export class ImgSlider extends Component {
     };
     return (
       <Slider {...settings}>
-        <div className="slideWrap">
-          <img
-            src="https://t1.daumcdn.net/friends/prod/product/8809721503980_AW_00.jpg"
-            alt=""
-            className="slideImg"
-          />
-        </div>
-        <div className="slideWrap">
-          <img
-            src="https://t1.daumcdn.net/friends/prod/product/8809721503980_AW_01.jpg"
-            alt=""
-            className="slideImg"
-          />
-        </div>
-        <div className="slideWrap">
-          <img
-            src="https://t1.daumcdn.net/friends/prod/product/8809721503980_AW_02.jpg"
-            alt=""
-            className="slideImg"
-          />
-        </div>
+        {this.state.source.map((el) => {
+          return (
+            <div className="slideWrap">
+              <img src={el} alt="" className="slideImg" />
+            </div>
+          );
+        })}
       </Slider>
     );
   }

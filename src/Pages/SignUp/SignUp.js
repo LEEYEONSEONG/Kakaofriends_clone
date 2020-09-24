@@ -1,4 +1,9 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+<<<<<<< HEAD
+=======
+import URL from "../../url";
+>>>>>>> master
 import "./SignUp.scss";
 
 class SignUp extends React.Component {
@@ -9,9 +14,13 @@ class SignUp extends React.Component {
       idValue: "",
       pwdValue: "",
       pwdCheckValue: "",
+      nameValue: "",
+      phoneValue: "",
       idErrorText: "",
       pwdErrorText: "",
       isConfirmForm: false,
+      isNextbtn: false,
+      isModal: false,
     };
   }
 
@@ -29,17 +38,33 @@ class SignUp extends React.Component {
   };
 
   handleClick = () => {
-    const SIGNUP_STATUS = {
-      100: "카카오계정 이메일을 입력해주세요.",
-      200: "이메일 형식이 올바르지 않습니다.",
-      300: "카카오계정 비밀번호를 입력해주세요.(영문자/숫자/특수문자",
-      400: "입력한 비밀번호와 재입력학 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.",
-    };
-
     const errorText = SIGNUP_STATUS[this.validata()];
     const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
 
-    if (!errorText) fetch();
+    if (!errorText) {
+<<<<<<< HEAD
+      fetch("http://10.58.1.216:8000/account/signup", {
+=======
+      fetch(URL + "account/signup", {
+>>>>>>> master
+        method: "POST",
+        body: JSON.stringify({
+          email: this.state.idValue,
+          password: this.state.pwdValue,
+          name: this.state.nameValue,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.message === "SUCCESS") {
+            this.props.history.push("/signin");
+            return;
+          }
+          this.setState({
+            isModal: !this.state.isModal,
+          });
+        });
+    }
 
     if (errorText) {
       this.setState({
@@ -62,6 +87,12 @@ class SignUp extends React.Component {
     if (pwdCheck) return 400;
   };
 
+  checkOutModal = () => {
+    this.setState({
+      isModal: !this.state.isModal,
+    });
+  };
+
   render() {
     const {
       idValue,
@@ -70,7 +101,13 @@ class SignUp extends React.Component {
       pwdCheckValue,
       pwdErrorText,
       isConfirmForm,
+      nameValue,
+      phoneValue,
+      isModal,
     } = this.state;
+
+    const nextBtn = idValue.length && pwdValue && nameValue;
+
     return (
       <div className="SignUp">
         <div className="kakaoWrap">
@@ -88,6 +125,7 @@ class SignUp extends React.Component {
                   onChange={this.handleIdPwdValue}
                   value={idValue}
                   name="idValue"
+                  autoComplete="off"
                 />
                 <div className="idError">
                   <p>{idErrorText}</p>
@@ -110,6 +148,7 @@ class SignUp extends React.Component {
                     value={pwdValue}
                     type="search"
                     name="pwdValue"
+                    autoComplete="off"
                   />
                   <input
                     className="pwdCheck"
@@ -118,6 +157,7 @@ class SignUp extends React.Component {
                     value={pwdCheckValue}
                     type="search"
                     name="pwdCheckValue"
+                    autoComplete="off"
                   />
                   <div className="pwdError">
                     <p>{pwdErrorText}</p>
@@ -128,7 +168,11 @@ class SignUp extends React.Component {
                   <input
                     className="nickUnfo"
                     placeholder="닉네임을 입력해주세요."
+                    onChange={this.handleIdPwdValue}
+                    value={nameValue}
                     type="search"
+                    name="nameValue"
+                    autoComplete="off"
                   />
                 </div>
               </div>
@@ -146,6 +190,9 @@ class SignUp extends React.Component {
                   className="phoneNumber"
                   placeholder="전화번호"
                   type="search"
+                  onChange={this.handleIdPwdValue}
+                  value={phoneValue}
+                  name="phoneValue"
                 />
               </div>
               <div className={isConfirmForm ? "selectPhone" : "closePhone"}>
@@ -161,7 +208,7 @@ class SignUp extends React.Component {
                 </button>
               </div>
               <div className="nextBtn" onClick={this.handleClick}>
-                <button>다음</button>
+                <button className={nextBtn ? "active" : "button"}>다음</button>
               </div>
             </div>
           </div>
@@ -182,12 +229,28 @@ class SignUp extends React.Component {
             </span>
           </div>
         </footer>
+        <div className={isModal ? "modal none" : "modal"}>
+          <div className="modal_content">
+            <p>
+              이미 사용된 Daum 메일 주소여서 또 사용할 수 없어요. 다른 아이디를
+              입력해 주세요.
+            </p>
+            <button
+              type="button"
+              className="modal_close_btn"
+              onClick={this.checkOutModal}
+            >
+              확인
+            </button>
+          </div>
+          <div className="modal_layer"></div>
+        </div>
       </div>
     );
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);
 
 const INFO = [
   "이용약관",
@@ -197,3 +260,10 @@ const INFO = [
   "공지사항",
   "한국어",
 ];
+
+const SIGNUP_STATUS = {
+  100: "카카오계정 이메일을 입력해주세요.",
+  200: "이메일 형식이 올바르지 않습니다.",
+  300: "카카오계정 비밀번호를 입력해주세요.(영문자/숫자/특수문자",
+  400: "입력한 비밀번호와 재입력학 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.",
+};

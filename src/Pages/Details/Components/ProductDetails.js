@@ -21,10 +21,9 @@ export class ProductDetails extends Component {
   }
 
   render() {
-    console.log(this.state.productDetails);
     return (
       <div>
-        {this.state.productDetails.map((el) => (
+        {this.props.productInfo.map((el) => (
           <div
             dangerouslySetInnerHTML={{
               __html: el.detail,
