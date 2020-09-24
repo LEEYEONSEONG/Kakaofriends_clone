@@ -1,18 +1,18 @@
 @import "../../../Styles/common.scss";
 
 .dropDownWrap {
+  @include flexBox(flex-start, center, row);
   position: absolute;
   width: 674px;
   height: 432.5px;
   top: 35px;
   left: -85px;
   padding: 32px 0;
-  @include flexBox(flex-start, center, row);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px;
   border-radius: 3.2px;
-  z-index: 10;
   background-color: #ffffff;
-  animation: 0.5s ease-in-out 0s 1 normal none running fadeIn;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 10000;
 
   .hoverMainMenu {
     width: 163px;
@@ -34,7 +34,7 @@
       .mainDropLink {
         text-align: left;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 15px;
       }
     }
   }
@@ -58,7 +58,7 @@
       .subDropLink {
         text-align: left;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 15px;
       }
     }
   }
@@ -71,7 +71,7 @@
 
     .hoverFixMenu {
       width: 328px;
-      margin-left: 20px;
+      margin: 0 10px;
       background-color: #ffffff;
       @include flexBox(center, flex-start, row);
       flex-wrap: wrap;
@@ -110,7 +110,7 @@
     }
     .dropBannerWrap {
       width: 328px;
-      margin-left: 20px;
+      margin: 0 10px;
       padding: 0 20px;
       @include flexBox(space-between, center, row);
 
