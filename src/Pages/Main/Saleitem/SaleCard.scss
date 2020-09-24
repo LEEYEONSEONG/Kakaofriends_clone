@@ -1,6 +1,6 @@
 @import "../../../Styles/common.scss";
 
-.Salecard {
+.SaleCard {
   @include flexBox(space-between, flex-start, row);
   margin-bottom: 100px;
 }
