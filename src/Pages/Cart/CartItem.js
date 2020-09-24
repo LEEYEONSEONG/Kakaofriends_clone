@@ -1,5 +1,5 @@
 import React from "react";
-import URL from "../../url";
+// import URL from "../../url";
 import "./CartItem.scss";
 
 class CartItem extends React.Component {

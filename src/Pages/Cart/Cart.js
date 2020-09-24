@@ -16,7 +16,6 @@ class Cart extends React.Component {
 
   getCartItem = () => {
     fetch(URL + "cart", {
-      method: "GET",
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -112,12 +111,12 @@ class Cart extends React.Component {
                   <li className="price">상품금액</li>
                 </ul>
               </div>
-              {carts.map((el, idx) => {
+              {carts.map((carts, idx) => {
                 return (
                   <CartItem
-                    key={el.product}
+                    key={carts.product}
                     idx={idx}
-                    carts={el}
+                    carts={carts}
                     check={this.handleCheck}
                     handleDelete={this.handleDelete}
                   />
