@@ -1,17 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
-=======
 import SaleCard from "./SaleCard";
 import List from "../../../Components/List/List";
 import { withInfiniteScroll } from "../hoc";
->>>>>>> master
 import "./Saleitem.scss";
 
 class Saleitem extends React.Component {
   render() {
-<<<<<<< HEAD
-    return <div className="Saleitem"></div>;
-=======
     const { productList } = this.props;
     return (
       <article className="Saleitem">
@@ -21,7 +15,6 @@ class Saleitem extends React.Component {
         <List productList={productList.slice(3)} />
       </article>
     );
->>>>>>> master
   }
 }
 
