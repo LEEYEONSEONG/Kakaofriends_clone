@@ -39,12 +39,145 @@
   z-index: 1;
 }
 
+.Title {
+  .titleWrap {
+    @include flexBox(center, center, column);
+
+    .titleText {
+      font-size: 48px;
+      line-height: 56px;
+      text-align: center;
+      padding-top: 30px;
+      max-width: 580px;
+      margin: auto;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .share {
+      position: absolute;
+      right: 220px;
+      top: 720px;
+      @include flexBox(center, center, row);
+      .shareBtn {
+        width: 37px;
+        height: 37px;
+        margin: 0px 3.5px 3px;
+
+        .btnImg {
+          width: 37px;
+          height: 37px;
+        }
+      }
+    }
+
+    .titlePrice {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 24px;
+      color: rgb(51, 51, 51);
+      line-height: 1.5;
+    }
+
+    .titleScore {
+      left: 130px;
+      margin-top: 11px;
+      @include flexBox(center, center, row);
+
+      .star {
+        @include flexBox(center, center, row);
+        .eachStar {
+          display: inline-block;
+          width: 22px;
+          height: 20px;
+          margin: 0px 3.5px;
+          background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/star_on.png");
+          background-position: left center;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+        }
+        .blankStar {
+          display: inline-block;
+          width: 22px;
+          height: 20px;
+          margin: 0px 3.5px;
+          background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/star_off.png");
+          background-position: left center;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+        }
+      }
+    }
+  }
+}
+
+.mainWrap {
+  margin-top: 60px;
+  text-align: center;
+  @include flexBox(center, center, column);
+
+  .detailsSub {
+    padding-left: 8px;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: rgb(51, 51, 51);
+    list-style: none;
+    text-align: left;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    line-height: 32px;
+  }
+
+  div {
+    max-width: 1080px;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    text-align: center;
+  }
+
+  hr {
+    visibility: hidden;
+  }
+
+  img {
+    max-width: 1080px;
+  }
+  .detailsMain {
+    max-width: 1080px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    text-align: center;
+  }
+}
+
 .Shipping {
   width: 1080px;
   height: auto;
   margin: 0 auto;
   border-top: 1px solid rgb(227, 229, 232);
   @include flexBox(center, flex-start, column);
+
+  li::before {
+    content: "";
+    top: 10.75px;
+    position: absolute;
+    left: 0px;
+    width: px;
+    height: 2.5px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 50%;
+  }
 
   .shippingHeader {
     width: 100%;
@@ -56,8 +189,10 @@
       color: rgb(154, 154, 158);
       margin-left: 15px;
       line-height: 1.5;
+      font-weight: lighter;
     }
   }
+
   .section {
     width: 100%;
 
@@ -196,6 +331,17 @@
           height: 20px;
           margin: 0px 3.5px 3px;
           background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/star_on.png");
+          background-position: left center;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+        }
+
+        .blankStar {
+          display: inline-block;
+          width: 22px;
+          height: 20px;
+          margin: 0px 3.5px;
+          background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/common/star_off.png");
           background-position: left center;
           background-repeat: no-repeat;
           background-size: auto 100%;
