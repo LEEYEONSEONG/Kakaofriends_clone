@@ -1,0 +1,20 @@
+.TopBtn {
+  display: none;
+  bottom: 13px;
+  right: 13px;
+  width: 46px;
+  height: 46px;
+  background-size: 17px;
+  color: transparent;
+
+  &.actived {
+    display: block;
+    position: fixed;
+    background: url("https://t1.kakaocdn.net/friends/kfo-common/mo/m640/ico_top.png")
+      center center / 16px no-repeat rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    border: 1px solid rgb(198, 198, 198);
+    cursor: pointer;
+    z-index: 10000;
+  }
+}
