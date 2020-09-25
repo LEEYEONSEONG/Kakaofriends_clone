@@ -13,7 +13,7 @@ class HomeCard extends React.Component {
   }
 
   componentDidMount() {
-    const { height } = this.divElement.current.clientHeight;
+    const height = this.divElement.current.clientHeight;
     this.setState({ height });
   }
 
