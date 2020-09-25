@@ -1,38 +1,19 @@
 import React from "react";
+// import URL from "../../url";
 import "./CartItem.scss";
 
 class CartItem extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isChecked: true,
-      isPrice: "",
-    };
-  }
-
-  handleCheck = () => {
-    this.setState({
-      isChecked: !this.state.isChecked,
-    });
-  };
-
-  handleDelete = () => {
-    fetch(URL + "cart", {
-      method: "DELETE",
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        product: this.state.cardID,
-      }),
-    });
-  };
-
   render() {
-    const { isChecked } = this.state;
+    const {
+      cart_id,
+      product,
+      main_image,
+      name,
+      price,
+      count,
+    } = this.props.carts;
 
-    const { product, image, name, price, count } = this.props.carts;
+    const { idx, icon } = this.props;
 
     const OPTIONS_COUNT = 30;
     const OPTIONS = Array(OPTIONS_COUNT)
@@ -43,31 +24,21 @@ class CartItem extends React.Component {
       <div key={product} className="CartItem">
         <ul className="cartItemWrapper">
           <li className="cartItemWrap">
-            <label className={`itemChecker ${isChecked ? "" : "unchecked"}`}>
-              <input
-                onClick={this.handleCheck}
-                type="checkbox"
-                className="itemCheckBox"
-                checked={isChecked ? "checked" : "unchecked"}
-              ></input>
-            </label>
+            <label
+              onClick={() => this.props.check(idx)}
+              className={`itemChecker ${icon ? "" : "unchecked"}`}
+            />
             <div className="imageWrap">
-              <a
-                className="image1"
-                href="https://store.kakaofriends.com/kr/products/7187"
-              >
-                <span itemtype="basket" className="thumbnail">
-                  <span class="img__Wrap-sc-1ck9vd1-0 kukZNN">
-                    <img
-                      src={image}
-                      alt="마우스패드_죠르디"
-                      class="thumbnailImage"
-                    />
-                  </span>
+              <span itemType="basket" className="thumbnail">
+                <span className="img__Wrap-sc-1ck9vd1-0 kukZNN">
+                  <img
+                    src={main_image}
+                    alt="떰네일"
+                    className="thumbnailImage"
+                  />
                 </span>
-              </a>
+              </span>
             </div>
-
             <div className="basketItem">
               <div className="itemTitle">
                 <div className="titleItemTitle">{name}</div>
@@ -76,9 +47,10 @@ class CartItem extends React.Component {
                   <div className="optionWrap">
                     <label content="1" className="selectQuantityBox">
                       <select className="selectQuantity">
-                        {OPTIONS.map((el) => {
+                        {OPTIONS.map(el => {
                           return (
                             <option
+                              key={el}
                               onChange={this.handlePrice}
                               value={el}
                               selected={el === count && true}
@@ -91,12 +63,14 @@ class CartItem extends React.Component {
                     </label>
                   </div>
                   <div className="priceWrap">
-                    <span>{price?.toLocaleString()}</span>
+                    <span>{price.toLocaleString()}</span>
                     원
                   </div>
                   <button
-                    class="removeButton"
-                    onClick={this.handleDelete}
+                    className="removeButton"
+                    onClick={() =>
+                      this.props.handleDelete(cart_id, this.props.idx)
+                    }
                   ></button>
                 </div>
               </div>

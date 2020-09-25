@@ -10,7 +10,7 @@ class Card extends React.Component {
     cartID: 0,
   };
 
-  handleCart = (cartID) => {
+  handleCart = cartID => {
     const { isCartAdd, productID } = this.state;
     if (!isCartAdd) {
       fetch(`${URL}cart`, {
@@ -24,8 +24,8 @@ class Card extends React.Component {
           isCartAdd: true,
         }),
       })
-        .then((res) => res.json())
-        .then((res) => {
+        .then(res => res.json())
+        .then(res => {
           if (res.message) {
             alert("로그인해주세요!");
             return;
