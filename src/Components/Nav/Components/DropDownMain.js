@@ -61,6 +61,9 @@ class DropDownMain extends React.Component {
           {mainMenu.map((category) => {
             return (
               <li
+                onClick={() =>
+                  this.props.history.push(`/category/${category.id}`)
+                }
                 key={category.id}
                 className="mainDropList"
                 onMouseOver={() => {

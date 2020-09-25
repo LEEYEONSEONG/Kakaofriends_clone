@@ -15,7 +15,7 @@ export class ReviewComment extends Component {
     fetch("/Data/mock.json")
       .then((res) => res.json())
       .then((res) => {
-        const result = res.comments;
+        const result = res.comment;
         this.setState({
           comment: result,
         });
@@ -36,13 +36,13 @@ export class ReviewComment extends Component {
               {productInfo[0] &&
                 Array(productInfo[0].score)
                   .fill(1)
-                  .map((filledstar) => {
+                  ?.map((filledstar) => {
                     return <span className="eachStar"></span>;
                   })}
               {productInfo[0] &&
                 Array(5 - productInfo[0].score)
                   .fill(1)
-                  .map((emptystar) => {
+                  ?.map((emptystar) => {
                     return <span className="blankStar"></span>;
                   })}
               <span className="revScore">
@@ -57,7 +57,7 @@ export class ReviewComment extends Component {
           <button className="sortByLike">좋아요순</button>
           <button className="sortByDate">최신순</button>
           <ul className="commentList">
-            {comment.map((comment) => {
+            {comment?.map((comment) => {
               return (
                 <li className="commentListLi" key={comment.id}>
                   <div className="listWrap">

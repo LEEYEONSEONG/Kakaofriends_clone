@@ -7,7 +7,7 @@ class List extends React.Component {
     const { productList } = this.props;
     return (
       <ul className="List">
-        {productList.map((product) => {
+        {productList?.map((product) => {
           return (
             <Card
               key={product.product_id}

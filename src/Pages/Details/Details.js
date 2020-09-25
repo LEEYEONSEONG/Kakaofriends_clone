@@ -11,7 +11,6 @@ import TopBtn from "../../Components/TopBtn/TopBtn";
 import "./Details.scss";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
-import TopBtn from "../../Components/TopBtn/TopBtn";
 import URL from "../../url";
 import "./Details.scss";
 

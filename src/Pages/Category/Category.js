@@ -1,10 +1,11 @@
 import React from "react";
 import List from "../../Components/List/List";
 import Sorting from "../../Components/Sorting/Sorting";
-import "./Category.scss";
-import "../Main/Allitem/Allitem.scss";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
+import URL from "../../url";
+import "./Category.scss";
+import "../Main/Allitem/Allitem.scss";
 
 class Category extends React.Component {
   constructor() {
@@ -26,7 +27,7 @@ class Category extends React.Component {
         });
       });
 
-    fetch("http://10.58.6.7:8001/products?main-category=2")
+    fetch(`${URL}products?main-category=2`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
