@@ -1,5 +1,4 @@
 import React from "react";
-// import URL from "../../url";
 import "./CartItem.scss";
 
 class CartItem extends React.Component {
@@ -47,7 +46,7 @@ class CartItem extends React.Component {
                   <div className="optionWrap">
                     <label content="1" className="selectQuantityBox">
                       <select className="selectQuantity">
-                        {OPTIONS.map(el => {
+                        {OPTIONS.map((el) => {
                           return (
                             <option
                               key={el}
