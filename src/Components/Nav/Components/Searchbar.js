@@ -15,9 +15,7 @@ class Searchbar extends React.Component {
   }
 
   componentDidMount() {
-    fetch(URL + "products", {
-      method: "GET",
-    })
+    fetch(`${URL}products`)
       .then((res) => res.json())
       .then((res) => {
         const result = res.data_list;
@@ -29,7 +27,6 @@ class Searchbar extends React.Component {
 
   searchItems = (e) => {
     e.preventDefault();
-    console.log(this.state.searchValue);
     this.setState({
       matchArr: [],
     });
@@ -65,6 +62,7 @@ class Searchbar extends React.Component {
         <ul className={`searchResultWrap ${matchArr.length ? "isShown" : ""}`}>
           {matchArr.slice(0, 8).map((product) => (
             <li
+              key={product.product_id}
               dangerouslySetInnerHTML={{
                 __html: product.name.replace(
                   `${searchValue}`,

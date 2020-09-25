@@ -1,0 +1,48 @@
+.locationDetail {
+  flex: 1;
+  width: 1089px;
+  margin: 0 auto;
+
+  .shopDetailImg {
+    width: 353px;
+    height: 500px;
+    margin: 10px 10px 0px 0px;
+
+    img {
+      width: 100%;
+    }
+
+    .shopDetail {
+      height: 250px;
+      padding: 30px 24px 26px;
+      border: 1px rgb(238, 238, 238) solid;
+      border-top: none;
+
+      strong {
+        font-size: 22px;
+      }
+
+      .wrapText {
+        margin-top: 13px;
+
+        img {
+          margin-right: 10px;
+          width: 25px;
+          height: 25px;
+        }
+
+        .textinfo {
+          display: flex;
+          margin-bottom: 10px;
+          font-size: 15px;
+          line-height: 23px;
+
+          a {
+            color: cornflowerblue;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

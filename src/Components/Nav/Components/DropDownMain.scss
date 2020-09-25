@@ -3,10 +3,10 @@
 .dropDownWrap {
   @include flexBox(flex-start, center, row);
   position: absolute;
-  width: 674px;
-  height: 432.5px;
   top: 35px;
   left: -85px;
+  width: 674px;
+  height: 432.5px;
   padding: 32px 0;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px;
   border-radius: 3.2px;
@@ -15,11 +15,11 @@
   z-index: 10000;
 
   .hoverMainMenu {
+    @include flexBox(flex-start, flex-start, column);
     width: 163px;
     height: 100%;
     border-right: solid 1px rgb(227, 229, 232);
     background-color: #ffffff;
-    @include flexBox(flex-start, flex-start, column);
 
     .mainDropList {
       height: 22px;
@@ -40,10 +40,10 @@
   }
 
   .hoverSubMenu {
+    @include flexBox(flex-start, flex-start, column);
     width: 163px;
     height: 100%;
     background-color: #ffffff;
-    @include flexBox(flex-start, flex-start, column);
 
     .subDropList {
       height: 22px;
@@ -64,23 +64,22 @@
   }
 
   .hoverFixMenuWrap {
+    @include flexBox(space-between, space-between, column);
     height: 100%;
     background-color: #ffffff;
     border-left: solid 1px rgb(227, 229, 232);
-    @include flexBox(space-between, space-between, column);
 
     .hoverFixMenu {
+      @include flexBox(center, flex-start, row);
+      flex-wrap: wrap;
       width: 328px;
       margin: 0 10px;
       background-color: #ffffff;
-      @include flexBox(center, flex-start, row);
-      flex-wrap: wrap;
 
       .sortByCharacter {
+        @include flexBox(center, center, row);
         display: block;
         margin: 7px 4px;
-        @include flexBox(center, center, row);
-
         :hover {
           font-weight: 700;
         }
@@ -100,19 +99,19 @@
             }
           }
           .charName {
+            margin-top: 8px;
             line-height: 1.5;
             font-size: 14px;
-            margin-top: 8px;
             text-align: center;
           }
         }
       }
     }
     .dropBannerWrap {
+      @include flexBox(space-between, center, row);
       width: 328px;
       margin: 0 10px;
       padding: 0 20px;
-      @include flexBox(space-between, center, row);
 
       .dropBanner {
         .dropBannerImg1 {

@@ -3,32 +3,34 @@
 .Searchbar {
   position: relative;
   margin-left: -10px;
+
   .box {
+    @include flexBox(flex-start, center, row);
     width: 216px;
     height: 40px;
     border: 1px solid #ededed;
     border-radius: 3.2px;
-    @include flexBox(flex-start, center, row);
 
     .btn {
-      border: none;
       padding: 3px 5px 0 10px;
       background: none;
+      border: none;
 
       .icon {
         display: inline-block;
         width: 14.4px;
         height: 14.4px;
-        background: url("/images/ico-header-search.png") center no-repeat;
+        background: url("/Images/ico-header-search.png") center no-repeat;
         background-size: 14.4px 14.4px;
       }
     }
     .SearchbarInput {
       border: none;
       padding: 9px 0;
-      outline: none;
-      font-size: 15px;
       color: gray;
+      font-size: 15px;
+      outline: none;
+
       &::-webkit-search-cancel-button {
         -webkit-appearance: none;
         height: 14px;

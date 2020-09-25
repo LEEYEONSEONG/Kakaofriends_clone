@@ -1,64 +1,63 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import URL from "../../url";
 import "./Card.scss";
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    isCartAdd: false,
+    productID: this.props.id,
+    cartID: 0,
+  };
 
-    this.state = {
-      isCartAdd: false,
-      productID: this.props.id,
-    };
-  }
-
-  handleCart = () => {
-    const { isCartAdd } = this.state;
+  handleCart = (cartID) => {
+    const { isCartAdd, productID } = this.state;
     if (!isCartAdd) {
-      fetch(URL + "cart/products", {
+      fetch(`${URL}cart`, {
         method: "POST",
         headers: {
           Authorization: localStorage.getItem("token"),
         },
         body: JSON.stringify({
-          product: this.state.productID,
+          product: productID,
           count: "1",
+          isCartAdd: true,
         }),
       })
         .then((res) => res.json())
         .then((res) => {
-          if (res.message !== "SUCCESS") {
+          if (res.message) {
             alert("로그인해주세요!");
             return;
           }
           this.setState({
-            isCartAdd: !this.state.isCartAdd,
+            isCartAdd: !isCartAdd,
+            cartID: res.cart_id,
           });
         });
     } else {
-      fetch(URL + "cart/products", {
+      fetch(`${URL}cart/${cartID}`, {
         method: "DELETE",
         headers: {
           Authorization: localStorage.getItem("token"),
         },
-        body: JSON.stringify({
-          product: this.state.productID,
-          // count: "1",
-        }),
       });
       this.setState({
-        isCartAdd: !this.state.isCartAdd,
+        isCartAdd: !isCartAdd,
       });
     }
   };
 
   render() {
-    const { isCartAdd } = this.state;
-    const { name, img, price, dcprice, dcpercent } = this.props;
+    const { isCartAdd, cartID } = this.state;
+    const { id, name, img, price, dcprice, dcpercent } = this.props;
     return (
       <li className="Card">
         <div>
-          <div className="thumnailWrap">
+          <div
+            onClick={() => this.props.history.push(`/details/${id}`)}
+            className="thumnailWrap"
+          >
             <div className="imgWrap" />
             <img alt="상품이미지" className="cardImage" src={img} />
           </div>
@@ -75,7 +74,7 @@ class Card extends React.Component {
         <div className="cartWrap">
           <button
             className={isCartAdd ? "addCart" : ""}
-            onClick={this.handleCart}
+            onClick={() => this.handleCart(cartID)}
             type="button"
           >
             담기
@@ -86,4 +85,4 @@ class Card extends React.Component {
   }
 }
 
-export default Card;
+export default withRouter(Card);

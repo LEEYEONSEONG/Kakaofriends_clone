@@ -1,11 +1,11 @@
 @import "../../../Styles/common.scss";
 
 .Homeitem {
+  position: relative;
   width: 1126px;
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 35px;
-  position: relative;
 
   .HomeCardList {
     display: grid;

@@ -26,7 +26,6 @@ class SearchResult extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         if (res.data_list.length) {
           this.setState({
             productList: res.data_list,
@@ -51,8 +50,6 @@ class SearchResult extends React.Component {
   }
 
   render() {
-    console.log(this.props.history.location.state);
-    console.log(this.state.productList);
     const { productList, totalCount } = this.state;
     return (
       <>

@@ -10,6 +10,7 @@ class SortChar extends React.Component {
   }
   render() {
     const { id, name, nameKor, imgOn, img } = this.props;
+    const { isImgOn } = this.state;
     return (
       <li
         key={id}
@@ -22,7 +23,7 @@ class SortChar extends React.Component {
             <span className="charImgWrap">
               <img
                 alt={name}
-                src={this.state.isImgOn ? imgOn : img}
+                src={isImgOn ? imgOn : img}
                 className="eachChar"
               />
             </span>

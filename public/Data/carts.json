@@ -1,0 +1,28 @@
+{
+  "carts": [
+    {
+      "product": 1,
+      "image": "https://t1.daumcdn.net/friends/prod/product/20200708183424425_8809721502129_8809721502129_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "마우스패드_죠르디",
+      "count": 2,
+      "discount_price": 0,
+      "price": 5000
+    },
+    {
+      "product": 2,
+      "image": "https://t1.daumcdn.net/friends/prod/product/20190902155910225_8809656139841_8809656139841_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "차량용방향제(통풍구형)_Apeach",
+      "count": 3,
+      "discount_price": 0,
+      "price": 13900
+    },
+    {
+      "product": 3,
+      "image": "https://t1.daumcdn.net/friends/prod/product/FRPBRYHMD8001_AW_00.jpg?type=thumb&opt=R255x255@2xa",
+      "name": "라이언 가습기",
+      "count": 1,
+      "discount_price": 0,
+      "price": 29000
+    }
+  ]
+}
