@@ -42,7 +42,9 @@ class Footer extends React.Component {
               통신판매업 신고번호 : 2017-서울강남-02573
             </span>
             <br />
-            <span className="infoText">대표이사 : 권승조</span>
+            <span className="infoText">
+              공동대표 : 김진희 이형우 이연성 정다솜 최지선 이지형
+            </span>
             <br />
             <span className="infoText">
               주소 : 서울특별시 강남구 테헤란로98길(대치동) 11 EG빌딩 5,6층
@@ -54,9 +56,10 @@ class Footer extends React.Component {
             <br />
             <a className="infoText" href="/#">
               store@kakaofriends.com
+              <br />
             </a>
             <span className="infoText">
-              글로벌 배송 문의 :
+              글로벌 배송 문의 :{" "}
               <a className="infoText" href="/#">
                 global@kakaofriends.com
               </a>
