@@ -101,9 +101,8 @@ class Cart extends React.Component {
   };
 
   render() {
-    const { carts, totalPrice, allBtnCheck } = this.state;
+    const { carts, totalPrice, allBtnCheck, isAllChecked } = this.state;
     const freeDelivery = totalPrice >= 30000;
-    console.log("render launched", this.state.isAllChecked);
     return (
       <div className="Cart">
         <Nav />
@@ -135,11 +134,13 @@ class Cart extends React.Component {
                   />
                   <span className="total">전체</span>
                   <span className="null">&nbsp;</span>
-                  <span className="totalCount">3</span>
+                  <span className="totalCount">{carts.length}</span>
                 </div>
                 <div className="headerDelete">
-                  <span className="delete">3개 선택</span>
-                  <button type="button" class="deleteButton" />
+                  <span className="delete">
+                    {isAllChecked.filter(x => x === true).length}개 선택
+                  </span>
+                  <button type="button" className="deleteButton" />
                 </div>
               </div>
             </div>
@@ -155,21 +156,20 @@ class Cart extends React.Component {
               {carts.map((carts, idx) => {
                 return (
                   <CartItem
-                    key={carts.product}
+                    key={idx}
                     idx={idx}
                     carts={carts}
                     check={this.handleCheck}
-                    All
                     handleDelete={this.handleDelete}
-                    icon={this.state.isAllChecked[idx]}
+                    icon={isAllChecked[idx]}
                   />
                 );
               })}
               <div className="totalPriceBox">
                 <div className="totalPriceBarWrap">
                   <span className="deliveryCountry">배송국가</span>
-                  <label content="한국" class="selectBox">
-                    <select class="selectBoxLabel">
+                  <label content="한국" className="selectBox">
+                    <select className="selectBoxLabel">
                       <option value="한국" selected="">
                         한국
                       </option>
@@ -184,7 +184,7 @@ class Cart extends React.Component {
                     </span>
                   </div>
                   <div className="deliveryFee">
-                    <span class="deliveryFeeLabel">배송비</span>
+                    <span className="deliveryFeeLabel">배송비</span>
                     <span className="deliveryFeeWon">
                       <span>
                         {!freeDelivery && totalPrice && "3,000원"}
@@ -194,7 +194,7 @@ class Cart extends React.Component {
                     </span>
                   </div>
                   <div className="totalFee">
-                    <span class="totalFeeLabel">총 결제금액</span>
+                    <span className="totalFeeLabel">총 결제금액</span>
                     <span className="totalFeeWon">
                       {!freeDelivery &&
                         totalPrice &&

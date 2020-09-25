@@ -14,7 +14,6 @@ class CartItem extends React.Component {
     } = this.props.carts;
 
     const { idx, icon } = this.props;
-    console.log(icon);
 
     const OPTIONS_COUNT = 30;
     const OPTIONS = Array(OPTIONS_COUNT)
@@ -30,9 +29,13 @@ class CartItem extends React.Component {
               className={`itemChecker ${icon ? "" : "unchecked"}`}
             />
             <div className="imageWrap">
-              <span itemtype="basket" className="thumbnail">
-                <span class="img__Wrap-sc-1ck9vd1-0 kukZNN">
-                  <img src={main_image} alt="떰네일" class="thumbnailImage" />
+              <span itemType="basket" className="thumbnail">
+                <span className="img__Wrap-sc-1ck9vd1-0 kukZNN">
+                  <img
+                    src={main_image}
+                    alt="떰네일"
+                    className="thumbnailImage"
+                  />
                 </span>
               </span>
             </div>
@@ -47,6 +50,7 @@ class CartItem extends React.Component {
                         {OPTIONS.map(el => {
                           return (
                             <option
+                              key={el}
                               onChange={this.handlePrice}
                               value={el}
                               selected={el === count && true}
@@ -63,7 +67,7 @@ class CartItem extends React.Component {
                     원
                   </div>
                   <button
-                    class="removeButton"
+                    className="removeButton"
                     onClick={() =>
                       this.props.handleDelete(cart_id, this.props.idx)
                     }
