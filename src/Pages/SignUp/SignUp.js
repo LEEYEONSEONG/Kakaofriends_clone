@@ -34,12 +34,12 @@ class SignUp extends React.Component {
     });
   };
 
-  trySignUp = () => {
+  handleClick = () => {
     const errorText = SIGNUP_STATUS[this.validata()];
     const idPwdStatus = this.validata() < 300 ? "idErrorText" : "pwdErrorText";
 
     if (!errorText) {
-      fetch(URL + "account/signup", {
+      fetch(`${URL}account/signup`, {
         method: "POST",
         body: JSON.stringify({
           email: this.state.idValue,
@@ -51,7 +51,6 @@ class SignUp extends React.Component {
         .then((result) => {
           if (result.message === "SUCCESS") {
             this.props.history.push("/signin");
-            return;
           }
           this.setState({
             isModal: !this.state.isModal,
@@ -64,15 +63,6 @@ class SignUp extends React.Component {
         [idPwdStatus]: errorText,
       });
     }
-  };
-
-  handleClick = () => {
-    this.trySignUp();
-  };
-
-  onFormSubmit = (e) => {
-    e.preventDefault();
-    this.trySignUp();
   };
 
   validata = () => {
@@ -112,7 +102,7 @@ class SignUp extends React.Component {
 
     return (
       <div className="SignUp">
-        <form onSubmit={this.onFormSubmit} className="kakaoWrap">
+        <div className="kakaoWrap">
           <div className="kakaoHead">
             <img alt="logo" src="/Images/bannerlogo.png" />
           </div>
@@ -214,7 +204,7 @@ class SignUp extends React.Component {
               </div>
             </div>
           </div>
-        </form>
+        </div>
         <footer className="information">
           <ul className="infoTop">
             {INFO.map((el, i) => {
