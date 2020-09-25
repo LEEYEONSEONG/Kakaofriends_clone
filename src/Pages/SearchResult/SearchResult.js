@@ -43,7 +43,7 @@ class SearchResult extends React.Component {
   componentDidMount() {
     this.showResult();
   }
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.history.location.state !== this.state.searchValue) {
       this.showResult();
     }
