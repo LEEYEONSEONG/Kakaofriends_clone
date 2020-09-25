@@ -47,10 +47,18 @@ class DropDownMain extends React.Component {
   };
 
   render() {
+    const {
+      opacity,
+      mainMenu,
+      hoverOn,
+      subMenu,
+      subIndex,
+      fixedMenu,
+    } = this.state;
     return (
-      <div style={{ opacity: this.state.opacity }} className="dropDownWrap">
+      <div style={{ opacity: opacity }} className="dropDownWrap">
         <ul className="hoverMainMenu">
-          {this.state.mainMenu.map((category) => {
+          {mainMenu.map((category) => {
             return (
               <li
                 key={category.id}
@@ -73,25 +81,23 @@ class DropDownMain extends React.Component {
           })}
         </ul>
         <ul className="hoverSubMenu">
-          {this.state.hoverOn &&
-            this.state.subMenu[this.state.subIndex - 1].subcategory?.map(
-              (subcategory) => {
-                return (
-                  <li key={subcategory.id} className="subDropList">
-                    <a
-                      className="subDropLink"
-                      href="https://store.kakaofriends.com/kr/index?tab=home"
-                    >
-                      {subcategory.category}
-                    </a>
-                  </li>
-                );
-              }
-            )}
+          {hoverOn &&
+            subMenu[subIndex - 1].subcategory?.map((subcategory) => {
+              return (
+                <li key={subcategory.id} className="subDropList">
+                  <a
+                    className="subDropLink"
+                    href="https://store.kakaofriends.com/kr/index?tab=home"
+                  >
+                    {subcategory.category}
+                  </a>
+                </li>
+              );
+            })}
         </ul>
         <div className="hoverFixMenuWrap">
           <ul className="hoverFixMenu">
-            {this.state.fixedMenu.map((character) => (
+            {fixedMenu.map((character) => (
               <SortChar
                 id={character.id}
                 key={character.id}

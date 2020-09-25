@@ -15,7 +15,7 @@ export class ReviewComment extends Component {
     fetch("/Data/mock.json")
       .then((res) => res.json())
       .then((res) => {
-        const result = res.comment;
+        const result = res.comments;
         this.setState({
           comment: result,
         });
@@ -23,19 +23,31 @@ export class ReviewComment extends Component {
   }
 
   render() {
+    const { productInfo } = this.props;
     const { comment } = this.state;
     return (
       <div className="ReviewComment">
         <div className="review">
           <div className="reviewWrap">
-            <h3 className="title">리뷰 {comment.length}개</h3>
+            <h3 className="title">
+              리뷰 {productInfo[0] && productInfo[0].review_count}개
+            </h3>
             <div className="stars">
-              <span className="eachStar"></span>
-              <span className="eachStar"></span>
-              <span className="eachStar"></span>
-              <span className="eachStar"></span>
-              <span className="eachStar"></span>
-              <span className="revScore">5</span>
+              {productInfo[0] &&
+                Array(productInfo[0].score)
+                  .fill(1)
+                  .map((filledstar) => {
+                    return <span className="eachStar"></span>;
+                  })}
+              {productInfo[0] &&
+                Array(5 - productInfo[0].score)
+                  .fill(1)
+                  .map((emptystar) => {
+                    return <span className="blankStar"></span>;
+                  })}
+              <span className="revScore">
+                {productInfo[0] && productInfo[0].score}
+              </span>
               <span className="revScoreOutof">5.0</span>
             </div>
           </div>

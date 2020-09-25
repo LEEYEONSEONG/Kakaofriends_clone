@@ -16,9 +16,9 @@ class Slide extends React.Component {
     };
     return (
       <Slider {...settings} className="babo">
-        {SLIDERS.map((slide) => {
+        {SLIDERS.map((slide, index) => {
           return (
-            <div>
+            <div key={index}>
               <img src={slide} alt="라이언" />
             </div>
           );

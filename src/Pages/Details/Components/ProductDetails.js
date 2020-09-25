@@ -24,11 +24,21 @@ export class ProductDetails extends Component {
     return (
       <div>
         {this.props.productInfo.map((el) => (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: el.detail,
-            }}
-          />
+          <div className="mainWrap">
+            <div
+              className="detailsMain"
+              dangerouslySetInnerHTML={{
+                __html: el.detail,
+              }}
+            />
+
+            <div
+              className="detailsSub"
+              dangerouslySetInnerHTML={{
+                __html: el.sub_detail,
+              }}
+            />
+          </div>
         ))}
       </div>
     );

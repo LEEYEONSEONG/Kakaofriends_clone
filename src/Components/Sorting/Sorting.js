@@ -4,13 +4,10 @@ import "./Sorting.scss";
 import CHARACTER from "./SortingData";
 
 class Sorting extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      charList: CHARACTER,
-      whichModalShown: 0,
-    };
-  }
+  state = {
+    charList: CHARACTER,
+    whichModalShown: 0,
+  };
 
   showOption = (e) => {
     const { whichModalShown } = this.state;

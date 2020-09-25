@@ -10,10 +10,10 @@ class Card extends React.Component {
     cartID: 0,
   };
 
-  handleCart = (cartID) => {
+  handleCart = cartID => {
     const { isCartAdd, productID } = this.state;
     if (!isCartAdd) {
-      fetch(URL + "cart", {
+      fetch(`${URL}cart`, {
         method: "POST",
         headers: {
           Authorization: localStorage.getItem("token"),
@@ -24,8 +24,8 @@ class Card extends React.Component {
           isCartAdd: true,
         }),
       })
-        .then((res) => res.json())
-        .then((res) => {
+        .then(res => res.json())
+        .then(res => {
           if (res.message) {
             alert("로그인해주세요!");
             return;
@@ -36,7 +36,7 @@ class Card extends React.Component {
           });
         });
     } else {
-      fetch(URL + "cart/" + cartID, {
+      fetch(`${URL}cart/${cartID}`, {
         method: "DELETE",
         headers: {
           Authorization: localStorage.getItem("token"),
@@ -52,12 +52,12 @@ class Card extends React.Component {
     const { isCartAdd, cartID } = this.state;
     const { id, name, img, price, dcprice, dcpercent } = this.props;
     return (
-      <li
-        className="Card"
-        onClick={() => this.props.history.push(`/details/${id}`)}
-      >
+      <li className="Card">
         <div>
-          <div className="thumnailWrap">
+          <div
+            onClick={() => this.props.history.push(`/details/${id}`)}
+            className="thumnailWrap"
+          >
             <div className="imgWrap" />
             <img alt="상품이미지" className="cardImage" src={img} />
           </div>

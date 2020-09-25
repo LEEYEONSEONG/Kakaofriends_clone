@@ -1,5 +1,6 @@
 import React from "react";
 import ImgSlider from "./Components/ImgSlider";
+import Title from "./Components/Title";
 import ProductDetails from "./Components/ProductDetails";
 import Shipping from "./Components/Shipping";
 import LiveRfq from "./Components/LiveRfq";
@@ -8,6 +9,9 @@ import Suggestion from "./Components/Suggestion";
 import PurchaseBar from "./Components/PurchaseBar";
 import TopBtn from "../../Components/TopBtn/TopBtn";
 import "./Details.scss";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
+import TopBtn from "../../Components/TopBtn/TopBtn";
 
 class Details extends React.Component {
   constructor() {
@@ -17,9 +21,10 @@ class Details extends React.Component {
       productDetails: [],
     };
   }
+  s;
 
   componentDidMount() {
-    fetch("http://10.58.6.7:8001/products/product/250")
+    fetch("http://10.58.2.194:8001/products/210")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -30,14 +35,17 @@ class Details extends React.Component {
   render() {
     return (
       <div className="Details">
+        <Nav />
         <ImgSlider productInfo={this.state.productDetails} />
+        <Title productInfo={this.state.productDetails} />
         <ProductDetails productInfo={this.state.productDetails} />
         <Shipping />
         <LiveRfq />
-        <ReviewComment />
+        <ReviewComment productInfo={this.state.productDetails} />
         <Suggestion />
         <PurchaseBar productInfo={this.state.productDetails} />
         <TopBtn />
+        <Footer />
       </div>
     );
   }
