@@ -4,9 +4,9 @@ import "../Details.scss";
 export class PurchaseBar extends Component {
   constructor() {
     super();
+
     this.state = {
       count: 1,
-      price: this.props.productDetails.price,
     };
   }
 
@@ -16,12 +16,13 @@ export class PurchaseBar extends Component {
 
   increaseQty = () => {
     return this.state.count > 1
-      ? () => this.setState({ count: this.state.count - 1 })
+      ? this.setState({ count: this.state.count - 1 })
       : null;
   };
 
   render() {
-    const { count, price } = this.state;
+    const { count } = this.state;
+    const { productInfo } = this.props;
     return (
       <div className="PurchaseBar">
         <div className="counter">
@@ -38,7 +39,12 @@ export class PurchaseBar extends Component {
           </div>
           <div className="totalPrice">
             <span className="totalText">총 상품금액</span>
-            <span className="price">{(price * count)?.toLocaleString()}원</span>
+            <span className="price">
+              {(
+                productInfo[0] && productInfo[0].price * count
+              )?.toLocaleString()}
+              원
+            </span>
           </div>
         </div>
         <div className="addToCart">
