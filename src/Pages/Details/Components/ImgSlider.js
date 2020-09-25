@@ -7,12 +7,11 @@ export class ImgSlider extends Component {
   constructor() {
     super();
 
-    this.state = {
-      source: this.props.productDetails.image_list,
-    };
+    this.state = {};
   }
 
   render() {
+    const { productInfo } = this.props;
     var settings = {
       dots: true,
       infinite: true,
@@ -23,15 +22,32 @@ export class ImgSlider extends Component {
       autoplaySpeed: 3500,
       pauseOnHover: false,
     };
+
     return (
       <Slider {...settings}>
-        {this.state.source.map((el) => {
-          return (
-            <div className="slideWrap">
-              <img src={el} alt="" className="slideImg" />
-            </div>
-          );
-        })}
+        <div className="slideWrap">
+          <img
+            src={productInfo[0] && productInfo[0].image_list[0]}
+            alt=""
+            className="slideImg"
+          />
+        </div>
+
+        <div className="slideWrap">
+          <img
+            src={productInfo[0] && productInfo[0].image_list[1]}
+            alt=""
+            className="slideImg"
+          />
+        </div>
+
+        <div className="slideWrap">
+          <img
+            src={productInfo[0] && productInfo[0].image_list[2]}
+            alt=""
+            className="slideImg"
+          />
+        </div>
       </Slider>
     );
   }
