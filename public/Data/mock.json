@@ -332,6 +332,7 @@
       "category": "토이",
       "banner": "https://t1.daumcdn.net/friends/prod/category/category_toy_W.jpg",
       "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "path": "/category/toy",
       "subcategory": [
         {
           "id": 1,
@@ -439,6 +440,7 @@
       "category": "문구",
       "banner": "https://t1.daumcdn.net/friends/prod/category/category_toy_W.jpg",
       "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
+      "path": "/category/office",
       "subcategory": [
         {
           "id": 1,
