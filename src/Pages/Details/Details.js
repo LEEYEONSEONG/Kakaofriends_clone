@@ -7,10 +7,13 @@ import LiveRfq from "./Components/LiveRfq";
 import ReviewComment from "./Components/ReviewComment";
 import Suggestion from "./Components/Suggestion";
 import PurchaseBar from "./Components/PurchaseBar";
+import TopBtn from "../../Components/TopBtn/TopBtn";
 import "./Details.scss";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
 import TopBtn from "../../Components/TopBtn/TopBtn";
+import URL from "../../url";
+import "./Details.scss";
 
 class Details extends React.Component {
   constructor() {
@@ -23,7 +26,7 @@ class Details extends React.Component {
   s;
 
   componentDidMount() {
-    fetch("http://10.58.2.194:8001/products/210")
+    fetch(`${URL}products/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({

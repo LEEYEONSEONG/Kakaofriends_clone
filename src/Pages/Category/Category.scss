@@ -1,14 +1,14 @@
 @import "../../Styles/common.scss";
 
 .Category {
-  width: 1080px;
   height: auto;
   margin: 66px auto 0;
   font-size: 14px;
 
   .banner {
-    width: 100%;
+    width: 1080px;
     height: 220px;
+    margin: 0 auto;
     @include flexBox(center, center, row);
 
     .bannerImg {
@@ -31,10 +31,13 @@
     }
   }
   .categoryWrap {
-    width: 100%;
+    width: 1080px;
+    margin: 0 auto;
     border-bottom: 1px solid rgb(242, 242, 242);
 
     .category {
+      margin: 0 auto;
+
       .categoryBtnOff {
         font-size: 17px;
         padding: 0px 15px;
