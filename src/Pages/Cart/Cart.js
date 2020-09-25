@@ -106,6 +106,7 @@ class Cart extends React.Component {
     console.log("render launched", this.state.isAllChecked);
     return (
       <div className="Cart">
+        <Nav />
         {!carts.length ? (
           <div className="EmptyCart">
             <p className="cartHeader">장바구니</p>
@@ -212,6 +213,7 @@ class Cart extends React.Component {
             </div>
           </div>
         )}
+        <Footer />
       </div>
     );
   }
