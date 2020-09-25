@@ -7,6 +7,8 @@ import LiveRfq from "./Components/LiveRfq";
 import ReviewComment from "./Components/ReviewComment";
 import Suggestion from "./Components/Suggestion";
 import PurchaseBar from "./Components/PurchaseBar";
+import TopBtn from "../../Components/TopBtn/TopBtn";
+import "./Details.scss";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
 import TopBtn from "../../Components/TopBtn/TopBtn";
