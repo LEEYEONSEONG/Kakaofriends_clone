@@ -3,6 +3,8 @@ import List from "../../Components/List/List";
 import Sorting from "../../Components/Sorting/Sorting";
 import "./Category.scss";
 import "../Main/Allitem/Allitem.scss";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 
 class Category extends React.Component {
   constructor() {
@@ -36,6 +38,7 @@ class Category extends React.Component {
   render() {
     return (
       <div className="Category">
+        <Nav />
         <div className="banner">
           <span className="bannerImg">
             <span className="bannerHeader">토이</span>
@@ -81,6 +84,7 @@ class Category extends React.Component {
           </div>
           <List productList={this.state.productList} />
         </div>
+        <Footer />
       </div>
     );
   }
