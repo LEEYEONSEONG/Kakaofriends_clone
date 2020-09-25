@@ -16,7 +16,7 @@ class Location extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/data/locationmock.json")
+    fetch("/Data/locationmock.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
