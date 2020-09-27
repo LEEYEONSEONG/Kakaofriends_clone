@@ -1,5 +1,4 @@
 import React from "react";
-// import { renderIntoDocument } from "react-dom/test-utils";
 import "./UserModal.scss";
 
 class UserModal extends React.Component {
