@@ -197,41 +197,6 @@
     }
   ],
 
-  "comment": [
-    {
-      "id": 1,
-      "name": "신*환",
-      "score": "1",
-      "date": "2020-09-10",
-      "comment": "인형이 들어있는 포장 플라스틱케이스는 막 던져서 담나보네요 찌그러져있고 밑바닥에는 이상한 종이용지도 붙어오고 인형 코끝에는 노란색 이상한게 묻어 있고 택배 상자는 멀쩡한데 내용물 포장 케이스가 찌그러져 있는건 어떻게 보관하시고 포장하는건가요 실망입니다.",
-      "liked": "7명이 좋아했어요"
-    },
-    {
-      "id": 2,
-      "name": "윤*현",
-      "score": "5",
-      "date": "2020-09-12",
-      "comment": "진짜 너무너무너무 귀여워요ㅠㅠ 라이언도 너무 보들보들하구, 뒤에 땅콩도 너무 귀여워요... 진짜로 사길 잘한 것 같습니다!:)",
-      "liked": "6명이 좋아했어요"
-    },
-    {
-      "id": 3,
-      "name": "유*연",
-      "score": "5",
-      "date": "2020-09-14",
-      "comment": "엄청 귀여워요 선물하기로 최고♥️",
-      "liked": "3명이 좋아했어요"
-    },
-    {
-      "id": 4,
-      "name": "조*아",
-      "score": "5",
-      "date": "2020-09-20",
-      "comment": "선물용이라 투명상자 안에 아직 들어가 있는데 들여다만 봐도 눈이 힐링되네요ㅋㅋ 줄때까지 보면서 눈정화해야겠어요. 귀여워라~",
-      "liked": ""
-    }
-  ],
-
   "MainMenu": [
     {
       "id": 1,
@@ -261,7 +226,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "category": "테마 기획전",
       "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",
       "subcategory": [
@@ -328,7 +293,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "category": "토이",
       "banner": "https://t1.daumcdn.net/friends/prod/category/category_toy_W.jpg",
       "url": "https://store.kakaofriends.com/kr/products/category/subject?sort=sellCount,desc",

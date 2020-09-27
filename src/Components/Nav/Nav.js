@@ -34,7 +34,7 @@ class Nav extends React.Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          itemInCart: res.total_count,
+          itemInCart: res.carts.length,
         });
       });
   };

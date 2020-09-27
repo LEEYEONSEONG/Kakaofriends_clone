@@ -16,6 +16,16 @@ class UserModal extends React.Component {
     }, 0);
   }
 
+  LoginInOut = () => {
+    if (!this.props.isLogin) {
+      this.props.history.push("/signin");
+      return;
+    }
+    window.localStorage.removeItem("token");
+    alert("로그아웃 했습니다!");
+    this.props.history.push("/main");
+  };
+
   render() {
     const { isLogin } = this.props;
     return (
@@ -29,7 +39,7 @@ class UserModal extends React.Component {
         }}
       >
         <li>
-          <a href="/signin">{!isLogin ? "로그인" : "로그아웃"} </a>
+          <p onClick={this.LoginInOut}>{!isLogin ? "로그인" : "로그아웃"} </p>
         </li>
         <li className={isLogin ? "allowed" : "notAllowed"}>주문내역</li>
         <li className={isLogin ? "allowed" : "notAllowed"}>찜</li>
