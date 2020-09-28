@@ -71,7 +71,7 @@ Query String으로 Sorting 된 데이터를 fetch 하여 ordering 옵션 기능�
 #### 5. 매장안내
 구글 API 및 리액트 컴포넌트, map함수를 적극 활용하여 페이지를 구현했다.
 
-![](https://images.velog.io/images/hyounglee/post/9d68350a-1dbe-43f9-bca3-c7527fa5a91c/ezgif.com-video-to-gif%20(12).gif)
+![](https://images.velog.io/images/hyounglee/post/941c5bfb-bcb4-415d-abd7-564172a80e0b/ezgif.com-video-to-gif%20(12).gif)
 
 #### 6. 카테고리 페이지
 
@@ -104,7 +104,7 @@ query string과 react router를 사용하여 각 id로 상세페이지 컴포넌
 
 ## 💌 프로젝트 후기 블로그 & 한줄평
 
-**드림카카오의 최강프론트!**
+**드림카카오의 최강프론트! 4인방**
 ### [김진희](https://velog.io/@bab_bury/Project)
 > 능력자 드림카카오 팀원들 ! 다른 팀원 앞에서 너무 웃지마 … 서운해 …
 ### [이연성](https://velog.io/@dustjd1535/1%EC%B0%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9B%84%EA%B8%B0-DreamKakao-Friends)
